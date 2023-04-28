@@ -1,0 +1,33 @@
+
+  /* body{
+    background-color: #325d9b;
+    color: #fff;
+  } */
+
+/* *{
+  padding: 0px;
+  margin:0px;
+} */
+
+  .container {
+    margin-top: 5px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 10px;
+  }
+
+  .featured-businesses {
+    text-align: center;
+  }
+
+  .card-title{
+    color: black;
+  }
+  
