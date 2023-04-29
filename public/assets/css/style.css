@@ -1,5 +1,4 @@
-
-  /* body{
+/* body{
     background-color: #325d9b;
     color: #fff;
   } */
@@ -8,26 +7,41 @@
   padding: 0px;
   margin:0px;
 } */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
 
-  .container {
+.container {
     margin-top: 5px;
-  }
+}
 
-  h1 {
+h1 {
     text-align: center;
-  }
+}
 
-  .search-input {
+.search-input {
     width: 100%;
     max-width: 300px;
     margin-right: 10px;
-  }
+}
 
-  .featured-businesses {
+.featured-businesses {
     text-align: center;
-  }
+}
 
-  .card-title{
+.card-title {
     color: black;
-  }
-  
+}
+
+/* screen from width > 500px will apply this */
+@media (min-width: 500px) {
+    /* style the navbar however u want */
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center !important;
+    }
+}
