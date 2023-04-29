@@ -36,8 +36,8 @@ h1 {
     color: black;
 }
 
-/* screen from width > 500px will apply this */
-@media (min-width: 500px) {
+/* screen from width > 320px will apply the style inside that scope */
+@media (min-width: 320px) {
     /* style the navbar however u want */
     .navbar-nav {
         flex-direction: row;
