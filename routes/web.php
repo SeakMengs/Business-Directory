@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
     return view('homepage');
 });
+
+// Sign Up Page
+Route::get('/signup', function(){
+    return view('signup');
+});
