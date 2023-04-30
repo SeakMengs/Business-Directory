@@ -78,3 +78,6 @@ border-color: #005cbf
     border: none;
 }
   
+.card-head-bgcolor{
+    background-color: #f8f9fa;
+}
