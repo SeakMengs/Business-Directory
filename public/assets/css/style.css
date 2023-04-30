@@ -7,6 +7,7 @@
   padding: 0px;
   margin:0px;
 } */
+
 .main-wrapper {
     display: flex;
     flex-direction: column;
@@ -32,10 +33,6 @@ h1 {
     text-align: center;
 }
 
-.card-title {
-    color: black;
-}
-
 /* screen from width > 320px will apply the style inside that scope */
 @media (min-width: 320px) {
     /* style the navbar however u want */
@@ -45,3 +42,39 @@ h1 {
         align-items: center !important;
     }
 }
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+  
+.card-title {
+font-size: 1.1rem;
+font-weight: 500;
+text-align: center;
+color: #3e3e3e;
+text-transform: uppercase;
+}
+
+.text-primary {
+color: #007bff !important;
+}
+
+.btn-primary {
+background-color: #007bff;
+border-color: #007bff;
+}
+
+.btn-primary:hover {
+background-color: #0069d9;
+border-color: #0062cc;
+}
+
+.btn-primary:focus {
+background-color: #0062cc;
+border-color: #005cbf
+}
+
+.category-border{
+    border: none;
+}
+  

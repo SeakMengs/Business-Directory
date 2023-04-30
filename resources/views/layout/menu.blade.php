@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="btn btn-outline-primary me-2" href="#">Login</a>
+                    <a class="btn btn-outline-primary me-2" href="/login">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-primary" href="/signup">Sign-up</a>

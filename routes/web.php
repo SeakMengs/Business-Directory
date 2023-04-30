@@ -21,3 +21,13 @@ Route::get('/', function(){
 Route::get('/signup', function(){
     return view('signup');
 });
+
+// Login Page
+Route::get('/login', function(){
+    return view('login');
+});
+
+// View More Category Page
+Route::get('/category', function(){
+    return view('category');
+});
