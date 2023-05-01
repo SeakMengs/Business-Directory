@@ -31,3 +31,9 @@ Route::get('/login', function(){
 Route::get('/category', function(){
     return view('category');
 });
+
+// Subcategory1 page
+Route::get('/subcate1', function(){
+    return view('subcate1');
+});
+
