@@ -2,55 +2,62 @@
 body {
     background-image: linear-gradient(to bottom, #E0EAFC, #CFDEF3);
     background-repeat: no-repeat;
-  }
-  
-  /* Set font and link colors */
-  body {
+}
+
+/* Set font and link colors */
+body {
     font-family: 'Open Sans', sans-serif;
     color: #333;
-  }
-  
-  a {
+}
+
+a {
     color: #214f6a;
-  }
-  
-  a:hover {
+}
+
+a:hover {
     color: #c93434;
-  }
-  
-  /* Add a subtle drop shadow to the navbar */
-  .navbar {
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+/* Add a subtle drop shadow to the navbar */
+.navbar {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style the jumbotron */
-  .jumbotron {
+}
+
+/* Style the jumbotron */
+.jumbotron {
     background-color: #fff;
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .jumbotron h1 {
+}
+
+.jumbotron h1 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
-  }
-  
-  .jumbotron p {
+}
+
+.jumbotron p {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-  }
-  
-  /* Add a subtle shadow and border to the cards */
-  .card {
+}
+
+/* Add a subtle shadow and border to the cards */
+.card {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     border: 1px solid #ccc;
     border-radius: 0.5rem;
-  }
-  
-  /* Style the card headers */
-  .card-header {
+}
+
+/* Style the card headers */
+.card-header {
     background-color: #214f6a;
     color: #fff;
     font-weight: bold;
@@ -58,23 +65,23 @@ body {
     padding: 1rem;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-  }
-  
-  /* Style the card body */
-  .card-body {
+}
+
+/* Style the card body */
+.card-body {
     padding: 1rem;
-  }
-  
-  /* Style the card footer */
-  .card-footer {
+}
+
+/* Style the card footer */
+.card-footer {
     background-color: #f8f9fa;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     padding: 0.5rem;
-  }
-  
-  /* Style the button */
-  .btn-custom {
+}
+
+/* Style the button */
+.btn-custom {
     display: inline-block;
     font-weight: bold;
     text-align: center;
@@ -90,26 +97,33 @@ body {
     color: #fff;
     background-color: #214f6a;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .btn-custom:hover {
+}
+
+.btn-custom:hover {
     background-color: #c93434;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Style the primary button */
-  .btn-primary {
+}
+
+/* Style the primary button */
+.btn-primary {
     color: #fff;
     background-color: #c93434;
     border-color: #c93434;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .btn-primary:hover {
+}
+
+.btn-primary:hover {
     background-color: #214f6a;
     border-color: #214f6a;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  
+}
+
+@media (min-width: 320px) {
+
+    /* style the navbar however u want */
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center !important;
+    }
+}
