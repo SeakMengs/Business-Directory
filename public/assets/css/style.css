@@ -126,6 +126,13 @@ a:hover {
 .header-align{
     text-align: center;
 }
+
+.fontawe-icon{
+    color: #c93434;
+    margin-right: 10px;
+}
+
+
 @media (min-width: 320px) {
 
     /* style the navbar however u want */
