@@ -20,7 +20,7 @@
 
 <!-- Search bar -->
 <div class="container">
-    <h1 class="pb-4">Business Directory</h1>
+    <h1 class="pb-4 header-align">Business Directory</h1>
     <div class="row justify-content-center pb-5">
         <div class="col-sm-8 col-md-6">
             <div class="input-group">
