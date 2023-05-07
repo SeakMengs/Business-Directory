@@ -3,7 +3,16 @@
 @section('dyncontent')
 
 <div class="container">
+     <!-- Breadcrumbs -->
+     <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active"><a href="/categoryshow">Category</a></li>
+            </ol>
+        </nav>
+    <!-- End Breadcrumbs -->
      <h2 class="header-align pb-3">Categories</h2>
+    
         <div class="row row-cols-1 row-cols-md-4 g-4">
         <!-- Automotive-Vehicle category -->
         <div class="col">
