@@ -7,7 +7,7 @@
       <h2 class="text-primary pb-4">Featured Categories</h2>
     </div>
     <div class="col text-end">
-      <a href="/category" class="btn btn-primary btn-sm">View More</a>
+      <a href="/categoryshow" class="btn btn-primary btn-sm">View More</a>
     </div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -42,7 +42,7 @@
       <div class="card h-100">
         <div class="card-body d-flex flex-column justify-content-center">
           <a href="#" class="text-decoration-none">
-            <h5 class="card-title mb-0">Banks &amp; Finance</h5>
+            <h5 class="card-title mb-0">Banks & Finance</h5>
           </a>
         </div>
       </div>

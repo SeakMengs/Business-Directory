@@ -9,7 +9,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-center">
-                    <a href="#" class="text-decoration-none">
+                    <a href="/automotive_cate" class="text-decoration-none">
                         <h5 class="card-title mb-0"> 
                             <i class="fa-solid fa-car fontawe-icon"></i>
                             Automotive - Vehicles

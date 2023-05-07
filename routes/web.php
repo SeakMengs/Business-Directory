@@ -28,12 +28,17 @@ Route::get('/login', function(){
 });
 
 // View More Category Page
-Route::get('/category', function(){
-    return view('category');
+Route::get('/categoryshow', function(){
+    return view('categoryshow');
 });
 
 // Subcategory1 page
 Route::get('/subcate1', function(){
     return view('subcate1');
+});
+
+// Automotive-Vehicle category page
+Route::get('/automotive_cate', function(){
+    return view('automotive_cate');
 });
 

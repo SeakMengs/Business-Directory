@@ -1,6 +1,6 @@
 /* Set background gradient */
 body {
-    background-image: linear-gradient(to bottom, #E0EAFC, #CFDEF3);
+    /* background-image: linear-gradient(to bottom, #E0EAFC, #CFDEF3); */
     background-repeat: no-repeat;
 }
 
@@ -132,7 +132,52 @@ a:hover {
     margin-right: 10px;
 }
 
+/* Company browse css*/
+.company-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+.company-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+}
+.company-logo {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+.company-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.company-rating {
+    color: #c93434;
+}
+.fa-star {
+    font-size: 1.2rem;
+    color: #c93434;
+}
+.fa-star-o {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+.company-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.company-link:hover {
+    color: #c93434;
+}
 
+
+/* For mobiler responsive */
 @media (min-width: 320px) {
 
     /* style the navbar however u want */
