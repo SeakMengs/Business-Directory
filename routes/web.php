@@ -46,6 +46,13 @@ Route::get('/automotive_cate', function(){
 Route::get('/s-cool-cambodia', function(){
     return view('s-cool-cambodia');
 });
+Route::get('/normal_user_profile', function () {
+    return view('normal_user_profile');
+});
+
+Route::get('/company_profile', function () {
+    return view('company_profile');
+});
 
 
 
