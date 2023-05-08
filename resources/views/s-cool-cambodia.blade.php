@@ -23,7 +23,8 @@
                         <div class="col-md-4 mb-4 mb-md-0">
                             <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/7/20220322020754/s_cool_logo_bw_small.png" class="img-fluid card-image-comdetail" alt="Company Logo">
                         </div>
-                        <div class="col-md-8">
+
+                        <div class="col-md-8 position-relative">
                             <h3 class="card-title-comdetail mb-0">S-Cool Cambodia</h3>
                             <p class="card-comdetail my-3">No.901, Kampuchea Krom Blvd (128), Sangkat Teuk Laak II, Khan Toul Kork , 12156, Phnom Penh</p>
                             <p class="card-comdetail">Contact Number: 012 345 678 / 016 836 896</p>
@@ -31,11 +32,14 @@
                             <p class="card-comdetail">Website: <a href="https://www.scool-international.com/" target="_blank">www.scool-international.com</a></p>
                             <div class="d-grid gap-2 d-md-block">
                                 <button class="btn btn-primary me-md-2 mb-2" type="button">Save Company</button>
-                                <button class="btn btn-primary me-md-2 mb-2" type="button">Report Company</button>
-                                <!-- Feedback button -->
                                 <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal">Give Feedback</button>
+                                <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal" data-bs-target="#reportModal">Report Company</button>
+                            </div>
+                            <div class="position-absolute bottom-0 end-0">
+                                <div class="star-rating" id="star-rating"></div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -74,6 +78,41 @@
             </div>
         </div>
     </div>
+    <!-- End feedback modal -->
+
+    <!-- Report Modal -->
+    <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportModalLabel">Report Company</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="report-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="report-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="report-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="report-email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="report-reason" class="form-label">Reason for report</label>
+                            <textarea class="form-control" id="report-reason" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End report modal -->
+
 
    <!-- The 3 tabs -->
    <div class="row mt-4">
@@ -156,6 +195,40 @@
 
 </div>
 
+
+<!-- Script for rating -->
+<script>
+    const ratingContainer = document.querySelector("#star-rating");
+
+    for (let i = 0; i < 5; i++) {
+        const star = document.createElement("span");
+        star.classList.add("fa", "fa-star", "unchecked");
+        star.dataset.rating = i + 1;
+        ratingContainer.appendChild(star);
+    }
+
+    ratingContainer.addEventListener("mouseover", event => {
+        const rating = event.target.dataset.rating;
+        if (rating) {
+            ratingContainer.querySelectorAll("span").forEach(star => {
+                if (star.dataset.rating <= rating) {
+                    star.classList.remove("unchecked");
+                    star.classList.add("checked");
+                } else {
+                    star.classList.remove("checked");
+                    star.classList.add("unchecked");
+                }
+            });
+        }
+    });
+
+    ratingContainer.addEventListener("mouseout", event => {
+        ratingContainer.querySelectorAll("span").forEach(star => {
+            star.classList.remove("checked");
+            star.classList.add("unchecked");
+        });
+    });
+</script>
 
 
 

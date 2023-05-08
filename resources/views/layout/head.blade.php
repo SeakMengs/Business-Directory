@@ -10,3 +10,5 @@
 <!-- Link the icon font awesome -->
 <script src="https://kit.fontawesome.com/72e69fb0a8.js" crossorigin="anonymous"></script>
 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-Z4o4z9Xg1Aed2yNQODaGJiMDvfSZYGGZtjgoZtJOGFkg9XvE0UCDgnI/gMjSg5w5J5eG+DURq3lZ4ch0zveX4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />

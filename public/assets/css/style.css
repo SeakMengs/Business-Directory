@@ -237,6 +237,24 @@ a:hover {
     max-width: 200px;
 }
 
+/* Rating stars */
+.star-rating {
+    font-size: 1.5rem;
+}
+
+.fa-star {
+    color: gray;
+    cursor: pointer;
+    margin-right: 0.2rem;
+}
+
+.fa-star.checked {
+    color: orange;
+}
+
+.fa-star.unchecked {
+    color: gray;
+}
 
 
 
