@@ -42,3 +42,10 @@ Route::get('/automotive_cate', function(){
     return view('automotive_cate');
 });
 
+// First Company Detail page
+Route::get('/s-cool-cambodia', function(){
+    return view('s-cool-cambodia');
+});
+
+
+

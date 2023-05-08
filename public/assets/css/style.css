@@ -145,8 +145,11 @@ a:hover {
     background-color: white;
 } */
 .company-logo {
-    max-width: 80%;
-    height: auto;
+    /* max-width: 80%;
+    height: auto; */
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
     display: block;
     margin: 0 auto 10px;
 }
@@ -195,7 +198,30 @@ a:hover {
 .breadcrumb-item.active > a {
     color: #c93434;
 }
+
+/* Company detail page */
+.card-comdetail {
+    border: none;
+    border-radius: 10px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    font-size: 16px;
+  }
   
+  .card-image-comdetail {
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  .card-title-comdetail {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .card-text-comdetail {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
 
 
 /* For mobiler responsive */
