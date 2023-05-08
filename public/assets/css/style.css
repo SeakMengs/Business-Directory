@@ -223,6 +223,23 @@ a:hover {
     font-weight: 500;
   }
 
+/* For the tabs in company detail page */
+.navbar-color{
+    color: #c93434;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #c93434;
+    color: white;
+  }
+
+.gallery-img {
+    max-width: 200px;
+}
+
+
+
+
 
 /* For mobiler responsive */
 @media (min-width: 320px) {
