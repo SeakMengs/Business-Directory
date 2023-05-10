@@ -25,9 +25,9 @@
     </div> -->
     <div class="col">
       <div class="card h-100">
-        <img src="https://dummyimage.com/400x200/000/fff" class="card-home-img" alt="Business Services">
+        <a href="#" class="text-decoration-none">
+        <img src=" {{ asset('images/business-logo.jpg') }}" class="card-home-img" alt="Business Logo">
         <div class="card-body d-flex flex-column justify-content-center">
-          <a href="#" class="text-decoration-none">
             <h5 class="card-title mb-2">Business Services</h5>
             <p class="card-subtitle text-muted">Solutions for legal, accounting, marketing, and HR</p>
           </a>
@@ -39,9 +39,9 @@
     <!-- 2nd category -->
     <div class="col">
       <div class="card h-100">
-        <img src="https://dummyimage.com/400x200/000/fff" class="card-home-img" alt="Banking & Finance">
+         <a href="#" class="text-decoration-none">
+        <img src=" {{ asset('images/bank-logo.jpg') }}" class="card-home-img" alt="Bank Logo">
         <div class="card-body d-flex flex-column justify-content-center">
-          <a href="#" class="text-decoration-none">
             <!-- <h5 class="card-title mb-0">Banking & Finance</h5> -->
             <h5 class="card-title mb-2">Banking & Finance</h5>
             <p class="card-subtitle text-muted">Manage your money and investments with confidence</p>
@@ -53,9 +53,9 @@
 
     <div class="col">
       <div class="card h-100">
-        <img src="https://dummyimage.com/400x200/000/fff" class="card-home-img" alt="Construction">
+        <a href="#" class="text-decoration-none">
+        <img src=" {{ asset('images/construction-logo.jpg') }}" class="card-home-img" alt="Construction logo">
         <div class="card-body d-flex flex-column justify-content-center">
-          <a href="#" class="text-decoration-none">
             <!-- <h5 class="card-title mb-0">Construction</h5> -->
             <h5 class="card-title mb-2">Construction</h5>
             <p class="card-subtitle text-muted">Comprehensive solutions for your business needs</p>
@@ -66,9 +66,9 @@
 
     <div class="col">
       <div class="card h-100">
-        <img src="https://dummyimage.com/400x200/000/fff" class="card-home-img" alt="Home & Household">
+        <a href="#" class="text-decoration-none">
+        <img src=" {{ asset('images/house-logo.jpg') }}" class="card-home-img" alt="Home & Household logo">
         <div class="card-body d-flex flex-column justify-content-center">
-          <a href="#" class="text-decoration-none">
             <!-- <h5 class="card-title mb-0">Home & Household</h5> -->
             <h5 class="card-title mb-2">Home & Household</h5>
             <p class="card-subtitle text-muted">Professional help for all your household needs</p>
@@ -79,9 +79,9 @@
 
     <div class="col">
       <div class="card h-100">
-        <img src="https://dummyimage.com/400x200/000/fff" class="card-home-img" alt="Industry, Agricultural & Garment">
-        <div class="card-body d-flex flex-column justify-content-center">
-          <a href="#" class="text-decoration-none">
+        <a href="#" class="text-decoration-none">
+        <img src=" {{ asset('images/agriculture-logo.jpg') }}" class="card-home-img" alt="Industry, Agricultural & Garment">
+        <div class="card-body d-flex flex-column justify-content-center">  
             <!-- <h5 class="card-title mb-0">Industry, Agricultural & Garment</h5> -->
             <h5 class="card-title mb-2">Industry, Agricultural & Garment</h5>
             <p class="card-subtitle text-muted">Tailored services for your business needs</p>
@@ -92,9 +92,9 @@
 
     <div class="col">
       <div class="card h-100">
-        <img src="https://dummyimage.com/400x200/000/fff" class="card-home-img" alt="Travel & Tourism">
+        <a href="#" class="text-decoration-none">
+        <img src=" {{ asset('images/travel-logo.jpg') }}" class="card-home-img" alt="Travel & Tourism">
         <div class="card-body d-flex flex-column justify-content-center">
-          <a href="#" class="text-decoration-none">
             <!-- <h5 class="card-title mb-0">Travel & Tourism</h5> -->
             <h5 class="card-title mb-2">Travel & Tourism</h5>
             <p class="card-subtitle text-muted">Take your travel and tourism business to new heights</p>
