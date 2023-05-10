@@ -58,7 +58,7 @@ a:hover {
 
 /* Style the card headers */
 .card-header {
-    background-color: #214f6a;
+    background-color: #c93434;
     color: #fff;
     font-weight: bold;
     font-size: 1.5rem;
@@ -256,6 +256,10 @@ a:hover {
     color: gray;
 }
 
+/* Homepage image */
+.card-home-img{
+    height: 200px;
+}
 
 
 

@@ -1,8 +1,9 @@
-@extends('layout.master')
+@extends('layout.mastertwo')
 
 @section('dyncontent')
 
-<div class="container py-5">
+<!-- Sorya Code -->
+<!-- <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
@@ -59,17 +60,61 @@
                 <option>Village 3</option>
               </select>
             </div>
-            <div class="form-group">
+            <div class="form-group pb-3">
               <label for="location_details">Location Details</label>
               <textarea class="form-control" id="location_details" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-secondary">Edit</button>
+            <button type="button" class="btn btn-success">Edit</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-@endsection
+<div class="container py-5">
+      <h1>User Profile</h1>
+      <!-- Saved Companies -->
+      <div class="row mt-4">
+        <div class="col">
+          <h2>Saved Companies</h2>
+          <div class="card-deck">
+            <div class="card">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Company Logo"/>
+              <div class="card-body">
+                <h5 class="card-title">Company Name</h5>
+                <p class="card-text">
+                  Brief description of the company.
+                </p>
+                <a href="#" class="btn btn-primary">View Company</a>
+              </div>
+            </div>
+            <!-- Add more cards here for each saved company -->
+          </div>
+        </div>
+      </div>
+      <!-- Edit Personal Information -->
+      <div class="row mt-4">
+        <div class="col">
+          <h2>Edit Personal Information</h2>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" value="John Doe"/>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" value="johndoe@example.com"/>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" value="********"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+@stop

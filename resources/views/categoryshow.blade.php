@@ -2,7 +2,7 @@
 
 @section('dyncontent')
 
-<div class="container">
+<div class="container my-4">
      <!-- Breadcrumbs -->
      <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
