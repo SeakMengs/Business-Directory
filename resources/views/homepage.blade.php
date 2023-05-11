@@ -14,15 +14,6 @@
   <!-- <div class="row row-cols-1 row-cols-md-3 g-4"> -->
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <!-- first category -->
-    <!-- <div class="col ">
-      <div class="card h-100">
-        <div class="card-body d-flex flex-column justify-content-center">
-          <a href="#" class="text-decoration-none">
-              <h5 class="card-title mb-0"> Business Services </h5>
-          </a>
-        </div>
-      </div>
-    </div> -->
     <div class="col">
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
@@ -51,6 +42,7 @@
     </div>
     <!-- End 2nd category -->
 
+    <!-- 3rd Category -->
     <div class="col">
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
@@ -63,7 +55,9 @@
         </div>
       </div>
     </div>
+    <!-- End 3rd Category -->
 
+    <!-- 4th Category -->
     <div class="col">
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
@@ -76,7 +70,9 @@
         </div>
       </div>
     </div>
+    <!-- End 4th Category -->
 
+    <!-- 5th Category -->
     <div class="col">
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
@@ -89,7 +85,9 @@
         </div>
       </div>
     </div>
+    <!-- End 5th Category -->
 
+    <!-- 6th Category -->
     <div class="col">
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
@@ -102,6 +100,8 @@
         </div>
       </div>
     </div>
+    <!-- End 6th Category -->
+    
   </div>
 </div>
 

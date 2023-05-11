@@ -74,11 +74,11 @@
 </div> -->
 
 <div class="container py-5">
-      <h1>User Profile</h1>
+    <h2 class="header-align pb-3">User Profile</h2>
       <!-- Saved Companies -->
       <div class="row mt-4">
         <div class="col">
-          <h2>Saved Companies</h2>
+          <h4>Saved Companies</h4>
           <div class="card-deck">
             <div class="card">
               <img src="https://via.placeholder.com/150" class="card-img-top" alt="Company Logo"/>
@@ -97,7 +97,7 @@
       <!-- Edit Personal Information -->
       <div class="row mt-4">
         <div class="col">
-          <h2>Edit Personal Information</h2>
+          <h4>Edit Personal Information</h4>
           <form>
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
