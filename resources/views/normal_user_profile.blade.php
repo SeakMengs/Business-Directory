@@ -73,48 +73,112 @@
   </div>
 </div> -->
 
-<div class="container py-5">
-    <h2 class="header-align pb-3">User Profile</h2>
-      <!-- Saved Companies -->
-      <div class="row mt-4">
-        <div class="col">
-          <h4>Saved Companies</h4>
-          <div class="card-deck">
-            <div class="card">
-              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Company Logo"/>
-              <div class="card-body">
-                <h5 class="card-title">Company Name</h5>
-                <p class="card-text">
-                  Brief description of the company.
-                </p>
-                <a href="#" class="btn btn-primary">View Company</a>
+<!-- First V -->
+  <!-- <div class="container py-5">
+      <h2 class="header-align pb-3">User Profile</h2>
+        Saved Companies
+        <div class="row mt-4">
+          <div class="col">
+            <h4>Saved Companies</h4>
+            <div class="card-deck">
+              <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Company Logo"/>
+                <div class="card-body">
+                  <h5 class="card-title">Company Name</h5>
+                  <p class="card-text">
+                    Brief description of the company.
+                  </p>
+                  <a href="#" class="btn btn-primary">View Company</a>
+                </div>
               </div>
+              Add more cards here for each saved company
             </div>
-            <!-- Add more cards here for each saved company -->
+          </div>
+        </div>
+        Edit Personal Information
+        <div class="row mt-4">
+          <div class="col">
+            <h4>Edit Personal Information</h4>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" value="John Doe"/>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" value="johndoe@example.com"/>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" value="********"/>
+              </div>
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div> -->
+  <!-- End First V -->
+
+
+  <!-- Second V -->
+
+  <div class="container pb-5">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8 col-lg-6">
+      <!-- User Profile -->
+      <div class="card">
+        <div class="card-header text-center">
+          User Profile
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Hello World" value="Hello World">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" value="helloworld@gmail.com">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="********" value="password123">
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary btn-edit" type="submit">Edit</button>
           </div>
         </div>
       </div>
-      <!-- Edit Personal Information -->
-      <div class="row mt-4">
-        <div class="col">
-          <h4>Edit Personal Information</h4>
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" value="John Doe"/>
+
+      <!-- Saved Companies -->
+      <div class="card mt-5">
+        <div class="card-header text-center">
+          Saved Companies
+        </div>
+        <div class="card-body">
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Company Name</h5>
+                  <button class="btn btn-danger btn-remove" type="button">Remove</button>
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" value="johndoe@example.com"/>
+            <div class="col">
+              <div class="card h-100">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Company Name</h5>
+                  <button class="btn btn-danger btn-remove" type="button">Remove</button>
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" value="********"/>
-            </div>
-            <button type="submit" class="btn btn-primary">Save Changes</button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
 @stop
