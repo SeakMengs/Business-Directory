@@ -1,9 +1,11 @@
-@extends('layout.master')
+@extends('layout.mastertwo')
 
 @section('dyncontent')
 
+<!-- Sorya Code -->
 <div class="container mt-4">
   <div class="row">
+    
     <div class="col-md-3">
       <div class="card">
         <div class="card-header">
@@ -11,17 +13,14 @@
         </div>
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <!-- <li class="list-group-item">
-              <a href="#">Company Profile</a>
-            </li> -->
-            <!-- <li class="list-group-item">
-              <a href="#">Add Company</a>
-            </li> -->
             <li class="list-group-item">
-              <a href="#">Edit Company Profile</a>
+              <a href="#">Company Profile</a>
             </li>
             <li class="list-group-item">
-              <a href="#">Delete Company</a>
+              <a href="#">Listings</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#">Add New Listings</a>
             </li>
           </ul>
         </div>
@@ -40,10 +39,10 @@
                 <label for="name">Company Name:</label>
                 <input type="text" class="form-control" id="name" value="S-Cool Cambodia" readonly>
               </div>
-              <!-- <div class="form-group">
+              <div class="form-group">
                 <label for="category">Category:</label>
                 <input type="text" class="form-control" id="category" value="Automotive - Vehicles" readonly>
-              </div> -->
+              </div>
               <div class="form-group">
                 <label for="phone">Phone:</label>
                 <input type="text" class="form-control" id="phone" value="012 345 678 / 016 836 896" readonly>
@@ -75,4 +74,91 @@
 </div>
 <br>
 
+<!-- Testing -->
+    <!-- <div class="container my-4">
+      <h4 class="text-center">Manage your company profile and listings.</h4>
+
+      <div class="row my-4">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5>Company Profile</h5>
+              <p class="card-text">View and edit your company profile information.</p>
+              <a href="#" class="btn btn-primary">Manage Profile</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5>Listings</h5>
+              <p class="card-text">View and manage your company listings.</p>
+              <a href="#" class="btn btn-primary">Manage Listings</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5>Add New Listing</h5>
+              <p class="card-text">Create a new company listing.</p>
+              <a href="#" class="btn btn-primary">Add Listing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+  </div> -->
+
+
+
+
 @stop
+
+
+<!-- Listing -->
+<!-- <div class="row my-4">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Company Information</h5>
+              <p class class="card-text">View and edit your company information.</p>
+              <form>
+                <div class="mb-3">
+                  <label for="company-name" class="form-label">Company Name</label>
+                  <input type="text" class="form-control" id="company-name" value="Your Company Name">
+                </div>
+                <div class="mb-3">
+                  <label for="company-logo" class="form-label">Company Logo</label>
+                  <input type="file" class="form-control" id="company-logo">
+                </div>
+                <div class="mb-3">
+                  <label for="company-email" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="company-email" value="info@yourcompany.com">
+                </div>
+                <div class="mb-3">
+                  <label for="company-address" class="form-label">Address</label>
+                  <textarea class="form-control" id="company-address" rows="3">1234 Main St, Suite 200, Anytown, USA 12345</textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="company-website" class="form-label">Website</label>
+                  <input type="url" class="form-control" id="company-website" value="https://www.yourcompany.com">
+                </div>
+                <div class="mb-3">
+                  <label for="company-description" class="form-label">Description</label>
+                  <textarea class="form-control" id="company-description" rows="5">We are a leading provider of quality products and services.</textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="company-services" class="form-label">Services</label>
+                  <textarea class="form-control" id="company-services" rows="5">We offer a wide range of products and services to meet the needs of our customers.</textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="company-gallery" class="form-label">Gallery</label>
+                  <input type="file" class="form-control" id="company-gallery" multiple>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </form>
+            </div>
+          </div>
+        </div> -->
