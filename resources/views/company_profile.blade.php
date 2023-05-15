@@ -116,7 +116,7 @@
                   <h5 class="card-title">S-Cool Cambodia</h5>
                 </div>
                 <div class="card-footer">
-                  <a href="/edit-listing" class="btn btn-danger btn-remove" type="button">Edit Listing</a>
+                  <a href="/edit-listing-SCoolCambodia" class="btn btn-danger btn-remove" type="button">Edit Listing</a>
                   <button class="btn btn-danger btn-remove" type="button">Remove</button>
                 </div>
               </div>
@@ -128,7 +128,7 @@
                   <h5 class="card-title">Heng Seng International Marketing Co., Ltd.</h5>
                 </div>
                 <div class="card-footer">
-                  <a href="/edit-listing" class="btn btn-danger btn-remove" type="button">Edit Listing</a>
+                  <a href="#" class="btn btn-danger btn-remove" type="button">Edit Listing</a>
                   <button class="btn btn-danger btn-remove" type="button">Remove</button>
                 </div>
               </div>

@@ -147,8 +147,6 @@
                     <li>Aircon Ducting/HVAC ducting</li>
                     <li>Auto Glass Coating</li>
                 </ul>
-                <p>We are committed to bringing the latest technology in cooling solutions and building efficiency to the Kingdom of Cambodia.</p>
-                <p>We are the exclusive distributor of S-Cool, V-Kool, Cooltex & Kool Foil brands in Cambodia.</p>
             </div>
             <!-- End Serivce Tab -->
 

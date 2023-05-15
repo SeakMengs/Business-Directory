@@ -59,9 +59,14 @@ Route::get('/edit-company-account', function () {
     return view('edit-company-account');
 });
 
-//Create new listing
-Route::get('/edit-listing', function () {
-    return view('/edit-listing');
+//Edit listing
+Route::get('/edit-listing-SCoolCambodia', function () {
+    return view('/edit-listing-SCoolCambodia');
+});
+
+//Add new listing
+Route::get('/add-listing', function () {
+    return view('/add-listing');
 });
 
 
