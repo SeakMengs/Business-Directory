@@ -54,5 +54,10 @@ Route::get('/company_profile', function () {
     return view('company_profile');
 });
 
+//Company-Account-Edit-Info
+Route::get('/edit-company-account', function () {
+    return view('edit-company-account');
+});
+
 
 

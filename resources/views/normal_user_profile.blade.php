@@ -132,16 +132,16 @@
         </div>
         <div class="card-body">
             <div class="mb-3">  
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Hello World" value="Hello World">
+                <label for="normal_user_name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="normal_user_name" placeholder="Hello World" value="Hello World">
             </div>
             <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" value="helloworld@gmail.com">
+                <label for="normal_user_email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="normal_user_email" placeholder="name@example.com" value="helloworld@gmail.com">
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="********" value="password123">
+                <label for="normal_user_password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="normal_user_password" placeholder="********" value="password123">
             </div>
             <div class="mb-3">
                 <button class="btn btn-primary btn-edit" type="submit">Edit</button>

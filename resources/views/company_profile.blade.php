@@ -3,7 +3,7 @@
 @section('dyncontent')
 
 <!-- Sorya Code -->
-<div class="container mt-4">
+<!-- <div class="container mt-4">
   <div class="row">
     
     <div class="col-md-3">
@@ -72,7 +72,40 @@
     </div>
   </div>
 </div>
-<br>
+<br> -->
+
+
+<!-- Test -->
+
+<div class="container pb-5">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8 col-lg-6">
+      <!-- Company Profile -->
+      <div class="card">
+        <div class="card-header text-center">
+          <h5>Company Account Information</h5>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">  
+                <label for="company_user_name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="company_user_name" id="company_user_name" value="John Doe" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="company_user_email" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="company_user_email" id="company_user_email" value="johndoe@example.com" readonly>
+            </div>
+            <div class="mb-3 text-center">
+              <a href="/edit-company-account" class="btn btn-primary">Edit Account</a>
+            </div>
+        </div>
+      </div>
+      <!-- End Company Account Profile -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- Testing -->
     <!-- <div class="container my-4">
