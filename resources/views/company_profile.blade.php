@@ -100,6 +100,52 @@
         </div>
       </div>
       <!-- End Company Account Profile -->
+
+
+      <!-- Company Listings -->
+      <div class="card mt-5">
+        <div class="card-header text-center">
+          <h5>Business Listings</h5>
+        </div>
+        <div class="card-body">
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/7/20220322020754/s_cool_logo_bw_small.png" class="card-img-top company-logo" alt="Company Logo">
+                <div class="card-body">
+                  <h5 class="card-title">S-Cool Cambodia</h5>
+                </div>
+                <div class="card-footer">
+                  <a href="/edit-listing" class="btn btn-danger btn-remove" type="button">Edit Listing</a>
+                  <button class="btn btn-danger btn-remove" type="button">Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/kh/logo_images/original/1501462.jfif" class="card-img-top company-logo" alt="Company Logo">
+                <div class="card-body">
+                  <h5 class="card-title">Heng Seng International Marketing Co., Ltd.</h5>
+                </div>
+                <div class="card-footer">
+                  <a href="/edit-listing" class="btn btn-danger btn-remove" type="button">Edit Listing</a>
+                  <button class="btn btn-danger btn-remove" type="button">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add new listing -->
+          <div class="text-center mt-4">
+            <a href="/add-listing" class="btn btn-success">Create New Listing</a>
+          </div>
+        </div>
+      </div>
+      <!-- End company listings -->
+<!-- /edit-listing -->
+      
+
+
+
       </div>
     </div>
   </div>

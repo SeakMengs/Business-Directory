@@ -59,5 +59,9 @@ Route::get('/edit-company-account', function () {
     return view('edit-company-account');
 });
 
+//Create new listing
+Route::get('/edit-listing', function () {
+    return view('/edit-listing');
+});
 
 

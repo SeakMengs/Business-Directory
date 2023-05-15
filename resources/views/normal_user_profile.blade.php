@@ -183,6 +183,7 @@
           </div>
         </div>
       </div>
+      <!-- Saved Companies -->
     </div>
   </div>
 </div>
