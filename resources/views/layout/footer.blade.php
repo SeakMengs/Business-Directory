@@ -1,5 +1,7 @@
+<!-- Container for About Us, Office Location, and Connect With Us sections -->
 <div class="container">
     <div class="row">
+        <!-- About Us section -->
         <div class="col-md-4 mb-3 mb-md-0">
             <h5 class="text-uppercase mb-4">About Us</h5>
             <p>VOS is a business directory website dedicated to helping people find local
@@ -7,6 +9,8 @@
                 various
                 industries, making it easy for users to find what they need.</p>
         </div>
+
+        <!-- Office Location section -->
         <div class="col-md-4 mb-3 mb-md-0">
             <h5 class="text-uppercase mb-4">Office Location</h5>
             <address class="mb-0">
@@ -16,6 +20,8 @@
                 Nowhere, Jupiter 223311<br>
             </address>
         </div>
+
+        <!-- Connect With Us section -->
         <div class="col-md-4">
             <h5 class="text-uppercase mb-4">Connect With Us</h5>
             <ul class="list-unstyled">
@@ -26,6 +32,8 @@
         </div>
     </div>
 </div>
+
+<!-- Bottom section with copyright information -->
 <div class="bg-light text-center py-3">
     <p class="mb-0">&copy; VOS Inc. All rights reserved.</p>
 </div>

@@ -1,15 +1,20 @@
 <nav class="navbar navbar-expand-md navbar-light mb-3">
     <div class="container">
+        <!-- Navigation Brand -->
         <a class="navbar-brand" href="/">VOS</a>
+        <!-- Navigation Toggler Button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+                <!-- Login button -->
                 <li class="nav-item">
                     <a class="btn btn-outline-primary me-2" href="/login">Login</a>
                 </li>
+                <!-- Sign up button -->
                 <li class="nav-item">
                     <a class="btn btn-primary" href="/signup">Sign-up</a>
                 </li>

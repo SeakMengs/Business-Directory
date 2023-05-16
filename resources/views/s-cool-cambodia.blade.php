@@ -21,25 +21,30 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-md-4 mb-4 mb-md-0">
+                            <!-- Company logo -->
                             <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/7/20220322020754/s_cool_logo_bw_small.png" class="img-fluid card-image-comdetail" alt="Company Logo">
                         </div>
 
                         <div class="col-md-8 position-relative">
+                            <!-- Company name -->
                             <h3 class="card-title-comdetail mb-0">S-Cool Cambodia</h3>
+                            <!-- Company address -->
                             <p class="card-comdetail my-3">No.901, Kampuchea Krom Blvd (128), Sangkat Teuk Laak II, Khan Toul Kork , 12156, Phnom Penh</p>
+                            <!-- Contact details -->
                             <p class="card-comdetail">Contact Number: 012 345 678 / 016 836 896</p>
                             <p class="card-comdetail">Email: cambodia@scoolfilm.com</p>
                             <p class="card-comdetail">Website: <a href="https://www.scool-international.com/" target="_blank">www.scool-international.com</a></p>
+                            <!-- Action buttons -->
                             <div class="d-grid gap-2 d-md-block">
                                 <button class="btn btn-primary me-md-2 mb-2" type="button">Save Company</button>
                                 <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal">Give Feedback</button>
                                 <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal" data-bs-target="#reportModal">Report Company</button>
                             </div>
+                            <!-- Star rating -->
                             <div class="position-absolute bottom-0 end-0">
                                 <div class="star-rating" id="star-rating"></div>
                             </div>
-                        </div>
-                        
+                        </div>   
                     </div>
                 </div>
             </div>
@@ -47,22 +52,26 @@
     </div>
     <!-- End company detail overview -->
 
+
     <!-- Feedback Modal -->
     <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                    <!-- Modal title -->
                     <h5 class="modal-title" id="feedbackModalLabel">Provide Feedback</h5>
+                    <!-- Close button -->
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="feedback-message" class="form-label">Message</label>
-                        <textarea class="form-control" id="feedback-message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                    <!-- Feedback form -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="feedback-message" class="form-label">Message</label>
+                            <textarea class="form-control" id="feedback-message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -72,15 +81,19 @@
     </div>
     <!-- End feedback modal -->
 
+
     <!-- Report Modal -->
     <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                    <!-- Modal title -->
                     <h5 class="modal-title" id="reportModalLabel">Report Company</h5>
+                    <!-- Close button -->
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <!-- Report form -->
                     <form>
                         <div class="mb-3">
                             <label for="report-reason" class="form-label">Reason for report</label>
@@ -98,21 +111,26 @@
     <!-- End report modal -->
 
 
+
    <!-- The 3 tabs -->
    <div class="row mt-4">
         <div class="col-12 d-flex">
             <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active navbar-color" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link navbar-color" id="services-tab" data-bs-toggle="tab" data-bs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false">Services</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link navbar-color" id="gallaries-tab" data-bs-toggle="tab" data-bs-target="#gallaries" type="button" role="tab" aria-controls="gallaries" aria-selected="false">Gallaries</button>
-            </li>
+                <li class="nav-item" role="presentation">
+                    <!-- Description tab button -->
+                    <button class="nav-link active navbar-color" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <!-- Services tab button -->
+                    <button class="nav-link navbar-color" id="services-tab" data-bs-toggle="tab" data-bs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false">Services</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <!-- Galleries tab button -->
+                    <button class="nav-link navbar-color" id="galleries-tab" data-bs-toggle="tab" data-bs-target="#galleries" type="button" role="tab" aria-controls="galleries" aria-selected="false">Galleries</button>
+                </li>
             </ul>
         </div>
+
         <div class="col-12">
             <div class="tab-content mt-3">
             <!-- Description Tab -->
@@ -180,8 +198,10 @@
 
 <!-- Script for rating -->
 <script>
+    // Select the rating container element
     const ratingContainer = document.querySelector("#star-rating");
 
+    // Loop to create five star elements
     for (let i = 0; i < 5; i++) {
         const star = document.createElement("span");
         star.classList.add("fa", "fa-star", "unchecked");
@@ -189,9 +209,11 @@
         ratingContainer.appendChild(star);
     }
 
+    // Event listener for mouseover event
     ratingContainer.addEventListener("mouseover", event => {
         const rating = event.target.dataset.rating;
         if (rating) {
+            // Iterate over all stars and update their classes based on the rating
             ratingContainer.querySelectorAll("span").forEach(star => {
                 if (star.dataset.rating <= rating) {
                     star.classList.remove("unchecked");
@@ -204,13 +226,16 @@
         }
     });
 
+    // Event listener for mouseout event
     ratingContainer.addEventListener("mouseout", event => {
+        // Reset all star classes to unchecked
         ratingContainer.querySelectorAll("span").forEach(star => {
             star.classList.remove("checked");
             star.classList.add("unchecked");
         });
     });
 </script>
+
 
 
 
