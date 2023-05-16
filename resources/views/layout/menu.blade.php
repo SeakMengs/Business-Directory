@@ -13,10 +13,33 @@
                 <li class="nav-item">
                     <a class="btn btn-primary" href="/signup">Sign-up</a>
                 </li>
+
+                <!-- company profile icon -->
+                <!-- <li class="nav-item">
+                <img src="{{ asset('images/company-profile.png') }}" alt="company-rofile" class="company-profile-icon">
+                        company profile
+                </li> -->
+
+                <!-- user profile icon -->
+                <!-- <li class="nav-item">
+                <img src="{{ asset('images/user-profile.png') }}" alt="company-rofile" class="company-profile-icon">
+                        user profile
+                </li> -->
+                
+                <!-- the logout button -->
+                <!-- <li class="nav-item">
+                    <a class="btn btn-primary" href="/logout">
+                    <img src=" {{ asset('images/icon-logout.png') }}" alt="Logout" class="logout-icon">
+                       logout
+                    </a>
+                </li> -->
+
+                </li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 <!-- Search bar -->
 <div class="container">
