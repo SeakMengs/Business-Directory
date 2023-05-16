@@ -32,11 +32,6 @@ Route::get('/categoryshow', function(){
     return view('categoryshow');
 });
 
-// Subcategory1 page
-Route::get('/subcate1', function(){
-    return view('subcate1');
-});
-
 // Automotive-Vehicle category page
 Route::get('/automotive_cate', function(){
     return view('automotive_cate');
@@ -57,6 +52,11 @@ Route::get('/company_profile', function () {
 //Company-Account-Edit-Info
 Route::get('/edit-company-account', function () {
     return view('edit-company-account');
+});
+
+//User-Account-Edit-Info
+Route::get('/edit-normaluser-account', function () {
+    return view('edit-normaluser-account');
 });
 
 //Edit listing

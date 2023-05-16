@@ -11,6 +11,7 @@
             </ol>
         </nav>
     <!-- End Breadcrumbs -->
+
      <h2 class="header-align pb-3">Categories</h2>
     
         <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -19,6 +20,7 @@
             <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-center">
                     <a href="/automotive_cate" class="text-decoration-none">
+                        <!-- Category title with icon -->
                         <h5 class="card-title mb-0"> 
                             <i class="fa-solid fa-car fontawe-icon"></i>
                             Automotive - Vehicles
@@ -34,6 +36,7 @@
             <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-center">
                     <a href="#" class="text-decoration-none">
+                        <!-- Category title with icon -->
                         <h5 class="card-title mb-0">
                             <i class="fa-solid fa-coins fontawe-icon"></i>
                             Banking & Finance
@@ -49,6 +52,7 @@
             <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-center">
                     <a href="#" class="text-decoration-none">
+                        <!-- Category title with icon -->
                         <h5 class="card-title mb-0">
                             <i class="fa-solid fa-briefcase fontawe-icon"></i>
                             Business Services
@@ -64,6 +68,7 @@
             <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-center">
                     <a href="#" class="text-decoration-none">
+                        <!-- Category title with icon -->
                         <h5 class="card-title mb-0">
                             <i class="fa-solid fa-gamepad fontawe-icon"></i>
                             Entertainment
@@ -79,6 +84,7 @@
             <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-center">
                     <a href="#" class="text-decoration-none">
+                        <!-- Category title with icon -->
                         <h5 class="card-title mb-0">
                             <i class="fa-solid fa-helmet-safety fontawe-icon"></i>
                             Construction
@@ -94,6 +100,7 @@
             <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-center">
                     <a href="#" class="text-decoration-none">
+                        <!-- Category title with icon -->
                         <h5 class="card-title mb-0">
                             <i class="fa-solid fa-school fontawe-icon"></i>
                             Education
@@ -109,6 +116,7 @@
             <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-center">
                     <a href="#" class="text-decoration-none">
+                        <!-- Category title with icon -->
                         <h5 class="card-title mb-0">
                             <i class="fa-solid fa-bowl-food fontawe-icon"></i>
                             Food & Beverages
@@ -124,6 +132,7 @@
             <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-center">
                     <a href="#" class="text-decoration-none">
+                        <!-- Category title with icon -->
                         <h5 class="card-title mb-0">
                             <i class="fa-solid fa-suitcase-medical fontawe-icon"></i>
                             Health & Medicine
@@ -135,7 +144,6 @@
         <!-- End  Health & Medicine -->
 
     </div>
-
 
 </div>
 

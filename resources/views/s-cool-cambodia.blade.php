@@ -57,14 +57,6 @@
                 </div>
                 <div class="modal-body">
                 <form>
-                    <!-- <div class="mb-3">
-                        <label for="feedback-name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="feedback-name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="feedback-email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="feedback-email" required>
-                    </div> -->
                     <div class="mb-3">
                         <label for="feedback-message" class="form-label">Message</label>
                         <textarea class="form-control" id="feedback-message" rows="5" required></textarea>
@@ -90,14 +82,6 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <!-- <div class="mb-3">
-                            <label for="report-name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="report-name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="report-email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="report-email" required>
-                        </div> -->
                         <div class="mb-3">
                             <label for="report-reason" class="form-label">Reason for report</label>
                             <textarea class="form-control" id="report-reason" rows="5" required></textarea>

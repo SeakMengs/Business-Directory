@@ -128,26 +128,27 @@
       <!-- User Profile -->
       <div class="card">
         <div class="card-header text-center">
-          <h5>User Profile</h5>
+          <h5>Normal User Account Information</h5>
         </div>
         <div class="card-body">
-            <div class="mb-3">  
-                <label for="normal_user_name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="normal_user_name" placeholder="Hello World" value="Hello World">
-            </div>
-            <div class="mb-3">
-                <label for="normal_user_email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="normal_user_email" placeholder="name@example.com" value="helloworld@gmail.com">
-            </div>
-            <div class="mb-3">
-                <label for="normal_user_password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="normal_user_password" placeholder="********" value="password123">
-            </div>
-            <div class="mb-3">
-                <button class="btn btn-primary btn-edit" type="submit">Edit</button>
-            </div>
+          <!-- Name field -->
+          <div class="mb-3">  
+            <label for="normal_user_name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="normal_user_name" id="normal_user_name" value="Hello World" readonly>
+          </div>
+          <!-- Email field -->
+          <div class="mb-3">
+            <label for="normal_user_email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="normal_user_email" id="normal_user_email" value="helloworld@gmail.com" readonly>
+          </div>
+          <!-- Edit Account button -->
+          <div class="mb-3 text-center">
+            <a href="/edit-normaluser-account" class="btn btn-primary">Edit Account</a>
+          </div>
         </div>
       </div>
+      <!-- End User Profile -->
+
 
       <!-- Saved Companies -->
       <div class="card mt-5">
@@ -156,26 +157,32 @@
         </div>
         <div class="card-body">
           <div class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- First saved company -->
             <div class="col">
               <div class="card h-100">
+                <!-- Company logo -->
                 <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/7/20220322020754/s_cool_logo_bw_small.png" class="card-img-top company-logo" alt="Company Logo">
                 <div class="card-body">
+                  <!-- Company name -->
                   <h5 class="card-title">S-Cool Cambodia</h5>
-                  <!-- <button class="btn btn-danger btn-remove" type="button">Remove</button> -->
                 </div>
                 <div class="card-footer">
+                  <!-- Remove button -->
                   <button class="btn btn-danger btn-remove" type="button">Remove</button>
                 </div>
               </div>
             </div>
+            <!-- Second saved company -->
             <div class="col">
               <div class="card h-100">
+                <!-- Company logo -->
                 <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/kh/logo_images/original/1501462.jfif" class="card-img-top company-logo" alt="Company Logo">
                 <div class="card-body">
+                  <!-- Company name -->
                   <h5 class="card-title">Heng Seng International Marketing Co., Ltd.</h5>
-                  <!-- <button class="btn btn-danger btn-remove" type="button">Remove</button> -->
                 </div>
                 <div class="card-footer">
+                  <!-- Remove button -->
                   <button class="btn btn-danger btn-remove" type="button">Remove</button>
                 </div>
               </div>
@@ -183,7 +190,8 @@
           </div>
         </div>
       </div>
-      <!-- Saved Companies -->
+      <!-- End Saved Companies -->
+
     </div>
   </div>
 </div>

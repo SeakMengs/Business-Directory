@@ -75,36 +75,38 @@
 <br> -->
 
 
-<!-- Test -->
-
 <div class="container pb-5">
   <div class="row justify-content-center mt-5">
     <div class="col-md-8 col-lg-6">
       <!-- Company Profile -->
       <div class="card">
         <div class="card-header text-center">
-          <h5>Company Account Information</h5>
+          <!-- Card header title -->
+          <h5>Company User Account Information</h5>
         </div>
         <div class="card-body">
-            <div class="mb-3">  
-                <label for="company_user_name" class="form-label">Name</label>
-                <input type="text" class="form-control" name="company_user_name" id="company_user_name" value="John Doe" readonly>
-            </div>
-            <div class="mb-3">
-                <label for="company_user_email" class="form-label">Email address</label>
-                <input type="email" class="form-control" name="company_user_email" id="company_user_email" value="johndoe@example.com" readonly>
-            </div>
-            <div class="mb-3 text-center">
-              <a href="/edit-company-account" class="btn btn-primary">Edit Account</a>
-            </div>
+          <div class="mb-3">
+            <label for="company_user_name" class="form-label">Name</label>
+            <!-- Input field for company user name -->
+            <input type="text" class="form-control" name="company_user_name" id="company_user_name" value="John Doe" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="company_user_email" class="form-label">Email address</label>
+            <!-- Input field for company user email -->
+            <input type="email" class="form-control" name="company_user_email" id="company_user_email" value="johndoe@example.com" readonly>
+          </div>
+          <div class="mb-3 text-center">
+            <!-- Edit account button -->
+            <a href="/edit-company-account" class="btn btn-primary">Edit Account</a>
+          </div>
         </div>
       </div>
       <!-- End Company Account Profile -->
 
-
       <!-- Company Listings -->
       <div class="card mt-5">
         <div class="card-header text-center">
+          <!-- Card header title -->
           <h5>Business Listings</h5>
         </div>
         <div class="card-body">
@@ -116,7 +118,9 @@
                   <h5 class="card-title">S-Cool Cambodia</h5>
                 </div>
                 <div class="card-footer">
+                  <!-- Edit listing button for S-Cool Cambodia -->
                   <a href="/edit-listing-SCoolCambodia" class="btn btn-danger btn-remove" type="button">Edit Listing</a>
+                  <!-- Remove listing button for S-Cool Cambodia -->
                   <button class="btn btn-danger btn-remove" type="button">Remove</button>
                 </div>
               </div>
@@ -128,116 +132,25 @@
                   <h5 class="card-title">Heng Seng International Marketing Co., Ltd.</h5>
                 </div>
                 <div class="card-footer">
+                  <!-- Edit listing button for Heng Seng International Marketing Co., Ltd. -->
                   <a href="#" class="btn btn-danger btn-remove" type="button">Edit Listing</a>
+                  <!-- Remove listing button for Heng Seng International Marketing Co., Ltd. -->
                   <button class="btn btn-danger btn-remove" type="button">Remove</button>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Add new listing -->
+          <!-- Add new listing button -->
           <div class="text-center mt-4">
             <a href="/add-listing" class="btn btn-success">Create New Listing</a>
           </div>
         </div>
       </div>
       <!-- End company listings -->
-<!-- /edit-listing -->
       
-
-
 
       </div>
     </div>
   </div>
 </div>
-
-
-
-<!-- Testing -->
-    <!-- <div class="container my-4">
-      <h4 class="text-center">Manage your company profile and listings.</h4>
-
-      <div class="row my-4">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5>Company Profile</h5>
-              <p class="card-text">View and edit your company profile information.</p>
-              <a href="#" class="btn btn-primary">Manage Profile</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5>Listings</h5>
-              <p class="card-text">View and manage your company listings.</p>
-              <a href="#" class="btn btn-primary">Manage Listings</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5>Add New Listing</h5>
-              <p class="card-text">Create a new company listing.</p>
-              <a href="#" class="btn btn-primary">Add Listing</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
-  </div> -->
-
-
-
-
 @stop
-
-
-<!-- Listing -->
-<!-- <div class="row my-4">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Company Information</h5>
-              <p class class="card-text">View and edit your company information.</p>
-              <form>
-                <div class="mb-3">
-                  <label for="company-name" class="form-label">Company Name</label>
-                  <input type="text" class="form-control" id="company-name" value="Your Company Name">
-                </div>
-                <div class="mb-3">
-                  <label for="company-logo" class="form-label">Company Logo</label>
-                  <input type="file" class="form-control" id="company-logo">
-                </div>
-                <div class="mb-3">
-                  <label for="company-email" class="form-label">Email Address</label>
-                  <input type="email" class="form-control" id="company-email" value="info@yourcompany.com">
-                </div>
-                <div class="mb-3">
-                  <label for="company-address" class="form-label">Address</label>
-                  <textarea class="form-control" id="company-address" rows="3">1234 Main St, Suite 200, Anytown, USA 12345</textarea>
-                </div>
-                <div class="mb-3">
-                  <label for="company-website" class="form-label">Website</label>
-                  <input type="url" class="form-control" id="company-website" value="https://www.yourcompany.com">
-                </div>
-                <div class="mb-3">
-                  <label for="company-description" class="form-label">Description</label>
-                  <textarea class="form-control" id="company-description" rows="5">We are a leading provider of quality products and services.</textarea>
-                </div>
-                <div class="mb-3">
-                  <label for="company-services" class="form-label">Services</label>
-                  <textarea class="form-control" id="company-services" rows="5">We offer a wide range of products and services to meet the needs of our customers.</textarea>
-                </div>
-                <div class="mb-3">
-                  <label for="company-gallery" class="form-label">Gallery</label>
-                  <input type="file" class="form-control" id="company-gallery" multiple>
-                </div>
-                <button type="submit" class="btn btn-primary">Save Changes</button>
-              </form>
-            </div>
-          </div>
-        </div> -->
