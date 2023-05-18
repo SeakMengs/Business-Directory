@@ -153,7 +153,7 @@
             <!-- End Serivce Tab -->
 
             <!-- Gallaries Tab -->
-            <div class="tab-pane fade" id="gallaries" role="tabpanel" aria-labelledby="gallaries-tab">
+            <div class="tab-pane fade" id="galleries" role="tabpanel" aria-labelledby="gallaries-tab">
                 <h5 class="mb-4">Gallaries</h5>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
                     <!-- First image -->

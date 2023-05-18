@@ -14,30 +14,33 @@
                 <li class="nav-item">
                     <a class="btn btn-outline-primary me-2" href="/login">Login</a>
                 </li>
+
                 <!-- Sign up button -->
                 <li class="nav-item">
                     <a class="btn btn-primary" href="/signup">Sign-up</a>
                 </li>
 
-                <!-- company profile icon -->
-                <!-- <li class="nav-item">
-                <img src="{{ asset('images/company-profile.png') }}" alt="company-rofile" class="company-profile-icon">
-                        company profile
-                </li> -->
+                    <!-- Logout For normal user -->
+                <!-- <div class="dropdown">
+                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa-solid fa-user fa-xl fontawe-icon"></i> Normal Username
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/normal_user_profile">Account Settings</a>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+                </div> -->
 
-                <!-- user profile icon -->
-                <!-- <li class="nav-item">
-                <img src="{{ asset('images/user-profile.png') }}" alt="company-rofile" class="company-profile-icon">
-                        user profile
-                </li> -->
-                
-                <!-- the logout button -->
-                <!-- <li class="nav-item">
-                    <a class="btn btn-primary" href="/logout">
-                    <img src=" {{ asset('images/icon-logout.png') }}" alt="Logout" class="logout-icon">
-                       logout
-                    </a>
-                </li> -->
+                    <!-- Logout For company user -->
+                <!-- <div class="dropdown">
+                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa-solid fa-building fa-xl fontawe-icon"></i> Company Username
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/company_profile">Account Settings</a>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+                </div> -->
 
                 </li>
             </ul>
@@ -48,7 +51,7 @@
 
 <!-- Search bar -->
 <div class="container">
-    <h1 class="pb-4 header-align">Business Directory</h1>
+    <h1 class="pb-3 header-align">Business Directory</h1>
     <div class="row justify-content-center pb-5">
         <div class="col-sm-8 col-md-6">
             <div class="input-group">
@@ -64,3 +67,11 @@
     </div>
 </div>
 <!-- End Search bar -->
+
+<!-- For the dropdown -->
+<script>
+    $(document).ready(function() {
+    $('.dropdown-toggle').dropdown();
+    });
+</script>
+

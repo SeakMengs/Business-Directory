@@ -28,7 +28,34 @@ a:hover {
 /* Add a subtle drop shadow to the navbar */
 .navbar {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
 }
+
+.navbar-brand {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #c93434 !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #ff5a5a;
+}
+
+.navbar-toggler {
+    background-color: #fff;
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
 
 /* Style the jumbotron */
 .jumbotron {
@@ -125,6 +152,11 @@ a:hover {
 
 .header-align{
     text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    color: #c93434;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .fontawe-icon{
@@ -269,8 +301,62 @@ a:hover {
   align-items: center;
 }
 
-/* Company profile page */
 
+/* For logout  */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-toggle {
+background: none;
+border: none;
+color: #333;
+cursor: pointer;
+}
+
+.dropdown-menu {
+position: absolute;
+top: 100%;
+right: 0;
+min-width: 160px;
+background-color: #f9f9f9;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+background-color: #fff;
+}
+
+.dropdown-item {
+padding: 8px 16px;
+display: block;
+text-decoration: none;
+color: #333;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #f8f9fa;
+    color: #c93434;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    color: #333;
+    box-shadow: none;
+}
+
+/* style search bar */
+.search-input {
+    border-radius: 0;
+}
+
+.form-select {
+    border-radius: 0;
+}
+
+.input-group button {
+    border-radius: 0;
+}
   
 
 /* For mobiler responsive */
