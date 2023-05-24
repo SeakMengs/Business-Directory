@@ -14,12 +14,14 @@
   </div>
 
   <div class="row row-cols-1 row-cols-md-3 g-4">
-   <!-- first category -->
+   <!-- First category -->
     <div class="col">
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
           <!-- Category logo -->
-          <img src="{{ asset('images/business-logo.jpg') }}" class="card-home-img" alt="Business Logo">
+          <div class="text-center"> <!-- Add a class to center the image -->
+            <img src="assets/images/businessserviceimg.jpeg" class="card-home-img mx-auto" alt="Business Logo"> <!-- Add mx-auto class for horizontal centering -->
+          </div>
           <div class="card-body d-flex flex-column justify-content-center">
             <!-- Category title -->
             <h5 class="card-title mb-2">Business Services</h5>
@@ -29,7 +31,7 @@
         </a>
       </div>
     </div>
-    <!-- end first category -->
+    <!-- End first category -->
 
 
     <!-- 2nd category -->
@@ -37,7 +39,9 @@
       <div class="card h-100">
          <a href="#" class="text-decoration-none">
           <!-- Category logo -->
-        <img src=" {{ asset('images/bank-logo.jpg') }}" class="card-home-img" alt="Bank Logo">
+          <div class="text-center"> <!-- Add a class to center the image -->
+            <img src="assets/images/financeimg.jpeg" class="card-home-img mx-auto" alt="Bank Logo">
+          </div>
         <div class="card-body d-flex flex-column justify-content-center">
           <!-- Category title -->
             <h5 class="card-title mb-2">Banking & Finance</h5>
@@ -54,7 +58,9 @@
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
            <!-- Category logo -->
-        <img src=" {{ asset('images/construction-logo.jpg') }}" class="card-home-img" alt="Construction logo">
+           <div class="text-center"> <!-- Add a class to center the image -->
+              <img src="assets/images/constructionimg.jpeg" class="card-home-img mx-auto" alt="Construction logo">
+          </div>
         <div class="card-body d-flex flex-column justify-content-center">
           <!-- Category title -->
             <h5 class="card-title mb-2">Construction</h5>
@@ -71,7 +77,9 @@
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
            <!-- Category logo -->
-        <img src=" {{ asset('images/house-logo.jpg') }}" class="card-home-img" alt="Home & Household logo">
+           <div class="text-center"> <!-- Add a class to center the image -->
+              <img src="assets/images/householdimg.jpeg" class="card-home-img mx-auto" alt="Home & Household logo">
+          </div>
         <div class="card-body d-flex flex-column justify-content-center">
           <!-- Category title -->
             <h5 class="card-title mb-2">Home & Household</h5>
@@ -88,7 +96,9 @@
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
            <!-- Category logo -->
-        <img src=" {{ asset('images/agriculture-logo.jpg') }}" class="card-home-img" alt="Industry, Agricultural & Garment">
+           <div class="text-center"> <!-- Add a class to center the image -->
+               <img src="assets/images/agricultureimg.jpeg" class="card-home-img mx-auto" alt="Industry, Agricultural & Garment">
+          </div>
         <div class="card-body d-flex flex-column justify-content-center">  
           <!-- Category title -->
             <h5 class="card-title mb-2">Industry, Agricultural & Garment</h5>
@@ -105,7 +115,9 @@
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
            <!-- Category logo -->
-        <img src=" {{ asset('images/travel-logo.jpg') }}" class="card-home-img" alt="Travel & Tourism">
+           <div class="text-center"> <!-- Add a class to center the image -->
+              <img src="assets/images/travelimg.jpeg" class="card-home-img mx-auto" alt="Travel & Tourism">
+            </div>
         <div class="card-body d-flex flex-column justify-content-center">
           <!-- Category title -->
             <h5 class="card-title mb-2">Travel & Tourism</h5>
