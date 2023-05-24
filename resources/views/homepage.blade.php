@@ -14,7 +14,7 @@
   </div>
 
   <div class="row row-cols-1 row-cols-md-3 g-4">
-   <!-- First category -->
+    <!-- First category -->
     <div class="col">
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
@@ -47,8 +47,8 @@
             <h5 class="card-title mb-2">Banking & Finance</h5>
              <!-- Category subtitle -->
             <p class="card-subtitle text-muted">Manage your money and investments with confidence</p>
-          </a>
         </div>
+        </a>
       </div>
     </div>
     <!-- End 2nd category -->
@@ -59,15 +59,15 @@
         <a href="#" class="text-decoration-none">
            <!-- Category logo -->
            <div class="text-center"> <!-- Add a class to center the image -->
-              <img src="assets/images/constructionimg.jpeg" class="card-home-img mx-auto" alt="Construction logo">
+              <img src="assets/images/constructionimgtwo.jpeg" class="card-home-img mx-auto" alt="Construction logo">
           </div>
         <div class="card-body d-flex flex-column justify-content-center">
           <!-- Category title -->
             <h5 class="card-title mb-2">Construction</h5>
              <!-- Category subtitle -->
             <p class="card-subtitle text-muted">Comprehensive solutions for your business needs</p>
-          </a>
         </div>
+        </a>
       </div>
     </div>
     <!-- End 3rd Category -->
@@ -85,8 +85,8 @@
             <h5 class="card-title mb-2">Home & Household</h5>
              <!-- Category subtitle -->
             <p class="card-subtitle text-muted">Professional help for all your household needs</p>
-          </a>
         </div>
+        </a>
       </div>
     </div>
     <!-- End 4th Category -->
@@ -99,13 +99,13 @@
            <div class="text-center"> <!-- Add a class to center the image -->
                <img src="assets/images/agricultureimg.jpeg" class="card-home-img mx-auto" alt="Industry, Agricultural & Garment">
           </div>
-        <div class="card-body d-flex flex-column justify-content-center">  
+          <div class="card-body d-flex flex-column justify-content-center">  
           <!-- Category title -->
             <h5 class="card-title mb-2">Industry, Agricultural & Garment</h5>
              <!-- Category subtitle -->
             <p class="card-subtitle text-muted">Tailored services for your business needs</p>
-          </a>
         </div>
+        </a>
       </div>
     </div>
     <!-- End 5th Category -->
@@ -123,8 +123,8 @@
             <h5 class="card-title mb-2">Travel & Tourism</h5>
              <!-- Category subtitle -->
             <p class="card-subtitle text-muted">Take your travel and tourism business to new heights</p>
-          </a>
         </div>
+        </a>
       </div>
     </div>
     <!-- End 6th Category -->
