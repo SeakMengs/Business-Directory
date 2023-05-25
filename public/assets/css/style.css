@@ -292,6 +292,7 @@ a:hover {
 /* Homepage image */
 .card-home-img{
     height: 200px;
+    border-radius: 50%;
 }
 
 

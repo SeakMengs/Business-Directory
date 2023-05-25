@@ -19,7 +19,7 @@
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
           <!-- Category logo -->
-          <div class="text-center"> <!-- Add a class to center the image -->
+          <div class="text-center mt-2"> <!-- Add a class to center the image -->
             <img src="assets/images/businessserviceimg.jpeg" class="card-home-img mx-auto" alt="Business Logo"> <!-- Add mx-auto class for horizontal centering -->
           </div>
           <div class="card-body d-flex flex-column justify-content-center">
@@ -39,7 +39,7 @@
       <div class="card h-100">
          <a href="#" class="text-decoration-none">
           <!-- Category logo -->
-          <div class="text-center"> <!-- Add a class to center the image -->
+          <div class="text-center mt-2"> <!-- Add a class to center the image -->
             <img src="assets/images/financeimg.jpeg" class="card-home-img mx-auto" alt="Bank Logo">
           </div>
         <div class="card-body d-flex flex-column justify-content-center">
@@ -58,8 +58,8 @@
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
            <!-- Category logo -->
-           <div class="text-center"> <!-- Add a class to center the image -->
-              <img src="assets/images/constructionimgtwo.jpeg" class="card-home-img mx-auto" alt="Construction logo">
+           <div class="text-center mt-2"> <!-- Add a class to center the image -->
+              <img src="assets/images/constructionimg.jpeg" class="card-home-img mx-auto" alt="Construction logo">
           </div>
         <div class="card-body d-flex flex-column justify-content-center">
           <!-- Category title -->
@@ -77,7 +77,7 @@
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
            <!-- Category logo -->
-           <div class="text-center"> <!-- Add a class to center the image -->
+           <div class="text-center mt-2"> <!-- Add a class to center the image -->
               <img src="assets/images/householdimg.jpeg" class="card-home-img mx-auto" alt="Home & Household logo">
           </div>
         <div class="card-body d-flex flex-column justify-content-center">
@@ -96,7 +96,7 @@
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
            <!-- Category logo -->
-           <div class="text-center"> <!-- Add a class to center the image -->
+           <div class="text-center mt-2"> <!-- Add a class to center the image -->
                <img src="assets/images/agricultureimg.jpeg" class="card-home-img mx-auto" alt="Industry, Agricultural & Garment">
           </div>
           <div class="card-body d-flex flex-column justify-content-center">  
@@ -115,7 +115,7 @@
       <div class="card h-100">
         <a href="#" class="text-decoration-none">
            <!-- Category logo -->
-           <div class="text-center"> <!-- Add a class to center the image -->
+           <div class="text-center mt-2"> <!-- Add a class to center the image -->
               <img src="assets/images/travelimg.jpeg" class="card-home-img mx-auto" alt="Travel & Tourism">
             </div>
         <div class="card-body d-flex flex-column justify-content-center">
