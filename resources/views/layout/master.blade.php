@@ -28,6 +28,8 @@
         <!-- End Footer section -->
     </main>
 
+    <!-- Search -->
+    <script src="assets/js/search.js"></script>
 
 </body>
 
