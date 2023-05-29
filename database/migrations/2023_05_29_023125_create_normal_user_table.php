@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdminUserTable extends Migration
+class CreateNormalUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,24 @@ class CreateAdminUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin_user', function (Blueprint $table) {
-            $table->id('admin_id');
+        Schema::create('normal_user', function (Blueprint $table) {
+            $table->id('normal_user_id');
             $table->text('name');
             $table->text('email');
             $table->text('password');
-            $table->tinyInteger('role');
-            $table->tinyInteger('access_level');
+
+            // Role used to define user type
+            // 1 = Normal User
+            // 2 = Company User
+            // 3 = Admin
+            $table->tinyInteger('role')->default(1);
+            $table->boolean('is_banned')->default(false);
+            $table->unsignedBigInteger('ban_by_admin_id')->nullable();
             $table->text('profile_url')->nullable();
-            $table->boolean('find_user')->default(false);
-            $table->boolean('add_category')->default(false);
-            $table->boolean('ban_access')->default(false);
-            $table->boolean('access_everything')->default(false);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+            $table->foreign('ban_by_admin_id')->references('admin_id')->on('admin_user');
         });
     }
 
@@ -37,6 +41,6 @@ class CreateAdminUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin_user');
+        Schema::dropIfExists('normal_user');
     }
 }
