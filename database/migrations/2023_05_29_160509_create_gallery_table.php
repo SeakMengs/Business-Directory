@@ -13,10 +13,10 @@ class CreateGalleryTable extends Migration
      */
     public function up()
     {
-        Schema::create('gallery', function (Blueprint $table) {
+        Schema::create('company_gallery', function (Blueprint $table) {
             $table->id('gallery_id');
             $table->unsignedBigInteger('company_id');
-            $table->text('photo');
+            $table->text('photo_url');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
@@ -31,6 +31,6 @@ class CreateGalleryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gallery');
+        Schema::dropIfExists('company_gallery');
     }
 }

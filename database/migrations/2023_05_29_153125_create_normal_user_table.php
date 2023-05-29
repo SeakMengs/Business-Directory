@@ -18,10 +18,10 @@ class CreateNormalUserTable extends Migration
             $table->text('name');
             $table->text('email');
             $table->text('password');
-            $table->unsignedBigInteger('role');
+            $table->tinyInteger('role');
             $table->boolean('is_banned')->default(false);
             $table->unsignedBigInteger('ban_by_admin_id')->nullable();
-            $table->text('profile')->nullable();
+            $table->text('profile_url')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 

@@ -20,8 +20,11 @@ class CreateSavedCompanyTable extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
-            $table->foreign('normal_user_id')->references('normal_user_id')->on('normal_user');
-            $table->foreign('company_id')->references('company_id')->on('company');
+            //* If the user is deleted, delete the saved company
+            $table->foreign('normal_user_id')->references('normal_user_id')->on('normal_user')->onDelete('cascade');
+
+            //* If the company is deleted, delete the saved company from the user
+            $table->foreign('company_id')->references('company_id')->on('company')->onDelete('cascade');
         });
     }
 

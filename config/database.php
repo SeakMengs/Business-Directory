@@ -57,7 +57,13 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
-            'engine' => null,
+
+            // default engine is not set
+            // 'engine' => null,
+
+            // https://stackoverflow.com/questions/11358849/mysql-innodb-engine-in-laravel
+            // Use InnoDB as the default database engine because it supports foreign keys
+            'engine' => 'InnoDB',
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],

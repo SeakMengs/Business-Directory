@@ -13,14 +13,14 @@ class CreateContactTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact', function (Blueprint $table) {
+        Schema::create('company_contact', function (Blueprint $table) {
             $table->id('contact_id');
             $table->unsignedBigInteger('company_id');
             $table->unsignedBigInteger('phone_number');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
-            $table->foreign('company_id')->references('company_id')->on('company');
+            $table->foreign('company_id')->references('company_id')->on('company')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateContactTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact');
+        Schema::dropIfExists('company_contact');
     }
 }

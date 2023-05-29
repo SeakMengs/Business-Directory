@@ -17,7 +17,7 @@ class CreateServiceTable extends Migration
             $table->id('service_id');
             $table->unsignedBigInteger('company_id');
             $table->text('name');
-            $table->text('photo');
+            $table->text('photo_url');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
