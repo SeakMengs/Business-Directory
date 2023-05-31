@@ -33,10 +33,10 @@ class CreateCompanyTable extends Migration
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
             //* if company_user_id is deleted, delete the companies that belong to that company_user_id as well
-            $table->foreign('company_user_id')->references('company_user_id')->on('company_user')->onDelete('cascade');
+            // $table->foreign('company_user_id')->references('company_user_id')->on('company_user')->onDelete('cascade');
 
-            $table->foreign('category_id')->references('category_id')->on('category');
-            $table->foreign('ban_by_admin_id')->references('admin_id')->on('admin_user');
+            // $table->foreign('category_id')->references('category_id')->on('category');
+            // $table->foreign('ban_by_admin_id')->references('admin_id')->on('admin_user');
         });
     }
 

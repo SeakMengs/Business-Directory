@@ -22,9 +22,8 @@ class CreateCategoryTable extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
-            $table->foreign('add_by_admin_id')->references('admin_id')->on('admin_user');
-            $table->foreign('edit_by_admin_id')->references('admin_id')->on('admin_user');
-
+            // $table->foreign('add_by_admin_id')->references('admin_id')->on('admin_user');
+            // $table->foreign('edit_by_admin_id')->references('admin_id')->on('admin_user');
         });
     }
 

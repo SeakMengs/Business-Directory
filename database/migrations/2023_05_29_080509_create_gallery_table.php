@@ -20,7 +20,7 @@ class CreateGalleryTable extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
-            $table->foreign('company_id')->references('company_id')->on('company');
+            // $table->foreign('company_id')->references('company_id')->on('company');
         });
     }
 

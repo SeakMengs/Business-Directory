@@ -22,10 +22,10 @@ class CreateFeedbackTable extends Migration
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
             //* If the company is deleted, delete the feedbacks
-            $table->foreign('company_id')->references('company_id')->on('company')->onDelete('cascade');
+            // $table->foreign('company_id')->references('company_id')->on('company')->onDelete('cascade');
 
             //* If the user is deleted, delete the feedbacks
-            $table->foreign('normal_user_id')->references('normal_user_id')->on('normal_user')->onDelete('cascade');
+            // $table->foreign('normal_user_id')->references('normal_user_id')->on('normal_user')->onDelete('cascade');
         });
     }
 

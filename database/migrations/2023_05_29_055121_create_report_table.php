@@ -21,8 +21,8 @@ class CreateReportTable extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
-            $table->foreign('company_id')->references('company_id')->on('company');
-            $table->foreign('report_by_normal_user_id')->references('normal_user_id')->on('normal_user');
+            // $table->foreign('company_id')->references('company_id')->on('company');
+            // $table->foreign('report_by_normal_user_id')->references('normal_user_id')->on('normal_user');
         });
     }
 
