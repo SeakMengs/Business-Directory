@@ -17,7 +17,7 @@
 
                 <!-- Sign up button -->
                 <li class="nav-item">
-                    <a class="btn btn-primary" href="/signup">Sign-up</a>
+                    <a class="btn btn-primary" href="/sign-up">Sign-up</a>
                 </li>
 
                     <!-- Logout For normal user -->
