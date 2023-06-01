@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\auth;
 
 use App\Models\NormalUser;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\CompanyUser;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class RegisterController extends Controller
 {
@@ -64,7 +65,8 @@ class RegisterController extends Controller
     {
 
         // $test = CompanyUser::get();
-        // dd($test);
+        $test = DB::table('company_user')->get();
+        dd($test);
 
         // Validate the form data. First parameter is the request object, second parameter is the validation rules
         // https://stackoverflow.com/questions/45007905/custom-laravel-validation-messages
