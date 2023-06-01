@@ -70,6 +70,11 @@ Route::get('/edit-listing-SCoolCambodia', function () {
 Route::get('/add-listing', function () {
     return view('/add-listing');
 });
+
+//Render Search Results
+Route::get('/search-results', function () {
+    return view('/search-results');
+});
 //* End of to be deleted ------------------------------------------------------------------
 
 //* Route with controller
