@@ -11,6 +11,8 @@ class NormalUser extends Model implements Authenticatable
     use \Illuminate\Auth\Authenticatable;
     use HasFactory;
 
+    protected $primaryKey = 'normal_user_id';
+
     protected $table = 'normal_user';
 
     protected $guard = 'normalUser';

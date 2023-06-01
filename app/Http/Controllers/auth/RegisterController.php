@@ -55,7 +55,7 @@ class RegisterController extends Controller
         ]);
 
         if ($saveUser) {
-            return redirect()->route('user')->with('success', 'User created successfully');
+            return redirect()->route('home')->with('success', 'Regular user created successfully');
         } else {
             return redirect()->back()->with('error', 'User creation failed');
         }
@@ -63,30 +63,25 @@ class RegisterController extends Controller
 
     public function companyUserRegister(Request $request)
     {
-
-        // $test = CompanyUser::get();
-        $test = DB::table('company_user')->get();
-        dd($test);
-
         // Validate the form data. First parameter is the request object, second parameter is the validation rules
         // https://stackoverflow.com/questions/45007905/custom-laravel-validation-messages
-        // $validate = $request->validate(
-        //     [
-        //         'name' => ['required', 'unique:normal_user'],
-        //         'password' => ['required', 'confirmed', 'min:8'],
-        //         'password_confirmation' => ['required', 'min:8', 'same:password'],
-        //     ],
-        //     [
-        //         'name.required' => 'Username is required',
-        //         'name.unique' => 'Username already exists',
-        //         'password.required' => 'Password is required',
-        //         'password.confirmed' => 'Password does not match',
-        //         'password.min' => 'Password must be at least 8 characters',
-        //         'password_confirmation.required' => 'Password confirmation is required',
-        //         'password_confirmation.min' => 'Password confirmation must be at least 8 characters',
-        //         'password_confirmation.same' => 'Password confirmation does not match',
-        //     ]
-        // );
+        $validate = $request->validate(
+            [
+                'name' => ['required', 'unique:normal_user'],
+                'password' => ['required', 'confirmed', 'min:8'],
+                'password_confirmation' => ['required', 'min:8', 'same:password'],
+            ],
+            [
+                'name.required' => 'Username is required',
+                'name.unique' => 'Username already exists',
+                'password.required' => 'Password is required',
+                'password.confirmed' => 'Password does not match',
+                'password.min' => 'Password must be at least 8 characters',
+                'password_confirmation.required' => 'Password confirmation is required',
+                'password_confirmation.min' => 'Password confirmation must be at least 8 characters',
+                'password_confirmation.same' => 'Password confirmation does not match',
+            ]
+        );
 
         $saveUser = CompanyUser::create([
             'name' => $request->input('name'),
@@ -95,7 +90,7 @@ class RegisterController extends Controller
         ]);
 
         if ($saveUser) {
-            return redirect()->route('user')->with('success', 'User created successfully');
+            return redirect()->route('home')->with('success', 'Company user created successfully');
         } else {
             return redirect()->back()->with('error', 'User creation failed');
         }

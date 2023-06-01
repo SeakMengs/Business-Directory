@@ -12,6 +12,8 @@ class UserMiddleware
 
     public function __construct()
     {
+        // dd(Auth::guard('normalUser')->check(), Auth::guard('companyUser')->check());
+
         // because we use multiple guards, we need to check which guard is currently logged in
         if (Auth::guard('normalUser')->check()) {
             $guard = 'normalUser';
@@ -38,6 +40,8 @@ class UserMiddleware
 
                 // if the user is authorized, continue with the request
                 return $next($request);
+            } else if (Auth::guard($this->guard)->user()->role != $role) {
+                return response("You are a " . $this->guard . " but you try to access " . $role . ' page, unauthorized', 401);
             }
         }
 

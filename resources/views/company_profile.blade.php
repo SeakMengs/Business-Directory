@@ -5,7 +5,7 @@
 <!-- Sorya Code -->
 <!-- <div class="container mt-4">
   <div class="row">
-    
+
     <div class="col-md-3">
       <div class="card">
         <div class="card-header">
@@ -97,7 +97,7 @@
           </div>
           <div class="mb-3 text-center">
             <!-- Edit account button -->
-            <a href="/edit-company-account" class="btn btn-primary">Edit Account</a>
+            <a href="/user/company/profile/edit" class="btn btn-primary">Edit Account</a>
           </div>
         </div>
       </div>
@@ -147,7 +147,7 @@
         </div>
       </div>
       <!-- End company listings -->
-      
+
 
       </div>
     </div>

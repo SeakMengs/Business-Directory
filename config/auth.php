@@ -77,11 +77,11 @@ return [
     'providers' => [
         'normalUser' => [
             'driver' => 'eloquent',
-            'model' => app\Models\NormalUser::class,
+            'model' => App\Models\NormalUser::class,
         ],
         'companyUser' => [
             'driver' => 'eloquent',
-            'model' => app\Models\CompanyUser::class,
+            'model' => App\Models\CompanyUser::class,
         ],
 
         // 'users' => [

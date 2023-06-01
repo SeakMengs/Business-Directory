@@ -132,7 +132,7 @@
         </div>
         <div class="card-body">
           <!-- Name field -->
-          <div class="mb-3">  
+          <div class="mb-3">
             <label for="normal_user_name" class="form-label">Name</label>
             <input type="text" class="form-control" name="normal_user_name" id="normal_user_name" value="Hello World" readonly>
           </div>
@@ -143,7 +143,7 @@
           </div>
           <!-- Edit Account button -->
           <div class="mb-3 text-center">
-            <a href="/edit-normaluser-account" class="btn btn-primary">Edit Account</a>
+            <a href="/user/normal/profile/edit" class="btn btn-primary">Edit Account</a>
           </div>
         </div>
       </div>

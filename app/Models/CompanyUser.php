@@ -12,7 +12,9 @@ class CompanyUser extends Model implements Authenticatable
     use \Illuminate\Auth\Authenticatable;
     use HasFactory;
 
-    public $table = 'company_user';
+    protected $primaryKey = 'company_user_id';
+
+    protected $table = 'company_user';
 
     protected $guard = 'companyUser';
 

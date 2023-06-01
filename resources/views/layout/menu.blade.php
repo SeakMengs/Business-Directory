@@ -10,38 +10,43 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <!-- Login button -->
-                <li class="nav-item">
-                    <a class="btn btn-outline-primary me-2" href="/login">Login</a>
-                </li>
+                @if (!Auth::guard('companyUser')->check() && !Auth::guard('normalUser')->check())
+                    <!-- Login button -->
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary me-2" href="/login">Login</a>
+                    </li>
 
-                <!-- Sign up button -->
-                <li class="nav-item">
-                    <a class="btn btn-primary" href="/sign-up">Sign-up</a>
-                </li>
-
+                    <!-- Sign up button -->
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="/sign-up">Sign-up</a>
+                    </li>
+                @elseif (Auth::guard('normalUser')->check())
                     <!-- Logout For normal user -->
-                <!-- <div class="dropdown">
-                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa-solid fa-user fa-xl fontawe-icon"></i> Normal Username
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/normal_user_profile">Account Settings</a>
-                    <a class="dropdown-item" href="#">Logout</a>
-                </div>
-                </div> -->
-
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-user fa-xl fontawe-icon"></i>
+                            {{ Auth::guard('normalUser')->user()->name }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/user/normal/profile">Account Settings</a>
+                            <a class="dropdown-item" href="/user/normal/logout">Logout</a>
+                        </div>
+                    </div>
+                @elseif (Auth::guard('companyUser')->check())
                     <!-- Logout For company user -->
-                <!-- <div class="dropdown">
-                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa-solid fa-building fa-xl fontawe-icon"></i> Company Username
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/company_profile">Account Settings</a>
-                    <a class="dropdown-item" href="#">Logout</a>
-                </div>
-                </div> -->
-
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-building fa-xl fontawe-icon"></i>
+                            {{ Auth::guard('companyUser')->user()->name }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/user/company/profile">Account Settings</a>
+                            <a class="dropdown-item" href="/user/company/logout">Logout</a>
+                        </div>
+                    </div>
+                @endif
                 </li>
             </ul>
         </div>
@@ -71,10 +76,6 @@
 <!-- For the dropdown -->
 <script>
     $(document).ready(function() {
-    $('.dropdown-toggle').dropdown();
+        $('.dropdown-toggle').dropdown();
     });
 </script>
-
-
-
-
