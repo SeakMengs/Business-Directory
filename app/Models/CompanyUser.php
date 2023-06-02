@@ -27,6 +27,10 @@ class CompanyUser extends Model implements Authenticatable
 
     protected $hidden = [
         'password',
+        'created_at',
+        'updated_at',
+        'is_banned',
+        'ban_by_admin_id',
     ];
 
     // The function below are mutators and accessors that will be called automatically
@@ -43,5 +47,10 @@ class CompanyUser extends Model implements Authenticatable
     public function getRoleAttribute($value)
     {
         return $value == 2 ? 'companyUser' : null;
+    }
+
+    public function companies()
+    {
+        return $this->hasMany(Company::class, 'company_user_id');
     }
 }

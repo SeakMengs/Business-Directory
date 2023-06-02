@@ -152,3 +152,4 @@ Route::middleware(['userAuth:companyUser'])->group(function () {
 });
 
 //* ----------------End of Authenticated Routes-------------------- *//
+Route::get('/test', [SiteController::class, 'test']);
