@@ -71,14 +71,17 @@ class ProjectSeeder extends Seeder
             [
                 'name' => 'Category 1',
                 'logo_url' => 'Logo 1',
+                'add_by_admin_id' => '1',
             ],
             [
                 'name' => 'Category 2',
                 'logo_url' => 'Logo 2',
+                'add_by_admin_id' => '1',
             ],
             [
                 'name' => 'Category 3',
                 'logo_url' => 'Logo 3',
+                'add_by_admin_id' => '1',
             ],
         ];
 
