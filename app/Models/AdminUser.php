@@ -18,6 +18,14 @@ class AdminUser extends Model
         'email',
         'password',
         'profile_url',
-       
+        'access_level',
+        'find_user',
+        'add_category',
+        'ban_access',
+        'access_everything'
+    ];
+
+    protected $hidden = [
+        'password',
     ];
 }

@@ -15,6 +15,7 @@ class Report extends Model
 
     protected $fillable = [
         'reason',
-       
+        'company_id',
+        'report_by_normal_user_id',
     ];
 }

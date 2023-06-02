@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery extends Model
+class CompanyContact extends Model
 {
     use HasFactory;
 
-    protected $table = 'gallery';
+    protected $table = 'company_contact';
 
-    protected $primaryKey = 'gallery_id';
+    protected $primaryKey = 'contact_id';
 
     protected $fillable = [
-        'photo_url',
-       
+        'phone_number',
+        'company_id',
     ];
 }

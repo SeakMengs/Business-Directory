@@ -12,7 +12,7 @@ class Company extends Model
     protected $table = 'company';
 
     protected $primaryKey = 'company_id';
-    
+
     protected $fillable = [
         'name',
         'street',
@@ -24,5 +24,7 @@ class Company extends Model
         'email',
         'website',
         'description',
+        'company_user_id',
+        'category_id',
     ];
 }

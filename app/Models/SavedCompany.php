@@ -14,7 +14,7 @@ class SavedCompany extends Model
     protected $primaryKey = 'saved_company_id';
 
     protected $fillable = [
-      
-       
+        'company_id',
+        'normal_user_id',
     ];
 }

@@ -14,5 +14,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // User::factory(10)->create();
+        $this->call(ProjectSeeder::class);
     }
+
+    // If you want to seed only a specific seeder
+    // php artisan db:seed --class=DatabaseSeeder
 }

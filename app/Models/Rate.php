@@ -14,7 +14,8 @@ class Rate extends Model
     protected $primaryKey = 'rate_id';
 
     protected $fillable = [
-        'like',
-       
+        'star_number',
+        'company_id',
+        'normal_user_id',
     ];
 }

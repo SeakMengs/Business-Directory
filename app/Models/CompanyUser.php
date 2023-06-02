@@ -22,6 +22,7 @@ class CompanyUser extends Model implements Authenticatable
         'name',
         'email',
         'password',
+        'profile_url',
     ];
 
     protected $hidden = [

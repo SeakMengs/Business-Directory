@@ -21,7 +21,7 @@ class NormalUser extends Model implements Authenticatable
         'name',
         'email',
         'password',
-        'photo_url'
+        'profile_url'
     ];
 
     protected $hidden = [
