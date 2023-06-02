@@ -2,7 +2,7 @@
 
 @section('dyncontent')
 
-    <div class="container my-5">
+    <div class="container my-5 login-option-page">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-5">
                 <div class="card shadow">
