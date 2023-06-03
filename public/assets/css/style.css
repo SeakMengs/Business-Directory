@@ -410,7 +410,7 @@ border-color: #c93434;
 outline: none;
 }
 
-/* CSS for login form: user and company */
+/* CSS for login and signup form: user and company */
 .custom-login-form .card {
     background-color: #f8f9fa;
     border: none;
@@ -455,6 +455,37 @@ outline: none;
     background-color: #36714b;
 }
 
+.custom-login-form .error-message {
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px 0px;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-login-form .error-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+    color: #dc3545;
+    font-size: 16px;
+}
+
+.custom-login-form .error-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+.custom-login-form .error-list li {
+    color: red;
+    margin: 5px 0px;
+    display: flex;
+    align-items: center;
+}
   
 
 /* For mobiler responsive */

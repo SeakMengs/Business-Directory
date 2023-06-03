@@ -37,10 +37,13 @@
                             </div>
                             {{-- error style here --}}
                             @if ($errors->any())
-                                <div class="">
-                                    @foreach ($errors->all() as $error)
-                                        <label>{{ $error }}</label>
-                                    @endforeach
+                                <div class="error-message">
+                                    <ul class="error-list">
+                                        @foreach ($errors->all() as $error)
+                                            <!-- <li>{{ $error }}</li> -->
+                                            <li><i class="fas fa-exclamation-circle error-icon"></i>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             @endif
                             <div class="d-grid gap-2 mb-3">

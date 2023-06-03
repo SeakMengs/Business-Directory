@@ -25,7 +25,8 @@
                             </div>
                             {{-- error style here --}}
                             @if ($errors->any())
-                                <div class="">
+                                <div class="error-message">
+                                    <i class="fas fa-exclamation-circle error-icon"></i>
                                     @foreach ($errors->all() as $error)
                                         <label>{{ $error }}</label>
                                     @endforeach
