@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NormalUser;
 use Illuminate\Http\Request;
 
 class NormalUserController extends Controller
@@ -12,8 +13,18 @@ class NormalUserController extends Controller
         $this->middleware('userAuth:normalUser')->except('logout');
     }
 
-    public function profile()
+    public function profile($name)
     {
+        // this is unofficial query. created for testing purposes
+        // first() returns the first record that matches the query
+        $data = NormalUser::where('name', $name)->first();
+
+        if (!$data) {
+            return response()->json([
+                'message' => 'User not found',
+            ], 404);
+        }
+
         return view('normal_user_profile');
     }
 

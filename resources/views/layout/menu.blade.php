@@ -29,7 +29,7 @@
                             {{ Auth::guard('normalUser')->user()->name }}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/user/normal/profile">Account Settings</a>
+                            <a class="dropdown-item" href="/user/normal/{{Auth::guard('normalUser')->user()->name}}/profile">Account Settings</a>
                             <a class="dropdown-item" href="/user/normal/logout">Logout</a>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                             {{ Auth::guard('companyUser')->user()->name }}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/user/company/profile">Account Settings</a>
+                            <a class="dropdown-item" href="/user/company/{{Auth::guard('companyUser')->user()->name}}/profile">Account Settings</a>
                             <a class="dropdown-item" href="/user/company/logout">Logout</a>
                         </div>
                     </div>

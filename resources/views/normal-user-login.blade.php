@@ -23,6 +23,14 @@
                                 <input type="password" name="password" class="form-control" id="passwordInput" required>
                                 <!-- Password input field -->
                             </div>
+                            {{-- error style here --}}
+                            @if ($errors->any())
+                                <div class="">
+                                    @foreach ($errors->all() as $error)
+                                        <label>{{ $error }}</label>
+                                    @endforeach
+                                </div>
+                            @endif
                             <div class="d-grid gap-2 mb-3">
                                 <button class="btn btn-primary" type="submit">Login</button>
                             </div>

@@ -137,17 +137,17 @@ Route::get('/user/company/logout', [LogoutController::class, 'logCompanyUserOut'
 
 Route::middleware(['userAuth:normalUser'])->group(function () {
 
-    Route::get('/user/normal/profile', [NormalUserController::class, 'profile'])->name('user.normal.profile');
+    Route::get('/user/normal/{name}/profile', [NormalUserController::class, 'profile'])->name('user.normal.name.profile');
 
-    Route::get('/user/normal/profile/edit', [NormalUserController::class, 'editProfile'])->name('user.normal.profile.edit');
+    Route::get('/user/normal/{name}/profile/edit', [NormalUserController::class, 'editProfile'])->name('user.normal.name.profile.edit');
 
 });
 
 Route::middleware(['userAuth:companyUser'])->group(function () {
 
-    Route::get('/user/company/profile', [CompanyUserController::class, 'profile'])->name('user.company.profile');
+    Route::get('/user/company/{name}/profile', [CompanyUserController::class, 'profile'])->name('user.company.name.profile');
 
-    Route::get('/user/company/profile/edit', [CompanyUserController::class, 'editProfile'])->name('user.company.profile.edit');
+    Route::get('/user/company/{name}/profile/edit', [CompanyUserController::class, 'editProfile'])->name('user.company.name.profile.edit');
 
 });
 

@@ -1,4 +1,4 @@
-@extends('layout.mastertwo')
+@extends('layout.master')
 
 @section('dyncontent')
 
@@ -13,7 +13,7 @@
         <div class="card-body">
           <form method="POST">
             <!-- Name field -->
-            <div class="mb-3">  
+            <div class="mb-3">
               <label for="normal_user_name" class="form-label">Name</label>
               <input type="text" class="form-control" name="normal_user_name" id="normal_user_name" value="Hello World">
             </div>

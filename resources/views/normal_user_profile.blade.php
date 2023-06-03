@@ -1,4 +1,4 @@
-@extends('layout.mastertwo')
+@extends('layout.master')
 
 @section('dyncontent')
 
@@ -143,7 +143,7 @@
           </div>
           <!-- Edit Account button -->
           <div class="mb-3 text-center">
-            <a href="/user/normal/profile/edit" class="btn btn-primary">Edit Account</a>
+            <a href="/user/normal/{{Auth::guard('normalUser')->user()->name}}/profile/edit" class="btn btn-primary">Edit Account</a>
           </div>
         </div>
       </div>

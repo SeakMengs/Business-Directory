@@ -7,6 +7,7 @@ use App\Models\CompanyUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -33,6 +34,7 @@ class RegisterController extends Controller
         $validate = $request->validate(
             [
                 'name' => ['required', 'unique:normal_user'],
+                'email' => ['required', 'unique:normal_user'],
                 'password' => ['required', 'confirmed', 'min:8'],
                 'password_confirmation' => ['required', 'min:8', 'same:password'],
             ],
@@ -45,6 +47,9 @@ class RegisterController extends Controller
                 'password_confirmation.required' => 'Password confirmation is required',
                 'password_confirmation.min' => 'Password confirmation must be at least 8 characters',
                 'password_confirmation.same' => 'Password confirmation does not match',
+                'email.required' => 'Email is required',
+                'email.unique' => 'Email already exists',
+                'email.email' => 'Email is not valid',
             ]
         );
 
@@ -55,9 +60,18 @@ class RegisterController extends Controller
         ]);
 
         if ($saveUser) {
-            return redirect()->route('home')->with('success', 'Regular user created successfully');
+            $credentials = $request->only('email', 'password');
+
+            if (Auth::guard('normalUser')->attempt($credentials)) {
+                if (Auth::guard('normalUser')->user()->role == 'normalUser') {
+                    // logout from normalUser guard if companyUser is logged in
+                    Auth::guard('companyUser')->logout();
+
+                    return redirect()->route('user.normal.name.profile')->with('success', 'Login success');
+                }
+            }
         } else {
-            return redirect()->back()->with('error', 'User creation failed');
+            return redirect()->back()->withErrors(['error' => 'Failed to create user']);
         }
     }
 
@@ -67,7 +81,8 @@ class RegisterController extends Controller
         // https://stackoverflow.com/questions/45007905/custom-laravel-validation-messages
         $validate = $request->validate(
             [
-                'name' => ['required', 'unique:normal_user'],
+                'name' => ['required', 'unique:company_user'],
+                'email' => ['required', 'unique:company_user'],
                 'password' => ['required', 'confirmed', 'min:8'],
                 'password_confirmation' => ['required', 'min:8', 'same:password'],
             ],
@@ -80,6 +95,9 @@ class RegisterController extends Controller
                 'password_confirmation.required' => 'Password confirmation is required',
                 'password_confirmation.min' => 'Password confirmation must be at least 8 characters',
                 'password_confirmation.same' => 'Password confirmation does not match',
+                'email.required' => 'Email is required',
+                'email.unique' => 'Email already exists',
+                'email.email' => 'Email is not valid',
             ]
         );
 
@@ -90,9 +108,18 @@ class RegisterController extends Controller
         ]);
 
         if ($saveUser) {
-            return redirect()->route('home')->with('success', 'Company user created successfully');
+            $credentials = $request->only('email', 'password');
+
+            if (Auth::guard('companyUser')->attempt($credentials)) {
+                if (Auth::guard('companyUser')->user()->role == 'companyUser') {
+                    // logout from companyUser guard if normalUser is logged in
+                    Auth::guard('normalUser')->logout();
+
+                    return redirect()->route('user.company.name.profile')->with('success', 'Login success');
+                }
+            }
         } else {
-            return redirect()->back()->with('error', 'User creation failed');
+            return redirect()->back()->withErrors(['error' => 'Failed to create user']);
         }
     }
 }

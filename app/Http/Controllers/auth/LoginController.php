@@ -42,14 +42,18 @@ class LoginController extends Controller
         ];
 
         if (Auth::guard('companyUser')->attempt($credentials)) {
+
             if (Auth::guard('companyUser')->user()->role == 'companyUser') {
                 // logout from companyUser guard if normalUser is logged in
                 Auth::guard('normalUser')->logout();
 
-                return redirect()->route('user.company.profile')->with('success', 'Login success');
+                return redirect()->route('user.company.name.profile', [
+                    'name' => Auth::guard('companyUser')->user()->name
+                ])->with('success', 'Login success');
             }
+
         } else {
-            return redirect()->back()->with('error', 'Login failed');
+            return redirect()->back()->withErrors(['error' => 'Credentials does not match']);
         }
     }
 
@@ -77,10 +81,12 @@ class LoginController extends Controller
                 // logout from normalUser guard if companyUser is logged in
                 Auth::guard('companyUser')->logout();
 
-                return redirect()->route('user.normal.profile')->with('success', 'Login success');
+                return redirect()->route('user.normal.name.profile', [
+                    'name' => Auth::guard('normalUser')->user()->name
+                ])->with('success', 'Login success');
             }
         } else {
-            return redirect()->route('home')->with('error', 'Login failed');
+            return redirect()->back()->withErrors(['error' => 'Credentials does not match']);
         }
     }
 }

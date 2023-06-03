@@ -35,13 +35,25 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next, $role)
     {
+
         if ($this->guard) {
             if (Auth::guard($this->guard)->user()->role == $role) {
 
+                // get current dynamic name from route
+                $currentName = $request->route()->parameter('name');
+
+                // prevent user with the same role from accessing other user's data
+                if (Auth::guard($this->guard)->user()->name != $currentName) {
+                    return response("You do not have access to view " . $currentName . '\'s data', 401);
+                }
+
                 // if the user is authorized, continue with the request
                 return $next($request);
+
             } else if (Auth::guard($this->guard)->user()->role != $role) {
+
                 return response("You are a " . $this->guard . " but you try to access " . $role . ' page, unauthorized', 401);
+
             }
         }
 
