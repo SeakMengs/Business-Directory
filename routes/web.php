@@ -35,19 +35,19 @@ use App\Http\Controllers\auth\RegisterController;
 // });
 
 // View More Category Page
-Route::get('/categoryshow', function () {
-    return view('categoryshow');
-});
+// Route::get('/categoryshow', function () {
+//     return view('categoryshow');
+// });
 
 // Automotive-Vehicle category page
-Route::get('/automotive_cate', function () {
-    return view('automotive_cate');
-});
+// Route::get('/automotive_cate', function () {
+//     return view('automotive_cate');
+// });
 
 // First Company Detail page
-Route::get('/s-cool-cambodia', function () {
-    return view('s-cool-cambodia');
-});
+// Route::get('/s-cool-cambodia', function () {
+//     return view('s-cool-cambodia');
+// });
 // Route::get('/normal_user_profile', function () {
 //     return view('normal_user_profile');
 // });
@@ -67,9 +67,9 @@ Route::get('/s-cool-cambodia', function () {
 // });
 
 //Edit listing
-Route::get('/edit-listing-SCoolCambodia', function () {
-    return view('/edit-listing-SCoolCambodia');
-});
+// Route::get('/edit-listing-SCoolCambodia', function () {
+//     return view('/edit-listing-SCoolCambodia');
+// });
 
 //Add new listing
 Route::get('/add-listing', function () {
@@ -83,40 +83,61 @@ Route::get('/search-results', function () {
 //* End of to be deleted ------------------------------------------------------------------
 
 //* Route with controller
+Route::controller(SiteController::class)->group(function() {
 
-Route::get('/', [SiteController::class, 'home'])->name('home');
+    Route::get('/', 'home')->name('home');
+
+    Route::get('/category', 'categories')->name('category');
+
+    route::get('/category/{categoryName}', 'categoryName')->name('category.name');
+
+    route::get('/category/{categoryName}/{companyName}', 'companyName')->name('category.categoryName.companyName');
+
+});
 
 //*---------------------------Sign up Controller --------------------------------------------------
+// Group route by RegisterController
+Route::controller(RegisterController::class)->group(function() {
 
-Route::get('/sign-up', [RegisterController::class, 'signUpOption'])->name('sign-up');
+    Route::get('/sign-up', 'signUpOption')->name('sign-up');
 
-Route::get('sign-up/company', [RegisterController::class, 'companyUserSignUpView'])->name('sign-up.company');
+    Route::get('sign-up/company', 'companyUserSignUpView')->name('sign-up.company');
 
-Route::get('sign-up/user', [RegisterController::class, 'normalUserSignUpView'])->name('sign-up.user');
+    Route::get('sign-up/user', 'normalUserSignUpView')->name('sign-up.user');
 
-// Route for saving user to database
-Route::post('/register/company', [RegisterController::class, 'companyUserRegister'])->name('register.company');
+    // Route for saving user to database
+    Route::post('/register/company', 'companyUserRegister')->name('register.company');
 
-Route::post('/register/user', [RegisterController::class, 'normalUserRegister'])->name('register.user');
+    Route::post('/register/user', 'normalUserRegister')->name('register.user');
+
+});
 
 //*---------------------------Login Controller --------------------------------------------------
+// Group route by LoginController
+Route::controller(LoginController::class)->group(function() {
 
-Route::get('/login', [LoginController::class, 'loginOption'])->name('login');
+    Route::get('/login', 'loginOption')->name('login');
 
-Route::get('login/company', [LoginController::class, 'companyUserLoginView'])->name('login.company');
+    Route::get('login/company', 'companyUserLoginView')->name('login.company');
 
-Route::get('login/user', [LoginController::class, 'normalUserLoginView'])->name('login.user');
+    Route::get('login/user', 'normalUserLoginView')->name('login.user');
 
-// Route for saving user to database
-Route::post('/logging-in/company', [LoginController::class, 'companyUserLogin'])->name('logging-in.company');
+    // Route for saving user to database
+    Route::post('/logging-in/company', 'companyUserLogin')->name('logging-in.company');
 
-Route::post('/logging-in/user', [LoginController::class, 'normalUserLogin'])->name('logging-in.user');
+    Route::post('/logging-in/user', 'normalUserLogin')->name('logging-in.user');
+
+});
 
 //*---------------------------Logout Controller --------------------------------------------------
+// Group route by LogoutController
+Route::controller(LogoutController::class)->group(function() {
 
-Route::get('/user/normal/logout', [LogoutController::class, 'logNormalUserOut'])->name('user.normal.logout');
+    Route::get('/user/normal/logout', 'logNormalUserOut')->name('user.normal.logout');
 
-Route::get('/user/company/logout', [LogoutController::class, 'logCompanyUserOut'])->name('user.company.logout');
+    Route::get('/user/company/logout', 'logCompanyUserOut')->name('user.company.logout');
+
+});
 
 //* End of Route with controller
 
@@ -149,6 +170,9 @@ Route::middleware(['userAuth:companyUser'])->group(function () {
 
     Route::get('/user/company/{name}/profile/edit', [CompanyUserController::class, 'editProfile'])->name('user.company.name.profile.edit');
 
+    Route::get('/user/company/{name}/edit-company/{companyName}', [CompanyUserController::class, 'editCompany'])->name('user.company.name.edit-company.companyName');
+
+    Route::get('/user/company/{name}/add-company', [CompanyUserController::class, 'addCompany'])->name('user.company.name.add-company');
 });
 
 //* ----------------End of Authenticated Routes-------------------- *//

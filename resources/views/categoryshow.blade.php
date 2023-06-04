@@ -7,21 +7,21 @@
      <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active"><a href="/categoryshow">Category</a></li>
+                <li class="breadcrumb-item active"><a href="/category">Category</a></li>
             </ol>
         </nav>
     <!-- End Breadcrumbs -->
 
      <h2 class="header-align pb-3">Categories</h2>
-    
+
         <div class="row row-cols-1 row-cols-md-4 g-4">
         <!-- Automotive-Vehicle category -->
         <div class="col">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-center">
-                    <a href="/automotive_cate" class="text-decoration-none">
+                    <a href="/category/Automotive - Vehicles" class="text-decoration-none">
                         <!-- Category title with icon -->
-                        <h5 class="card-title mb-0"> 
+                        <h5 class="card-title mb-0">
                             <i class="fa-solid fa-car fontawe-icon"></i>
                             Automotive - Vehicles
                         </h5>

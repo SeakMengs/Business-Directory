@@ -28,8 +28,17 @@ class NormalUserController extends Controller
         return view('normal_user_profile');
     }
 
-    public function editProfile()
+
+    public function editProfile($username)
     {
+        // TODO: query normal_user where username match username
+
         return view('edit-normaluser-account');
     }
+
+    public function saveProfileEdit(Request $request)
+    {
+        return 'TODO later';
+    }
+
 }

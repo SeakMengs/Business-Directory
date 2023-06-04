@@ -1,19 +1,6 @@
 @extends('layout.master')
 
 @section('dyncontent')
-
-{{-- Example Auth check will delete later --}}
-{{-- Auth::guard('normalUser')->user()->{any name from database column} --}}
-    @if (Auth::guard('normalUser')->check())
-        <h2>Welcome {{ Auth::guard('normalUser')->user()->name }}</h2>
-        <h2>Your role is : {{ Auth::guard('normalUser')->user()->role }}</h2>
-    @elseif (Auth::guard('companyUser')->check())
-        <h2>Welcome {{ Auth::guard('companyUser')->user()->name }}</h2>
-        <h2>Your role is : {{ Auth::guard('companyUser')->user()->role }}</h2>
-    @else
-        <h2>no Role login</h2>
-    @endif
-
     <div class="container my-5">
         <div class="row">
             <div class="col">
@@ -22,7 +9,7 @@
             </div>
             <div class="col text-end">
                 <!-- Link to view more categories -->
-                <a href="/categoryshow" class="btn btn-primary btn-sm">View More</a>
+                <a href="/category" class="btn btn-primary btn-sm">View More</a>
             </div>
         </div>
 

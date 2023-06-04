@@ -30,8 +30,31 @@ class CompanyUserController extends Controller
         return view('company_profile');
     }
 
-    public function editProfile()
+    public function editProfile($username)
     {
+        // TODO: query company_user where username match username
+
         return view('edit-company-account');
+    }
+
+    public function saveProfileEdit(Request $request)
+    {
+        return 'TODO later';
+    }
+
+    public function editCompany($username, $companyName) {
+        // TODO: query company where username match username and companyName match companyName, join with service, company_gallery, company_contact
+
+        return view('edit-company');
+    }
+
+    public function saveCompanyEdit(Request $request)
+    {
+        return 'TODO later';
+    }
+
+    public function addCompany($username) {
+
+        return view('add-company');
     }
 }
