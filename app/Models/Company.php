@@ -38,4 +38,8 @@ class Company extends Model
     public function feedbacks() {
         return $this->hasMany(Feedback::class, 'company_id', 'company_id');
     }
+
+    public function contacts() {
+        return $this->hasMany(CompanyContact::class, 'company_id', 'company_id');
+    }
 }

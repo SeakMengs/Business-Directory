@@ -15,7 +15,8 @@ class CreateCategoryTable extends Migration
     {
         Schema::create('category', function (Blueprint $table) {
             $table->id('category_id');
-            $table->unsignedBigInteger('add_by_admin_id');
+            // default super admin id start from 1 meaning that if the category is added by database it's added by super admin
+            $table->unsignedBigInteger('add_by_admin_id')->default(1);
             $table->text('name');
             $table->text('logo_url')->nullable();
             $table->unsignedBigInteger('edit_by_admin_id')->nullable();

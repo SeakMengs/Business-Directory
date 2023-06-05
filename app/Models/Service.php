@@ -15,7 +15,12 @@ class Service extends Model
 
     protected $fillable = [
         'name',
-        'photo_url',
         'company_id',
+        'photo_url',
+    ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
     ];
 }

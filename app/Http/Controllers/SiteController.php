@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CompanyUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SiteController extends Controller
 {
@@ -13,7 +14,7 @@ class SiteController extends Controller
     }
 
     public function test() {
-        $data = CompanyUser::with('companies.feedbacks')->get();
+        $data = CompanyUser::with('companies.feedbacks', 'companies.contacts')->get();
 
         // with id
         // $data = CompanyUser::with('companies.feedbacks')->where('company_user_id', 2)->get();

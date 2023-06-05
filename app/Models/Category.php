@@ -17,4 +17,9 @@ class Category extends Model
         'name',
         'logo_url',
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

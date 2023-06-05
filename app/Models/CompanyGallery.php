@@ -17,4 +17,9 @@ class CompanyGallery extends Model
         'photo_url',
         'company_id',
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

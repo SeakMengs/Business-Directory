@@ -17,4 +17,9 @@ class CompanyContact extends Model
         'phone_number',
         'company_id',
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

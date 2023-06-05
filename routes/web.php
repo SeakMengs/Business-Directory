@@ -173,6 +173,8 @@ Route::middleware(['userAuth:companyUser'])->group(function () {
     Route::get('/user/company/{name}/edit-company/{companyName}', [CompanyUserController::class, 'editCompany'])->name('user.company.name.edit-company.companyName');
 
     Route::get('/user/company/{name}/add-company', [CompanyUserController::class, 'addCompany'])->name('user.company.name.add-company');
+
+    Route::post('/user/company/{name}/add-company/save', [CompanyUserController::class, 'addCompanySave'])->name('user.company.name.add-company.save');
 });
 
 //* ----------------End of Authenticated Routes-------------------- *//
