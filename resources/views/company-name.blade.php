@@ -84,18 +84,6 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                    <!-- Feedback display section -->
-                    <div id="feedbackDisplay" class="mt-4">
-                        <h5>Feedback</h5>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <strong>User 1:</strong> Great company, excellent service.
-                            </li>
-                            <li class="list-group-item">
-                                <strong>User 2:</strong> Not Good.
-                            </li>
-                        </ul>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -135,7 +123,7 @@
     <!-- End report modal -->
 
    <!-- The 3 tabs -->
-   <div class="row mt-4">
+    <div class="row mt-4">
         <div class="col-12 d-flex">
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -150,69 +138,89 @@
                     <!-- Galleries tab button -->
                     <button class="nav-link navbar-color" id="galleries-tab" data-bs-toggle="tab" data-bs-target="#galleries" type="button" role="tab" aria-controls="galleries" aria-selected="false">Galleries</button>
                 </li>
+                <li class="nav-item" role="presentation">
+                    <!-- Feedback tab button -->
+                    <button class="nav-link navbar-color" id="feedback-tab" data-bs-toggle="tab" data-bs-target="#feedback" type="button" role="tab" aria-controls="feedback" aria-selected="false">Feedback</button>
+                </li>
             </ul>
         </div>
 
         <div class="col-12">
             <div class="tab-content mt-3">
-            <!-- Description Tab -->
-            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                <p>S-COOL is the world leading heat protection window film company with its head office in Singapore. Our proprietary products included Super Ceramic ATO window film, provides the best high heat protection and value for money. This is the result of dedications and efforts by our R&D team, whom founded the use of this special ceramic compound for maximum heat rejection. Our founders started marketing solar control window film since 2007, under the brand S-COOL Solar & Security Window Film.</p>
-            </div>
-            <!-- End Description Tab -->
+                <!-- Description Tab -->
+                <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                    <p>S-COOL is the world leading heat protection window film company with its head office in Singapore. Our proprietary products included Super Ceramic ATO window film, provides the best high heat protection and value for money. This is the result of dedications and efforts by our R&D team, whom founded the use of this special ceramic compound for maximum heat rejection. Our founders started marketing solar control window film since 2007, under the brand S-COOL Solar & Security Window Film.</p>
+                </div>
+                <!-- End Description Tab -->
 
-            <!-- Service Tab -->
-            <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
-                <h5 class="mb-4">Our Services</h5>
-                <ul>
-                    <li>Building Energy Saving Film</li>
-                    <li>Security Window Film</li>
-                    <li>Roofing Insulation</li>
-                    <li>Aircon Ducting/HVAC ducting</li>
-                    <li>Auto Glass Coating</li>
-                </ul>
-            </div>
-            <!-- End Serivce Tab -->
+                <!-- Service Tab -->
+                <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+                    <h5 class="mb-4">Our Services</h5>
+                    <ul>
+                        <li>Building Energy Saving Film</li>
+                        <li>Security Window Film</li>
+                        <li>Roofing Insulation</li>
+                        <li>Aircon Ducting/HVAC ducting</li>
+                        <li>Auto Glass Coating</li>
+                    </ul>
+                </div>
+                <!-- End Service Tab -->
 
-            <!-- Gallaries Tab -->
-            <div class="tab-pane fade" id="galleries" role="tabpanel" aria-labelledby="gallaries-tab">
-                <h5 class="mb-4">Gallaries</h5>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-                    <!-- First image -->
-                     <div class="col">
-                        <div class="card">
-                            <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/kh/gallery_images/original/2118249.jfif" class="card-img-top" alt="Gallery Image 1">
+                <!-- Galleries Tab -->
+                <div class="tab-pane fade" id="galleries" role="tabpanel" aria-labelledby="galleries-tab">
+                    <h5 class="mb-4">Galleries</h5>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                        <!-- Gallery images -->
+                        <!-- First image -->
+                        <div class="col">
+                            <div class="card">
+                                <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/kh/gallery_images/original/2118249.jfif" class="card-img-top" alt="Gallery Image 1">
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Second image -->
-                    <div class="col">
-                        <div class="card">
-                            <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/kh/gallery_images/original/2027244.jfif" class="card-img-top" alt="Gallery Image 2">
+                        <!-- Second image -->
+                        <div class="col">
+                            <div class="card">
+                                <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/kh/gallery_images/original/2027244.jfif" class="card-img-top" alt="Gallery Image 2">
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Third image -->
-                    <div class="col">
-                        <div class="card">
-                            <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/kh/gallery_images/original/2027250.jfif" class="card-img-top" alt="Gallery Image 3">
+                        <!-- Third image -->
+                        <div class="col">
+                            <div class="card">
+                                <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/kh/gallery_images/original/2027250.jfif" class="card-img-top" alt="Gallery Image 3">
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Fourth image -->
-                    <div class="col">
-                        <div class="card">
-                            <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/kh/gallery_images/original/2027253.jfif" class="card-img-top" alt="Gallery Image 4">
+                        <!-- Fourth image -->
+                        <div class="col">
+                            <div class="card">
+                                <img src="https://s3-ap-southeast-1.amazonaws.com/yp-s3-dev/uploads/kh/gallery_images/original/2027253.jfif" class="card-img-top" alt="Gallery Image 4">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Gallaries Tab -->
+                <!-- End Galleries Tab -->
+
+                <!-- Feedback Tab -->
+                <div class="tab-pane fade" id="feedback" role="tabpanel" aria-labelledby="feedback-tab">
+                    <h5 class="mb-4">Feedback</h5> 
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <strong>User 1:</strong> Great company, excellent service.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>User 2:</strong> Not Good.
+                            </li>
+                        </ul>
+                </div>
+                <!-- End Feedback Tab -->
 
             </div>
         </div>
     </div>
     <!-- End the 3 tabs -->
+
     
 
 </div>
