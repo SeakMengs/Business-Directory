@@ -41,9 +41,22 @@
                                 <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal" data-bs-target="#reportModal">Report Company</button>
                             </div>
                             <!-- Star rating -->
-                            <div class="position-absolute bottom-0 end-0">
+                            <!-- <div class="position-absolute bottom-0 end-0">
+                                <div class="star-rating" id="star-rating"></div>
+                            </div> -->
+
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <!-- Overall rating -->
+                                <div class="average-rating">
+                                    <span class="text-muted">Average Rating:</span>
+                                    <span class="rating-value">4.5</span> <!-- Replace with actual overall rating -->
+                                    <span class="text-muted">out of 5</span>
+                                </div>
+                                <!-- Star rating -->
                                 <div class="star-rating" id="star-rating"></div>
                             </div>
+
+
                         </div>   
                     </div>
                 </div>
@@ -52,8 +65,7 @@
     </div>
     <!-- End company detail overview -->
 
-
-    <!-- Feedback Modal -->
+   <!-- Feedback Modal -->
     <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -65,13 +77,25 @@
                 </div>
                 <div class="modal-body">
                     <!-- Feedback form -->
-                    <form>
+                    <form id="feedbackForm">
                         <div class="mb-3">
                             <label for="feedback-message" class="form-label">Message</label>
                             <textarea class="form-control" id="feedback-message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    <!-- Feedback display section -->
+                    <div id="feedbackDisplay" class="mt-4">
+                        <h5>Feedback</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <strong>User 1:</strong> Great company, excellent service.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>User 2:</strong> Not Good.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -109,8 +133,6 @@
         </div>
     </div>
     <!-- End report modal -->
-
-
 
    <!-- The 3 tabs -->
    <div class="row mt-4">
