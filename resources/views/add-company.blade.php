@@ -20,9 +20,9 @@
     @endif
 
     {{-- Old function is used for accessing old input that the user submit and fail to validate --}}
-    @if (old())
+    {{-- @if (old()) --}}
         {{-- @dd(old()); --}}
-    @endif
+    {{-- @endif --}}
 
     <div class="container my-5 custom-listing-form">
         <div class="row justify-content-center">

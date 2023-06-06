@@ -168,13 +168,15 @@ Route::middleware(['userAuth:companyUser'])->group(function () {
 
     Route::get('/user/company/{name}/profile', [CompanyUserController::class, 'profile'])->name('user.company.name.profile');
 
-    Route::get('/user/company/{name}/profile/edit', [CompanyUserController::class, 'editProfile'])->name('user.company.name.profile.edit');
+    Route::get('/user/company/{name}/{id}/profile/edit', [CompanyUserController::class, 'editProfile'])->name('user.company.name.id.profile.edit');
 
     Route::get('/user/company/{name}/edit-company/{companyName}', [CompanyUserController::class, 'editCompany'])->name('user.company.name.edit-company.companyName');
 
     Route::get('/user/company/{name}/add-company', [CompanyUserController::class, 'addCompany'])->name('user.company.name.add-company');
 
     Route::post('/user/company/{name}/add-company/save', [CompanyUserController::class, 'addCompanySave'])->name('user.company.name.add-company.save');
+
+    Route::post('/user/company/{name}/{id}profile/edit/save', [CompanyUserController::class, 'saveEditProfile'])->name('user.company.name.id.profile.edit.save');
 
     // Route::get('/test', [SiteController::class, 'test']);
 

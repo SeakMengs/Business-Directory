@@ -46,16 +46,94 @@ class CompanyUserController extends Controller
         return view('company_profile');
     }
 
-    public function editProfile($username)
+    public function editProfile($username, $id)
     {
-        // TODO: query company_user where username match username
+        // TODO: query company_user where $id match
 
-        return view('edit-company-account');
+        $data = CompanyUser::where('company_user_id', $id)->first();
+
+        return view('edit-company-account', [
+            'user' => $data,
+        ]);
     }
 
-    public function saveProfileEdit(Request $request)
+    public function saveEditProfile(Request $request, $username, $id)
     {
-        return 'TODO later';
+
+        // store the first two input field because by default we place value in the input field
+        $storeInput = [
+            'name' => $request->input('name'),
+            'email' => $request->input('email')
+        ];
+
+        // check for password change first
+        // because we hide the input field and when the user submit the form
+        // it send null password to the server and it will be validated as null
+        // we fix that by checking if the password is null or not
+        // if it's null then we unset the password field from the request
+        if ($request->input('new_password') == null) {
+            $request->request->remove('old_password');
+            $request->request->remove('new_password');
+            $request->request->remove('new_password_confirmation');
+        } else {
+            // add hash password to the storeInput array
+            $storeInput['password'] = bcrypt($request->input('new_password'));
+
+            // after knowing that the user want to change the password
+            // we validate the password first
+            $validatePassword = Validator::make(
+                $request->input(),
+                [
+                    'old_password' => ['required', 'min:8'],
+                    'new_password' => ['required', 'min:8', 'confirmed'],
+                    'new_password_confirmation' => ['required', 'min:8'],
+                ],
+                [
+                    'old_password.required' => 'The old password is required',
+                    'old_password.min' => 'The old password must be at least 8 characters',
+                    'new_password.required' => 'The new password is required',
+                    'new_password.min' => 'The new password must be at least 8 characters',
+                    'new_password.confirmed' => 'The new password confirmation does not match',
+                    'new_password_confirmation.required' => 'The new password confirmation is required',
+                    'new_password_confirmation.min' => 'The new password confirmation must be at least 8 characters',
+                ]
+            );
+
+            if ($validatePassword->fails()) {
+                return redirect()->back()->withErrors($validatePassword)->withInput($request->all());
+            }
+        }
+
+        $validator = Validator::make(
+            $request->input(),
+            [
+                // name must be unique but can be the same as the current name
+                // https://stackoverflow.com/questions/22405762/laravel-update-model-with-unique-validation-rule-for-attribute
+                'name' => ['required', 'max:255', 'unique:company_user,name,' . $id . ',company_user_id'],
+                'email' => ['required', 'email', 'max:255', 'unique:company_user,email,' . $id . ',company_user_id'],
+            ],
+            [
+                'name.required' => 'The name is required',
+                'name.max' => 'The name must not exceed 255 characters',
+                'name.unique' => 'The name is already taken',
+                'email.required' => 'The email is required',
+                'email.email' => 'The email is invalid',
+                'email.max' => 'The email must not exceed 255 characters',
+                'email.unique' => 'The email is already taken',
+            ]
+        );
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
+
+        $saveChange = CompanyUser::where('company_user_id', $id)->update($storeInput);
+
+        if (!$saveChange) {
+            return redirect()->back()->withErrors('error', 'Failed to save changes');
+        } else {
+            return redirect()->route('user.company.name.profile', ['name' => $storeInput['name']])->with('success', 'Changes saved');
+        }
     }
 
     public function editCompany($username, $companyName)
