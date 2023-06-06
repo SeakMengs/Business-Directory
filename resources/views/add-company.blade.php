@@ -11,7 +11,7 @@
         </div>
     @endif
 
-    <div class="container my-5">
+    <div class="container my-5 custom-listing-form">
         <div class="row justify-content-center">
             <div class="col-md-9">
                 <div class="card mx-auto">
@@ -33,8 +33,8 @@
                                     </div>
                                     <div class="form-group mb-2">
                                         <label for="phone" class="form-label">Phone:</label>
-                                        <button type="button" onclick="CloneInputDom('phones')">Add</button>
-                                        <button type="button" onclick="PopBackInputDom('phones')">Remove </button>
+                                        <button type="button" onclick="CloneInputDom('phones')" class="add-rem-button">Add</button>
+                                        <button type="button" onclick="PopBackInputDom('phones')" class="add-rem-button">Remove </button>
                                         <!-- Label for the phone input field -->
                                         <input type="text" name="phone_number[]" class="form-control phones mb-2"
                                             id="phone">
@@ -70,8 +70,8 @@
                                     </div>
                                     <div class="form-group mb-2">
                                         <label for="galleries" class="form-label">Galleries:</label>
-                                        <button type="button" onclick="CloneInputDom('galleries')">Add</button>
-                                        <button type="button" onclick="PopBackInputDom('galleries')">Remove </button>
+                                        <button type="button" onclick="CloneInputDom('galleries')" class="add-rem-button">Add</button>
+                                        <button type="button" onclick="PopBackInputDom('galleries')" class="add-rem-button">Remove </button>
                                         <!-- Label for the galleries file input field -->
                                         <input class="galleries mb-2 form-control" type="file" name="photo_url[]"
                                             class="form-control" id="galleries" multiple>
@@ -114,8 +114,8 @@
                                     </div>
                                     <div class="form-group mb-2">
                                         <label for="services" class="form-label">Services:</label>
-                                        <button type="button" onclick="CloneInputDom('services')">Add</button>
-                                        <button type="button" onclick="PopBackInputDom('services')">Remove </button>
+                                        <button type="button" onclick="CloneInputDom('services')" class="add-rem-button">Add</button>
+                                        <button type="button" onclick="PopBackInputDom('services')" class="add-rem-button">Remove </button>
                                         <!-- Label for the services textarea field -->
                                         <input class="form-control mb-2 services" name="service[]" id="services"
                                             rows="5"></input> <!-- Services textarea field -->

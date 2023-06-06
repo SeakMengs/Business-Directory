@@ -486,6 +486,57 @@ outline: none;
     display: flex;
     align-items: center;
 }
+
+/* For add and remove button in listing */
+.add-rem-button {
+    /* background-color: #408558; */
+    background-color: #61b36b;
+    color: #fff;
+    padding: 4px 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.add-rem-button:hover {
+    /* background-color: #36714b; */
+    background-color: #4ca35c;
+}
+
+/* For listing error */
+.custom-listing-form .error-message {
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px 0px;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-listing-form .error-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+    color: #dc3545;
+    font-size: 16px;
+}
+
+.custom-login-form .error-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+.custom-listing-form .error-list li {
+    color: red;
+    margin: 5px 0px;
+    display: flex;
+    align-items: center;
+}
   
 
 /* For mobiler responsive */
