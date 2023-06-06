@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CompanyUser;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -31,18 +32,30 @@ class SiteController extends Controller
 
     public function categories() {
         // TODO: query all categories
+        $categories = Category::all();
 
-        return view('categoryshow');
+        return view('categoryshow', ['categories' => $categories]);
+
     }
 
     public function categoryName($categoryName) {
         // TODO: query category by category name
+        $category = Category::where('name', $categoryName)->first();
 
-        return view('category-name');
+        return view('category-name', ['category' => $category]);
     }
 
     public function companyName($categoryName, $companyName) {
         // TODO: query company by company name
+        $category = Category::where('name', $categoryName)->first();
+        if ($category) {
+            $company = $category->companies()->where('name', $companyName)->first();
+
+            if ($company) {
+                return view('company-name', ['company' => $company]);
+            }
+        }
+
 
         return view('company-name');
     }

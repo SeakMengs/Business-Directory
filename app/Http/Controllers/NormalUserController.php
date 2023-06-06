@@ -32,8 +32,19 @@ class NormalUserController extends Controller
     public function editProfile($username)
     {
         // TODO: query normal_user where username match username
+        $data = NormalUser::where('name', $username)->first();
 
-        return view('edit-normaluser-account');
+        if (!$data) {
+            return response()->json([
+                'message' => 'User not found',
+            ], 404);
+        }
+    
+        return view('edit-normaluser-account', [
+            'user' => $data,
+        ]);
+
+       
     }
 
     public function saveProfileEdit(Request $request)

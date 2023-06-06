@@ -139,8 +139,18 @@ class CompanyUserController extends Controller
     public function editCompany($username, $companyName)
     {
         // TODO: query company where username match username and companyName match companyName, join with service, company_gallery, company_contact
+        $company = CompanyUser::where('username', $username)
+        ->whereHas('companies', function ($query) use ($companyName) {$query->where('companyName', $companyName);})
+        ->with('companies.service', 'companies.company_gallery', 'companies.company_contact')->first();
 
-        return view('edit-company');
+
+    if (!$company) {
+        return response()->json([
+            'message' => 'Company not found',
+        ], 404);
+    }
+
+    return view('edit-company', compact('company'));
     }
 
     public function saveCompanyEdit(Request $request)
