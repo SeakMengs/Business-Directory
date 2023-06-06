@@ -150,7 +150,7 @@ class CompanyUserController extends Controller
 
         if ($validator->fails()) {
             // redirect back to the same page with errors and old inputs
-            return redirect()->back()->withErrors($validator)->withInput($request->input());
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
         }
 
         // Check auth again to make sure the user is logged in

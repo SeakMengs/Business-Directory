@@ -42,9 +42,11 @@ class UserMiddleware
                 // get current dynamic name from route
                 $currentName = $request->route()->parameter('name');
 
-                // prevent user with the same role from accessing other user's data
-                if (Auth::guard($this->guard)->user()->name != $currentName) {
-                    return response("You do not have access to view " . $currentName . '\'s data', 401);
+                if ($currentName) {
+                    if (Auth::guard($this->guard)->user()->name != $currentName) {
+                    // prevent user with the same role from accessing other user's data
+                        return response("You do not have access to view " . $currentName . '\'s data', 401);
+                    }
                 }
 
                 // if the user is authorized, continue with the request
