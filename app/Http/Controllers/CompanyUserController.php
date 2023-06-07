@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rate;
 use App\Models\Company;
 use App\Models\Service;
 use App\Models\Category;
+use App\Models\Feedback;
 use App\Models\CompanyUser;
+use App\Models\SavedCompany;
 use Illuminate\Http\Request;
 use App\Models\CompanyContact;
 use App\Models\CompanyGallery;
@@ -30,12 +33,10 @@ class CompanyUserController extends Controller
         return $uploadedFileUrl;
     }
 
-    public function profile($username)
+    public function profile($username, $userId)
     {
-
-        // this is unofficial query. created for testing purposes
-        // first() returns the first record that matches the query
-        $data = CompanyUser::where('name', $username)->first();
+        // TODO: Join relationship of company_user and many companies
+        $data = CompanyUser::with('companies')->where('company_user_id', $userId)->first();
 
         if (!$data) {
             return response()->json([
@@ -43,21 +44,25 @@ class CompanyUserController extends Controller
             ], 404);
         }
 
-        return view('company_profile');
+        // return response()->json($data);
+
+        return view('company_profile', [
+            'userData' => $data,
+        ]);
     }
 
-    public function editProfile($username, $id)
+    public function editProfile($username, $userId)
     {
-        // TODO: query company_user where $id match
+        // TODO: query company_user where $userId match
 
-        $data = CompanyUser::where('company_user_id', $id)->first();
+        $data = CompanyUser::where('company_user_id', $userId)->first();
 
         return view('edit-company-account', [
             'user' => $data,
         ]);
     }
 
-    public function saveEditProfile(Request $request, $username, $id)
+    public function saveEditProfile(Request $request, $username, $userId)
     {
 
         // store the first two input field because by default we place value in the input field
@@ -66,16 +71,9 @@ class CompanyUserController extends Controller
             'email' => $request->input('email')
         ];
 
-        // check for password change first
-        // because we hide the input field and when the user submit the form
-        // it send null password to the server and it will be validated as null
-        // we fix that by checking if the password is null or not
-        // if it's null then we unset the password field from the request
-        if ($request->input('new_password') == null) {
-            $request->request->remove('old_password');
-            $request->request->remove('new_password');
-            $request->request->remove('new_password_confirmation');
-        } else {
+        // if the change password check is checked
+        // we validate password
+        if (isset($request['change_password'])) {
             // add hash password to the storeInput array
             $storeInput['password'] = bcrypt($request->input('new_password'));
 
@@ -84,11 +82,15 @@ class CompanyUserController extends Controller
             $validatePassword = Validator::make(
                 $request->input(),
                 [
-                    'old_password' => ['required', 'min:8'],
+                    // password:companyUser is for custom validation rule
+                    // it checks if the password is correct
+                    // https://laravel.com/docs/8.x/validation#rule-password
+                    'old_password' => ['required', 'min:8', 'password:companyUser'],
                     'new_password' => ['required', 'min:8', 'confirmed'],
                     'new_password_confirmation' => ['required', 'min:8'],
                 ],
                 [
+                    'old_password.password' => 'The old password is incorrect',
                     'old_password.required' => 'The old password is required',
                     'old_password.min' => 'The old password must be at least 8 characters',
                     'new_password.required' => 'The new password is required',
@@ -109,8 +111,8 @@ class CompanyUserController extends Controller
             [
                 // name must be unique but can be the same as the current name
                 // https://stackoverflow.com/questions/22405762/laravel-update-model-with-unique-validation-rule-for-attribute
-                'name' => ['required', 'max:255', 'unique:company_user,name,' . $id . ',company_user_id'],
-                'email' => ['required', 'email', 'max:255', 'unique:company_user,email,' . $id . ',company_user_id'],
+                'name' => ['required', 'max:255', 'unique:company_user,name,' . $userId . ',company_user_id'],
+                'email' => ['required', 'email', 'max:255', 'unique:company_user,email,' . $userId . ',company_user_id'],
             ],
             [
                 'name.required' => 'The name is required',
@@ -127,30 +129,37 @@ class CompanyUserController extends Controller
             return redirect()->back()->withErrors($validator)->withInput($request->all());
         }
 
-        $saveChange = CompanyUser::where('company_user_id', $id)->update($storeInput);
+        $saveChange = CompanyUser::where('company_user_id', $userId)->update($storeInput);
 
         if (!$saveChange) {
             return redirect()->back()->withErrors('error', 'Failed to save changes');
         } else {
-            return redirect()->route('user.company.name.profile', ['name' => $storeInput['name']])->with('success', 'Changes saved');
+            return redirect()->route('user.company.name.id.profile.edit', [
+                'name' => $storeInput['name'],
+                'id' => $userId,
+            ])->with('success', 'Changes saved');
         }
     }
 
-    public function editCompany($username, $companyName)
+    public function editCompany(Request $request, $username, $userId)
     {
-        // TODO: query company where username match username and companyName match companyName, join with service, company_gallery, company_contact
-        $company = CompanyUser::where('username', $username)
-        ->whereHas('companies', function ($query) use ($companyName) {$query->where('companyName', $companyName);})
-        ->with('companies.service', 'companies.company_gallery', 'companies.company_contact')->first();
+        // get company_id from query parameter
+        $companyId = $request->query('company_id');
 
+        // TODO: query company join with contacts, services, and galleries & query categories separately
+        // NOTE: we make sure that the company is owned by the user
+        // NOTE: I created a function called contacts in the Company model (it's used to get the contacts of the company)
+        $company = Company::with('contacts', 'services', 'galleries')->where([['company_id', $companyId], ['company_user_id', $userId]])->first();
 
-    if (!$company) {
-        return response()->json([
-            'message' => 'Company not found',
-        ], 404);
-    }
+        $categories = Category::get();
 
-    return view('edit-company', compact('company'));
+        // json view
+        // return response()->json($company);
+
+        return view('edit-company', [
+            'company' => $company,
+            'categories' => $categories,
+        ]);
     }
 
     public function saveCompanyEdit(Request $request)
@@ -158,7 +167,7 @@ class CompanyUserController extends Controller
         return 'TODO later';
     }
 
-    public function addCompany($username)
+    public function addCompany($username, $userId)
     {
         // TODO: query all categories
 
@@ -168,7 +177,7 @@ class CompanyUserController extends Controller
             'categories' => $categories,
         ]);
     }
-    public function addCompanySave(Request $request, $username)
+    public function addCompanySave(Request $request, $username, $userId)
     {
         // dd($request);
 
@@ -280,10 +289,10 @@ class CompanyUserController extends Controller
         }
 
         // Save the company services
-        foreach ($request->input('service') as $service) {
+        foreach ($request->input('services') as $service) {
             // echo $service;
             Service::create([
-                'company_id' => 1,
+                'company_id' => $savedComapnyId,
                 'name' => $service,
             ]);
         }
@@ -299,5 +308,27 @@ class CompanyUserController extends Controller
         }
 
         return redirect()->back()->with('success', 'Company added successfully');
+    }
+
+    public function removeCompany(Request $request, $username, $userId)
+    {
+        $company_id = $request->query('company_id');
+
+        // make sure the person who is removing the company is the owner of the company
+        // NOTE: we delete the company and all its related data because we cannot use foreign key constraint on planetscale
+        $removeCompany = Company::where([['company_id', $company_id], ['company_user_id', $userId]])->delete();
+
+        if ($removeCompany) {
+            $removeContacts = CompanyContact::where('company_id', $company_id)->delete();
+            $removeServices = Service::where('company_id', $company_id)->delete();
+            $removeGalleries = CompanyGallery::where('company_id', $company_id)->delete();
+            $removeFeedbacks = Feedback::where('company_id', $company_id)->delete();
+            $removeRates = Rate::where('company_id', $company_id)->delete();
+            $removeSavedCompanies = SavedCompany::where('company_id', $company_id)->delete();
+
+            return redirect()->back()->with('success', 'Company has been removed');
+        } else {
+            return redirect()->back()->with('error', 'Remove company failed');
+        }
     }
 }

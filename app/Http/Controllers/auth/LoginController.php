@@ -47,8 +47,9 @@ class LoginController extends Controller
                 // logout from companyUser guard if normalUser is logged in
                 Auth::guard('normalUser')->logout();
 
-                return redirect()->route('user.company.name.profile', [
-                    'name' => Auth::guard('companyUser')->user()->name
+                return redirect()->route('user.company.name.id.profile', [
+                    'name' => Auth::guard('companyUser')->user()->name,
+                    'id' => Auth::guard('companyUser')->user()->company_user_id
                 ])->with('success', 'Login success');
             }
 

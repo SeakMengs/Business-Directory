@@ -19,7 +19,7 @@
         </div>
     @endif
 
-    <div class="container pb-5">
+    <div class="container pb-5 custom-listing-form">
         <div class="row justify-content-center mt-5">
             <div class="col-md-8 col-lg-6">
                 <!-- Company Profile -->
@@ -49,7 +49,7 @@
                             </div>
                             <!-- Change Password checkbox -->
                             <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" value="" id="change_password">
+                                <input class="form-check-input" type="checkbox"  name="change_password" id="change_password">
                                 <label class="form-check-label" for="change_password">
                                     Change Password
                                 </label>

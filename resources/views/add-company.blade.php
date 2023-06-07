@@ -29,7 +29,10 @@
             <div class="col-md-9">
                 <div class="card mx-auto">
                     <form
-                        action="{{ route('user.company.name.add-company.save', ['name' => Auth::guard('companyUser')->user()->name]) }}"
+                        action="{{ route('user.company.name.id.add-company.save', [
+                            'name' => Auth::guard('companyUser')->user()->name,
+                            'id' => Auth::guard('companyUser')->user()->company_user_id,
+                            ]) }}"
                         method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-header text-center">
@@ -217,6 +220,7 @@
             const currentExistingInput = nodes.length;
 
             if (currentExistingInput <= 1) {
+                alert('You must have at least one input left')
                 return;
             }
 

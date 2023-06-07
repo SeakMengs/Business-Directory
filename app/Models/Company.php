@@ -42,4 +42,20 @@ class Company extends Model
     public function contacts() {
         return $this->hasMany(CompanyContact::class, 'company_id', 'company_id');
     }
+
+    public function services() {
+        return $this->hasMany(Service::class, 'company_id', 'company_id');
+    }
+
+    public function galleries() {
+        return $this->hasMany(CompanyGallery::class, 'company_id', 'company_id');
+    }
+
+    public function rates() {
+        return $this->hasMany(Rate::class, 'company_id', 'company_id');
+    }
+
+    public function savedCompanies() {
+        return $this->hasMany(SavedCompany::class, 'company_id', 'company_id');
+    }
 }

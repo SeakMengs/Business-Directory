@@ -45,19 +45,25 @@ class SiteController extends Controller
         return view('category-name', ['category' => $category]);
     }
 
-    public function companyName($categoryName, $companyName) {
+    public function companyDetail($categoryName, $companyName) {
         // TODO: query company by company name
         $category = Category::where('name', $categoryName)->first();
+
         if ($category) {
             $company = $category->companies()->where('name', $companyName)->first();
 
             if ($company) {
-                return view('company-name', ['company' => $company]);
+                // return view('company-name', ['company' => $company]);
+                return response()->json([
+                    'company' => $company,
+                ]);
             }
         }
 
-
-        return view('company-name');
+        return response()->json([
+            'company' => $company,
+        ]);
+        // return view('company-detail');
     }
 
 }

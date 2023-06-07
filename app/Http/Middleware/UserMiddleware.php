@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class UserMiddleware
 {
     protected $guard;
+    protected $currentUserId;
 
     public function __construct()
     {
@@ -17,13 +18,17 @@ class UserMiddleware
         // because we use multiple guards, we need to check which guard is currently logged in
         if (Auth::guard('normalUser')->check()) {
             $guard = 'normalUser';
+            $currentUserId = Auth::guard('normalUser')->user()->normal_user_id;
         } else if (Auth::guard('companyUser')->check()) {
             $guard = 'companyUser';
+            $currentUserId = Auth::guard('companyUser')->user()->company_user_id;
         } else {
             $guard = null;
+            $currentUserId = null;
         }
 
         $this->guard = $guard;
+        $this->currentUserId = $currentUserId;
     }
 
     /**
@@ -41,9 +46,11 @@ class UserMiddleware
 
                 // get current dynamic name from route
                 $currentName = $request->route()->parameter('name');
+                $currentId = $request->route()->parameter('id');
 
                 if ($currentName) {
-                    if (Auth::guard($this->guard)->user()->name != $currentName) {
+                    // if currentName and currentId is not null, check if the user is authorized to access the data
+                    if (Auth::guard($this->guard)->user()->name != $currentName || $currentId != $this->currentUserId) {
                     // prevent user with the same role from accessing other user's data
                         return response("You do not have access to view " . $currentName . '\'s data', 401);
                     }
