@@ -12,6 +12,7 @@ use App\Models\SavedCompany;
 use Illuminate\Http\Request;
 use App\Models\CompanyContact;
 use App\Models\CompanyGallery;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -150,6 +151,8 @@ class CompanyUserController extends Controller
         // NOTE: we make sure that the company is owned by the user
         // NOTE: I created a function called contacts in the Company model (it's used to get the contacts of the company)
         $company = Company::with('contacts', 'services', 'galleries')->where([['company_id', $companyId], ['company_user_id', $userId]])->first();
+
+        // join with DB
 
         $categories = Category::get();
 
@@ -330,5 +333,185 @@ class CompanyUserController extends Controller
         } else {
             return redirect()->back()->with('error', 'Remove company failed');
         }
+    }
+
+    public function saveEditCompany(Request $request, $username, $userId)
+    {
+        $company_id = $request->query('company_id');
+
+        $storeUpdateCompany = [
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'category_id' => $request->input('category'),
+            'email' => $request->input('email'),
+            'website' => $request->input('website'),
+            'street' => $request->input('street'),
+            'city' => $request->input('city'),
+            'district' => $request->input('district'),
+            'commune' => $request->input('commune'),
+            'village' => $request->input('village'),
+            // Logo to be added if the user upload a new logo
+        ];
+        $storeUpdateContact = $request->input('phone_number');
+        $storeUpdateService = $request->input('services');
+
+        //* These can be null
+        $addContacts = $request->input('add_phone_number');
+        $addServices = $request->input('add_service');
+        $addGalleries = $request->file('add_gallery');
+
+        $deleteContacts = $request->input('delete_phones');
+        $deleteServices = $request->input('delete_services');
+        $deleteGalleries = $request->input('delete_galleries');
+        //* End of these can be null
+
+        // for testing purpose
+        // dd($storeUpdateCompany, $storeUpdateContact, $storeUpdateService, $addContacts, $addServices, $addGalleries, $deleteContacts, $deleteServices, $deleteGalleries);
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                // I put $company_id to ignore if the current company name is the same as the new company name & same apply for all the other fields
+                'name' => ['required', 'max:255', 'unique:company,name,' . $company_id . ',company_id'],
+                // make sure the category match the category in the category table
+                'category' => ['required', 'exists:category,category_id'],
+                'email' => ['required', 'email', 'unique:company,email,' . $company_id . ',company_id'],
+                'website' => ['required', 'url'],
+                'street' => ['required', 'max:255'],
+                'city' => ['required', 'max:255'],
+                'district' => ['required', 'max:255'],
+                'commune' => ['required', 'max:255'],
+                'village' => ['required', 'max:255'],
+                'phone_number.*' => ['required', 'numeric', 'digits_between:8,12', 'distinct'],
+                'services.*' => ['required', 'max:255', 'distinct'],
+                'add_phone_number.*' => ['unique:company_contact,phone_number', 'numeric', 'digits_between:8,12', 'distinct'],
+                'add_service.*' => ['required', 'unique:service,name'],
+                'add_gallery.*' => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:2048'],
+            ],
+            [
+                'name.required' => 'Company name is required',
+                'name.max' => 'Company name cannot be more than 255 characters',
+                'name.unique' => 'Company name already exist',
+                'category.required' => 'Category is required',
+                'category.exists' => 'Category does not exist',
+                'email.required' => 'Email is required',
+                'email.email' => 'Email is invalid',
+                'email.unique' => 'Email already exist',
+                'website.required' => 'Website is required',
+                'website.url' => 'Website is invalid',
+                'street.required' => 'Street is required',
+                'street.max' => 'Street cannot be more than 255 characters',
+                'city.required' => 'City is required',
+                'city.max' => 'City cannot be more than 255 characters',
+                'district.required' => 'District is required',
+                'district.max' => 'District cannot be more than 255 characters',
+                'commune.required' => 'Commune is required',
+                'commune.max' => 'Commune cannot be more than 255 characters',
+                'village.required' => 'Village is required',
+                'village.max' => 'Village cannot be more than 255 characters',
+                'phone_number.*.required' => 'Phone number is required',
+                'phone_number.*.numeric' => 'Phone number must be numeric',
+                'phone_number.*.digits_between' => 'Phone number must be between 8 to 12 digits',
+                'phone_number.*.distinct' => 'Phone number must be unique',
+                'services.*.required' => 'Service is required',
+                'services.*.max' => 'Service cannot be more than 255 characters',
+                'services.*.distinct' => 'Service must be unique',
+                'add_phone_number.*.unique' => 'Phone number already exist',
+                'add_phone_number.*.numeric' => 'Phone number must be numeric',
+                'add_phone_number.*.digits_between' => 'Phone number must be between 8 to 12 digits',
+                'add_phone_number.*.distinct' => 'Phone number must be unique',
+                'add_service.*.required' => 'Service is required',
+                'add_service.*.unique' => 'Service already exist',
+                'add_gallery.*.required' => 'Gallery is required',
+                'add_gallery.*.image' => 'Gallery must be an image',
+                'add_gallery.*.mimes' => 'Gallery must be a jpeg, jpg, png',
+                'add_gallery.*.max' => 'Gallery cannot be more than 2MB',
+            ]
+        );
+
+        if ($validator->fails()) {
+            // redirect back to the same page with errors and old inputs
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        }
+
+        // dd($storeUpdateCompany);
+        if ($request->file('logo')) {
+            $storeUpdateCompany['logo'] = $this->uploadToCloudinary($request->file('logo'));
+        }
+
+        // Update the company
+        $updateCompany = Company::where([['company_id', $company_id], ['company_user_id', $userId]])->update($storeUpdateCompany);
+
+        if ($updateCompany) {
+
+            if ($storeUpdateContact) {
+                // Update the company contact
+                foreach ($storeUpdateContact as $contact_id => $value) {
+                    $updateContact = CompanyContact::where([['contact_id', $contact_id], ['company_id', $company_id]])->update(['phone_number' => $value]);
+                }
+            }
+
+            if ($storeUpdateService) {
+                // Update the company service
+                foreach ($storeUpdateService as $service_id => $value) {
+                    $updateService = Service::where([['service_id', $service_id], ['company_id', $company_id]])->update(['name' => $value]);
+                }
+            }
+
+            if ($addContacts) {
+                // Add the company contact
+                foreach ($addContacts as $key => $phone) {
+                    $addContact = CompanyContact::create([
+                        'company_id' => $company_id,
+                        'phone_number' => $phone,
+                    ]);
+                }
+            }
+
+            if ($addServices) {
+                // Add the company service
+                foreach ($addServices as $key => $service_name) {
+                    $addService = Service::create([
+                        'company_id' => $company_id,
+                        'name' => $service_name,
+                    ]);
+                }
+            }
+
+            if ($addGalleries) {
+                // Add the company gallery
+                foreach ($request->file('add_gallery') as $key => $photo) {
+                    $addGallery = CompanyGallery::create([
+                        'company_id' => $company_id,
+                        'photo_url' => $this->uploadToCloudinary($photo),
+                    ]);
+                }
+            }
+
+            if ($deleteContacts) {
+                // Delete the company contact
+                foreach ($deleteContacts as $key => $contact_id) {
+                    $deleteContact = CompanyContact::where([['contact_id', $contact_id], ['company_id', $company_id]])->delete();
+                }
+            }
+
+            if ($deleteServices) {
+                // Delete the company service
+                foreach ($deleteServices as $key => $service_id) {
+                    $deleteService = Service::where([['service_id', $service_id], ['company_id', $company_id]])->delete();
+                }
+            }
+
+            if ($deleteGalleries) {
+                // Delete the company gallery
+                foreach ($deleteGalleries as $key => $gallery_id) {
+                    $deleteGallery = CompanyGallery::where([['gallery_id', $gallery_id], ['company_id', $company_id]])->delete();
+                }
+            }
+            return redirect()->back()->with('success', 'Company has been updated successfully');
+        } else {
+            return redirect()->back()->with('error', 'Company failed to update');
+        }
+
     }
 }

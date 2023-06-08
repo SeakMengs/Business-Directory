@@ -34,6 +34,8 @@ class SiteController extends Controller
         // TODO: query all categories
         $categories = Category::all();
 
+        // return response()->json($categories);
+
         return view('categoryshow', ['categories' => $categories]);
 
     }

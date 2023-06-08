@@ -179,6 +179,8 @@ Route::middleware(['userAuth:companyUser'])->group(function () {
 
     Route::get('/user/company/{name}/{id}/edit-company', [CompanyUserController::class, 'editCompany'])->name('user.company.name.id.edit-company');
 
+    Route::patch('/user/company/{name}/{id}/edit-company/save', [CompanyUserController::class, 'saveEditCompany'])->name('user.company.name.id.edit-company.save');
+
     Route::get('/user/company/{name}/{id}/remove-company', [CompanyUserController::class, 'removeCompany'])->name('user.company.name.id.removeCompany');
 
     // Route::get('/test', [SiteController::class, 'test']);

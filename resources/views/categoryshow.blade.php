@@ -2,149 +2,170 @@
 
 @section('dyncontent')
 
-<div class="container my-4">
-     <!-- Breadcrumbs -->
-     <nav aria-label="breadcrumb">
+    <div class="container my-4">
+        <!-- Breadcrumbs -->
+        <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item active"><a href="/category">Category</a></li>
             </ol>
         </nav>
-    <!-- End Breadcrumbs -->
+        <!-- End Breadcrumbs -->
 
-     <h2 class="header-align pb-3">Categories</h2>
+        <h2 class="header-align pb-3">Categories</h2>
 
         <div class="row row-cols-1 row-cols-md-4 g-4">
-        <!-- Automotive-Vehicle category -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <a href="/category/Automotive - Vehicles" class="text-decoration-none">
-                        <!-- Category title with icon -->
-                        <h5 class="card-title mb-0">
-                            <i class="fa-solid fa-car fontawe-icon"></i>
-                            Automotive - Vehicles
-                        </h5>
-                    </a>
+            <!-- Automotive-Vehicle category -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <a href="/category/Automotive - Vehicles" class="text-decoration-none">
+                            <!-- Category title with icon -->
+                            <h5 class="card-title mb-0">
+                                <i class="fa-solid fa-car fontawe-icon"></i>
+                                Automotive - Vehicles
+                            </h5>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-         <!-- End Automotive-Vehicle category -->
+            <!-- End Automotive-Vehicle category -->
 
-         <!-- Banking & Finance  -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <a href="#" class="text-decoration-none">
-                        <!-- Category title with icon -->
-                        <h5 class="card-title mb-0">
-                            <i class="fa-solid fa-coins fontawe-icon"></i>
-                            Banking & Finance
-                        </h5>
-                    </a>
+            <!-- Banking & Finance  -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <a href="#" class="text-decoration-none">
+                            <!-- Category title with icon -->
+                            <h5 class="card-title mb-0">
+                                <i class="fa-solid fa-coins fontawe-icon"></i>
+                                Banking & Finance
+                            </h5>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Banking & Finance -->
+            <!-- End Banking & Finance -->
 
-        <!-- Business Services -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <a href="#" class="text-decoration-none">
-                        <!-- Category title with icon -->
-                        <h5 class="card-title mb-0">
-                            <i class="fa-solid fa-briefcase fontawe-icon"></i>
-                            Business Services
-                        </h5>
-                    </a>
+            <!-- Business Services -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <a href="#" class="text-decoration-none">
+                            <!-- Category title with icon -->
+                            <h5 class="card-title mb-0">
+                                <i class="fa-solid fa-briefcase fontawe-icon"></i>
+                                Business Services
+                            </h5>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Business Services -->
+            <!-- End Business Services -->
 
-        <!-- Entertainment -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <a href="#" class="text-decoration-none">
-                        <!-- Category title with icon -->
-                        <h5 class="card-title mb-0">
-                            <i class="fa-solid fa-gamepad fontawe-icon"></i>
-                            Entertainment
-                        </h5>
-                    </a>
+            <!-- Entertainment -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <a href="#" class="text-decoration-none">
+                            <!-- Category title with icon -->
+                            <h5 class="card-title mb-0">
+                                <i class="fa-solid fa-gamepad fontawe-icon"></i>
+                                Entertainment
+                            </h5>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Entertainment -->
+            <!-- End Entertainment -->
 
-        <!-- Construction -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <a href="#" class="text-decoration-none">
-                        <!-- Category title with icon -->
-                        <h5 class="card-title mb-0">
-                            <i class="fa-solid fa-helmet-safety fontawe-icon"></i>
-                            Construction
-                        </h5>
-                    </a>
+            <!-- Construction -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <a href="#" class="text-decoration-none">
+                            <!-- Category title with icon -->
+                            <h5 class="card-title mb-0">
+                                <i class="fa-solid fa-helmet-safety fontawe-icon"></i>
+                                Construction
+                            </h5>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Construction -->
+            <!-- End Construction -->
 
-        <!-- Education -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <a href="#" class="text-decoration-none">
-                        <!-- Category title with icon -->
-                        <h5 class="card-title mb-0">
-                            <i class="fa-solid fa-school fontawe-icon"></i>
-                            Education
-                        </h5>
-                    </a>
+            <!-- Education -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <a href="#" class="text-decoration-none">
+                            <!-- Category title with icon -->
+                            <h5 class="card-title mb-0">
+                                <i class="fa-solid fa-school fontawe-icon"></i>
+                                Education
+                            </h5>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Education -->
+            <!-- End Education -->
 
-        <!--  Food & Beverages -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <a href="#" class="text-decoration-none">
-                        <!-- Category title with icon -->
-                        <h5 class="card-title mb-0">
-                            <i class="fa-solid fa-bowl-food fontawe-icon"></i>
-                            Food & Beverages
-                        </h5>
-                    </a>
+            <!--  Food & Beverages -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <a href="#" class="text-decoration-none">
+                            <!-- Category title with icon -->
+                            <h5 class="card-title mb-0">
+                                <i class="fa-solid fa-bowl-food fontawe-icon"></i>
+                                Food & Beverages
+                            </h5>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Food & Beverages -->
+            <!-- End Food & Beverages -->
 
-        <!--  Health & Medicine -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <a href="#" class="text-decoration-none">
-                        <!-- Category title with icon -->
-                        <h5 class="card-title mb-0">
-                            <i class="fa-solid fa-suitcase-medical fontawe-icon"></i>
-                            Health & Medicine
-                        </h5>
-                    </a>
+            <!--  Health & Medicine -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <a href="#" class="text-decoration-none">
+                            <!-- Category title with icon -->
+                            <h5 class="card-title mb-0">
+                                <i class="fa-solid fa-suitcase-medical fontawe-icon"></i>
+                                Health & Medicine
+                            </h5>
+                        </a>
+                    </div>
                 </div>
             </div>
+            <!-- End  Health & Medicine -->
+
+            {{-- Render from database. Will remove the above category once I fill database into category --}}
+            @if ($categories)
+                @foreach ($categories as $category)
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column justify-content-center">
+                                <a href="#" class="text-decoration-none">
+                                    <!-- Category title with icon -->
+                                    <h5 class="card-title mb-0">
+                                        @php
+                                            echo $category->logo_url;
+                                        @endphp
+                                        {{ $category->name }}
+                                    </h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @else
+            @endif
         </div>
-        <!-- End  Health & Medicine -->
 
     </div>
-
-</div>
 
 @stop
