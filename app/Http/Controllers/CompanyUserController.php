@@ -24,14 +24,40 @@ class CompanyUserController extends Controller
         $this->middleware('userAuth:companyUser')->except('logout');
     }
 
+    // Not being used due to caching problem that make request to img return 404
     public function uploadToCloudinary($image)
     {
         // ignore the warning (i'm not sure why it's there but it works, maybe I use low version of cloudinary package)
         $uploadedFileUrl = cloudinary()->upload($image->getRealPath(), [
-            'folder' => 'business-directory'
+            'folder' => 'business-directory',
+            // don't cache the image
+            'invalidate' => true,
+            'cache_invalidation' => true,
         ])->getSecurePath();
 
         return $uploadedFileUrl;
+    }
+
+    public function uploadToImgur($image) {
+        $client_id = env('IMGUR_CLIENT_ID');
+
+        // https://stackoverflow.com/questions/63060351/how-to-upload-images-to-imgur-using-laravel
+        // upload image to imgur api to my account
+        $client = new \GuzzleHttp\Client();
+        $response = $client->request('POST', 'https://api.imgur.com/3/image', [
+            'headers' => [
+                'authorization' => 'Client-ID ' . $client_id,
+                // if we want to store the image to our account
+                // 'authorization' => 'Bearer '. env('IMGUR_ACCESS_TOKEN'),
+                'content-type' => 'application/x-www-form-urlencoded',
+            ],
+            'form_params' => [
+                'image' => base64_encode(file_get_contents($image)),
+            ],
+        ]);
+
+        // get link
+        return json_decode($response->getBody()->getContents())->data->link;
     }
 
     public function profile($username, $userId)
@@ -259,7 +285,7 @@ class CompanyUserController extends Controller
 
         // https://stackoverflow.com/questions/17861412/calling-other-function-in-the-same-controller
         // call function inside the same controller
-        $logoUrl = $this->uploadToCloudinary($request->file('logo'));
+        $logoUrl = $this->uploadToImgur($request->file('logo'));
 
         $saveCompany = Company::create([
             'name' => $request->input('name'),
@@ -297,7 +323,7 @@ class CompanyUserController extends Controller
 
         // Save the company photos
         foreach ($request->file('photo_url') as $photo) {
-            $photoUrl = $this->uploadToCloudinary($photo);
+            $photoUrl = $this->uploadToImgur($photo);
 
             CompanyGallery::create([
                 'company_id' => $savedComapnyId,
@@ -431,7 +457,7 @@ class CompanyUserController extends Controller
 
         // dd($storeUpdateCompany);
         if ($request->file('logo')) {
-            $storeUpdateCompany['logo'] = $this->uploadToCloudinary($request->file('logo'));
+            $storeUpdateCompany['logo'] = $this->uploadToImgur($request->file('logo'));
         }
 
         // Update the company
@@ -478,7 +504,7 @@ class CompanyUserController extends Controller
                 foreach ($request->file('add_gallery') as $key => $photo) {
                     $addGallery = CompanyGallery::create([
                         'company_id' => $company_id,
-                        'photo_url' => $this->uploadToCloudinary($photo),
+                        'photo_url' => $this->uploadToImgur($photo),
                     ]);
                 }
             }

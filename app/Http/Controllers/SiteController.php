@@ -129,7 +129,7 @@ class SiteController extends Controller
     public function saveCompany(Request $request, $categoryName, $companyName)
     {
         if (!Auth::guard('normalUser')->check()) {
-            return redirect()->back()->with('error', 'You must login to save company');
+            return redirect()->back()->with('error', 'You must login as a normal user to save company');
         }
 
 
@@ -160,7 +160,7 @@ class SiteController extends Controller
     public function postFeedback(Request $request, $categoryName, $companyName)
     {
         if (!Auth::guard('normalUser')->check()) {
-            return redirect()->back()->with('error', 'You must login to post feedback on company');
+            return redirect()->back()->with('error', 'You must login as a normal user to post feedback on company');
         }
 
         $validate = Validator::make($request->all(), [
@@ -203,7 +203,7 @@ class SiteController extends Controller
     public function postReport(Request $request, $categoryName, $companyName)
     {
         if (!Auth::guard('normalUser')->check()) {
-            return redirect()->back()->with('error', 'You must login to report company');
+            return redirect()->back()->with('error', 'You must login as a normal user to report company');
         }
 
         $validate = Validator::make($request->all(), [
@@ -246,7 +246,7 @@ class SiteController extends Controller
     public function postRate(Request $request, $categoryName, $companyName)
     {
         if (!Auth::guard('normalUser')->check()) {
-            return redirect()->back()->with('error', 'You must login to rate company');
+            return redirect()->back()->with('error', 'You must login as a normal user to rate company');
         }
 
         $validate = Validator::make($request->all(), [
