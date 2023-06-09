@@ -11,7 +11,7 @@
     <!-- Main -->
     <main class="main-wrapper">
         <!-- Header section -->
-        <div class="container-fluid bg-light sticky-top">
+        <div class="container-fluid head-foot-bg sticky-top">
             @include('layout.menu')
         </div>
         <!-- End header section -->
@@ -21,7 +21,7 @@
         <!-- End Content -->
 
         <!-- Footer Section-->
-        <footer class="bg-light py-4">
+        <footer class="head-foot-bg py-4">
             @include('layout.footer')
         </footer>
 

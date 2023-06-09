@@ -34,6 +34,6 @@
 </div>
 
 <!-- Bottom section with copyright information -->
-<div class="bg-light text-center py-3">
+<!-- <div class="bg-light text-center py-3">
     <p class="mb-0">&copy; VOS Inc. All rights reserved.</p>
-</div>
+</div> -->
