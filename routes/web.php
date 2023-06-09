@@ -89,11 +89,19 @@ Route::controller(SiteController::class)->group(function() {
 
     Route::get('/category', 'categories')->name('category');
 
-    route::get('/category/{categoryName}', 'categoryShowCompany')->name('category.name');
+    route::get('/category/{categoryName}', 'categoryShowCompany')->name('category.categoryName');
 
     route::get('/category/{categoryName}/{companyName}', 'companyDetail')->name('category.categoryName.companyName');
 
     route::get('/search' , 'search')->name('search');
+
+    Route::post('/category/{categoryName}/{companyName}/save', 'saveCompany')->name('category.categoryName.companyName.save');
+
+    Route::post('/category/{categoryName}/{companyName}/feedback/post', 'postFeedback')->name('category.categoryName.companyName.feedback.post');
+
+    Route::post('/category/{categoryName}/{companyName}/report/post', 'postReport')->name('category.categoryName.companyName.report.post');
+
+    Route::post('/category/{categoryName}/{companyName}/rate/post', 'postRate')->name('category.categoryName.companyName.rate.post');
 
 });
 

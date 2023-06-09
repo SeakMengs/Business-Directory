@@ -29,7 +29,7 @@
     </main>
 
     <!-- Search -->
-    <script src="assets/js/search.js"></script>
+    {{-- <script src="assets/js/search.js"></script> --}}
 
 </body>
 

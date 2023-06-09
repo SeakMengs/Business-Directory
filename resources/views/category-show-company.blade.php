@@ -65,7 +65,10 @@
                         </div>
                     @endforeach
                 @else
-                    <span>There is no company in this category :(</span>
+                <div class="alert alert-danger" role="alert">
+                    No company found for <span class="text-danger">category</span> name <span
+                        class="text-danger">{{ $categoryName }}</span>
+                </div>
                 @endif
             </div>
     </div>

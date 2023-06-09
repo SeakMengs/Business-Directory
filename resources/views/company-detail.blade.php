@@ -15,6 +15,23 @@
         </nav>
         <!-- End Breadcrumbs -->
         @if ($company)
+            @if (session('success'))
+                <!-- Alert for success -->
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success!</strong> {{ session('success') }}
+                    <!-- Success message -->
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <!-- Button to close the alert -->
+                </div>
+            @elseif (session('error'))
+                <!-- Alert for error -->
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Error!</strong> {{ session('error') }}
+                    <!-- Error message -->
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <!-- Button to close the alert -->
+                </div>
+            @endif
             <!-- Start company detail overview -->
             <div class="row">
                 <div class="col-12">
@@ -34,7 +51,9 @@
                                     {{-- <p class="card-comdetail my-3">No.901, Kampuchea Krom Blvd (128), Sangkat Teuk Laak II,
                                         Khan
                                         Toul Kork , 12156, Phnom Penh</p> --}}
-                                        <address class="card-comdetail my-3">Address: {{ $company->street}}, {{ $company->district}}, {{ $company->commune}} , {{ $company->city }}</address>
+                                    <address class="card-comdetail my-3">Address: {{ $company->street }},
+                                        {{ $company->district }}, {{ $company->commune }} , {{ $company->city }}
+                                    </address>
                                     <!-- Contact details -->
                                     @if (count($company->contacts) >= 1)
                                         @foreach ($company->contacts as $contact)
@@ -48,7 +67,14 @@
                                             target="_blank">{{ $company->website }}</a></p>
                                     <!-- Action buttons -->
                                     <div class="d-grid gap-2 d-md-block">
-                                        <button class="btn btn-primary me-md-2 mb-2" type="button">Save Company</button>
+                                        <form style="display: contents"
+                                            action="/category/{{ $categoryName }}/{{ $company->name }}/save"
+                                            method="POST">
+                                            @csrf
+                                            <input type="hidden" value="{{ $company->company_id }}" name="company_id">
+                                            <button class="btn btn-primary me-md-2 mb-2" type="submit">Save
+                                                Company</button>
+                                        </form>
                                         <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal"
                                             data-bs-target="#feedbackModal">Give Feedback</button>
                                         <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal"
@@ -56,8 +82,8 @@
                                     </div>
                                     <!-- Star rating -->
                                     <!-- <div class="position-absolute bottom-0 end-0">
-                                                            <div class="star-rating" id="star-rating"></div>
-                                                        </div> -->
+                                                                                        <div class="star-rating" id="star-rating"></div>
+                                                                                    </div> -->
 
                                     <div class="card-footer d-flex justify-content-between align-items-center">
                                         <!-- Overall rating -->
@@ -93,10 +119,13 @@
                         </div>
                         <div class="modal-body">
                             <!-- Feedback form -->
-                            <form id="feedbackForm">
+                            <form id="feedbackForm"
+                                action="/category/{{ $categoryName }}/{{ $companyName }}/feedback/post" method="POST">
+                                @csrf
                                 <div class="mb-3">
+                                    <input type="hidden" value="{{ $company->company_id }}" name="company_id">
                                     <label for="feedback-message" class="form-label">Message</label>
-                                    <textarea class="form-control" id="feedback-message" rows="5" required></textarea>
+                                    <textarea class="form-control" id="feedback-message" rows="5" required name="feedback"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
@@ -111,21 +140,25 @@
 
 
             <!-- Report Modal -->
-            <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+            <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <!-- Modal title -->
                             <h5 class="modal-title" id="reportModalLabel">Report Company</h5>
                             <!-- Close button -->
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <!-- Report form -->
-                            <form>
+                            <form action="/category/{{ $categoryName }}/{{ $companyName }}/report/post" method="POST">
+                                @csrf
                                 <div class="mb-3">
+                                    <input type="hidden" value="{{ $company->company_id }}" name="company_id">
                                     <label for="report-reason" class="form-label">Reason for report</label>
-                                    <textarea class="form-control" id="report-reason" rows="5" required></textarea>
+                                    <textarea class="form-control" id="report-reason" rows="5" required name="report"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
@@ -218,16 +251,17 @@
                         <div class="tab-pane fade" id="feedback" role="tabpanel" aria-labelledby="feedback-tab">
                             <h5 class="mb-4">Feedback</h5>
                             @if (count($company->feedbacks) >= 1)
-                            <ul class="list-group">
-                                @foreach ($company->feedbacks as $feedback)
-                                    <li class="list-group-item">
-                                        {{-- https://stackoverflow.com/questions/47005539/strange-thing-in-laravel-where-on-dd-its-ok-without-its-not-an-object --}}
-                                        @if (isset($feedback->normalUser->name))
-                                            <strong>{{$feedback->normalUser->name}}:</strong> {{$feedback->feedback}}
-                                        @endif
-                                    </li>
-                                @endforeach
-                            </ul>
+                                <ul class="list-group">
+                                    @foreach ($company->feedbacks as $feedback)
+                                        <li class="list-group-item">
+                                            {{-- https://stackoverflow.com/questions/47005539/strange-thing-in-laravel-where-on-dd-its-ok-without-its-not-an-object --}}
+                                            @if (isset($feedback->normalUser->name))
+                                                <strong>{{ $feedback->normalUser->name }}:</strong>
+                                                {{ $feedback->feedback }}
+                                            @endif
+                                        </li>
+                                    @endforeach
+                                </ul>
                             @else
                                 <p>No feedbacks available</p>
                             @endif
@@ -237,6 +271,15 @@
                 </div>
             </div>
             <!-- End the 3 tabs -->
+
+            {{-- Hidden form to post rating star --}}
+            <form style="display: none" action="/category/{{ $categoryName }}/{{ $companyName }}/rate/post"
+                method="POST">
+                @csrf
+                <input type="hidden" value="{{ $company->company_id }}" name="company_id">
+                <input id="hidden-rate-input" type="hidden" name="rate_number">
+                <button id="hidden-rate-submit" type="submit" class="btn btn-primary">Submit</button>
+            </form>
         @else
             <span>No company found :(</span>
         @endif
@@ -248,14 +291,55 @@
     <script>
         // Select the rating container element
         const ratingContainer = document.querySelector("#star-rating");
+        const totalStar = 5;
+        // 	Null coalescing operator (??) to check if user has rated
+        const checkedStar = {{ $currentUserRateNumber ?? 0}}
+        const unCheckedStar = totalStar - checkedStar;
 
-        // Loop to create five star elements
-        for (let i = 0; i < 5; i++) {
-            const star = document.createElement("span");
-            star.classList.add("fa", "fa-star", "unchecked");
-            star.dataset.rating = i + 1;
-            ratingContainer.appendChild(star);
+        console.log(checkedStar);
+
+        function renderStar(ratingContainer, checkedStar, unCheckedStar) {
+            // reset the rating container
+            ratingContainer.innerHTML = "";
+
+            // Loop to create checked that user has rated
+            for (let i = 0; i < checkedStar; i++) {
+                const star = document.createElement("span");
+                star.classList.add("fa", "fa-star", "checked");
+                star.dataset.rating = i + 1;
+
+                // Event listener for click event to submit the rating
+                star.addEventListener('click', () => {
+                    const rateInput = document.querySelector('#hidden-rate-input');
+                    rateInput.value = star.dataset.rating;
+
+                    const rateSubmit = document.querySelector('#hidden-rate-submit');
+                    rateSubmit.click();
+                })
+
+                ratingContainer.appendChild(star);
+            }
+
+            // Loop the remaining stars that user has not rated
+            for (let i = 0; i < unCheckedStar; i++) {
+                const star = document.createElement("span");
+                star.classList.add("fa", "fa-star", "unchecked");
+                star.dataset.rating = checkedStar + i + 1;
+
+                // Event listener for click event to submit the rating
+                star.addEventListener('click', () => {
+                    const rateInput = document.querySelector('#hidden-rate-input');
+                    rateInput.value = star.dataset.rating;
+
+                    const rateSubmit = document.querySelector('#hidden-rate-submit');
+                    rateSubmit.click();
+                })
+
+                ratingContainer.appendChild(star);
+            }
         }
+
+        renderStar(ratingContainer, checkedStar, unCheckedStar);
 
         // Event listener for mouseover event
         ratingContainer.addEventListener("mouseover", event => {
@@ -276,11 +360,12 @@
 
         // Event listener for mouseout event
         ratingContainer.addEventListener("mouseout", event => {
-            // Reset all star classes to unchecked
-            ratingContainer.querySelectorAll("span").forEach(star => {
-                star.classList.remove("checked");
-                star.classList.add("unchecked");
-            });
+            // // Reset all star classes to unchecked
+            // ratingContainer.querySelectorAll("span").forEach(star => {
+            //     star.classList.remove("checked");
+            //     star.classList.add("unchecked");
+            // });
+            renderStar(ratingContainer, checkedStar, unCheckedStar);
         });
     </script>
 
