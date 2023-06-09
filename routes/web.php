@@ -72,9 +72,9 @@ use App\Http\Controllers\auth\RegisterController;
 // });
 
 //Add new listing
-Route::get('/add-listing', function () {
-    return view('/add-listing');
-});
+// Route::get('/add-listing', function () {
+//     return view('/add-listing');
+// });
 
 //Render Search Results
 Route::get('/search-results', function () {
@@ -92,6 +92,8 @@ Route::controller(SiteController::class)->group(function() {
     route::get('/category/{categoryName}', 'categoryShowCompany')->name('category.name');
 
     route::get('/category/{categoryName}/{companyName}', 'companyDetail')->name('category.categoryName.companyName');
+
+    route::get('/search' , 'search')->name('search');
 
 });
 

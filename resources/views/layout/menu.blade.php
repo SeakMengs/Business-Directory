@@ -63,15 +63,19 @@
     <h1 class="pb-3 header-align">Business Directory</h1>
     <div class="row justify-content-center pb-5">
         <div class="col-sm-8 col-md-6">
-            <div class="input-group">
-                <input type="text" class="form-control search-input" placeholder="Business type or name">
-                <select class="form-select" aria-label="Search by">
-                    <option selected>Search by</option>
-                    <option value="name">Name</option>
-                    <option value="category">Category</option>
-                </select>
-                <button class="btn btn-primary" type="button">Search</button>
-            </div>
+            <form action="/search" method="GET" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="Business type or name" name="search_query" value="{{ isset($search_query) ? $search_query : ""}}">
+                    <select class="form-select" aria-label="Search by" name="search_by">
+                        <option value="company" {{ isset($search_by) && $search_by == 'company' ? 'selected' : '' }}>
+                            Search company </option>
+                        <option value="category"
+                            {{ isset($search_by) && $search_by == 'category' ? 'selected' : '' }}>Search category
+                        </option>
+                    </select>
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

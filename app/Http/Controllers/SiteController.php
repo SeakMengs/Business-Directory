@@ -6,7 +6,6 @@ use App\Models\Company;
 use App\Models\Category;
 use App\Models\CompanyUser;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class SiteController extends Controller
 {
@@ -87,4 +86,28 @@ class SiteController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $search_by = $request->input('search_by');
+        $search_query = $request->input('search_query');
+        $result = [];
+
+        // if ($search_query) {
+            if ($search_by == 'company') {
+                $result = Company::with('contacts', 'rates', 'category')
+                    ->withAvg('rates as avg_star_rate', 'star_number')
+                    ->where('name', 'like', '%' . $search_query . '%')->get();
+            } else if ($search_by == 'category') {
+                $result = Category::where('name', 'like', '%' . $search_query . '%')->get();
+            }
+        // }
+
+        // return response()->json($result);
+
+        return view('search-results', [
+            'search_query' => $search_query,
+            'search_by' => $search_by,
+            'result' => $result,
+        ]);
+    }
 }
