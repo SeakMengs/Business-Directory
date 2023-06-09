@@ -17,4 +17,8 @@ class SavedCompany extends Model
         'company_id',
         'normal_user_id',
     ];
+
+    public function company() {
+        return $this->hasOne(Company::class, 'company_id', 'company_id');
+    }
 }

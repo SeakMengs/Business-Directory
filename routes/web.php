@@ -89,7 +89,7 @@ Route::controller(SiteController::class)->group(function() {
 
     Route::get('/category', 'categories')->name('category');
 
-    route::get('/category/{categoryName}', 'categoryName')->name('category.name');
+    route::get('/category/{categoryName}', 'categoryShowCompany')->name('category.name');
 
     route::get('/category/{categoryName}/{companyName}', 'companyDetail')->name('category.categoryName.companyName');
 
@@ -158,9 +158,13 @@ Route::controller(LogoutController::class)->group(function() {
 
 Route::middleware(['userAuth:normalUser'])->group(function () {
 
-    Route::get('/user/normal/{name}/profile', [NormalUserController::class, 'profile'])->name('user.normal.name.profile');
+    Route::get('/user/normal/{name}/{id}/profile', [NormalUserController::class, 'profile'])->name('user.normal.name.id.profile');
 
-    Route::get('/user/normal/{name}/profile/edit', [NormalUserController::class, 'editProfile'])->name('user.normal.name.profile.edit');
+    Route::get('/user/normal/{name}/{id}/profile/edit', [NormalUserController::class, 'editProfile'])->name('user.normal.name.id.profile.edit');
+
+    Route::post('/user/normal/{name}/{id}/profile/edit/save', [NormalUserController::class, 'saveEditProfile'])->name('user.normal.name.id.profile.edit.save');
+
+    Route::post('/user/normal/{name}/{id}/remove-saved-company', [NormalUserController::class, 'removeSavedCompany'])->name('user.normal.name.id.remove-saved-company');
 
 });
 

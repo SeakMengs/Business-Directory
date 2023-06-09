@@ -58,4 +58,8 @@ class Company extends Model
     public function savedCompanies() {
         return $this->hasMany(SavedCompany::class, 'company_id', 'company_id');
     }
+
+    public function category() {
+        return $this->hasOne(Category::class, 'category_id', 'category_id')->select(['category_id', 'name']);
+    }
 }

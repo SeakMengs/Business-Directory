@@ -320,20 +320,43 @@
             }
 
             let parentNode = document.getElementById('phone-parent')
-            parentNode.innerHTML +=
-                `<input type="text" name="add_phone_number[]" class="form-control new-phones mb-2" id="phone">`
+            //     `<input type="text" name="add_phone_number[]" class="form-control new-phones mb-2" id="phone">`
+
+            let newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.name = 'add_phone_number[]';
+            newInput.className = 'form-control new-phones mb-2';
+            newInput.id = 'phone';
+
+            parentNode.appendChild(newInput)
         }
 
         function renderNewServiceInput() {
             let parentNode = document.getElementById('service-parent')
-            parentNode.innerHTML +=
-                `<input type="text" name="add_service[]" class="form-control new-services mb-2" id="services">`
+
+            // I don't use innerHTML because it will remove all the child node which reset the value of the input
+            let newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.name = 'add_service[]';
+            newInput.className = 'form-control new-services mb-2';
+            newInput.id = 'services';
+
+            // `<input type="text" name="add_service[]" class="form-control new-services mb-2" id="services">`
+
+            parentNode.appendChild(newInput)
         }
 
         function renderNewGalleryInput() {
             let parentNode = document.getElementById('gallery-parent')
-            parentNode.innerHTML +=
-                `<input type="file" name="add_gallery[]" class="form-control new-galleries mb-2" id="gallery">`
+            // `<input type="file" name="add_gallery[]" class="form-control new-galleries mb-2" id="gallery">`
+
+            let newInput = document.createElement('input');
+            newInput.type = 'file';
+            newInput.name = 'add_gallery[]';
+            newInput.className = 'form-control new-galleries mb-2';
+            newInput.id = 'gallery';
+
+            parentNode.appendChild(newInput)
         }
     </script>
 @stop

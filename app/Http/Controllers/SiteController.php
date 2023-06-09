@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CompanyUser;
+use App\Models\Company;
 use App\Models\Category;
+use App\Models\CompanyUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +15,8 @@ class SiteController extends Controller
         return view('homepage');
     }
 
-    public function test() {
+    public function test()
+    {
         $data = CompanyUser::with('companies.feedbacks', 'companies.contacts')->get();
 
         // with id
@@ -30,7 +32,8 @@ class SiteController extends Controller
         // return response()->json($data);
     }
 
-    public function categories() {
+    public function categories()
+    {
         // TODO: query all categories
         $categories = Category::all();
 
@@ -40,32 +43,48 @@ class SiteController extends Controller
 
     }
 
-    public function categoryName($categoryName) {
-        // TODO: query category by category name
-        $category = Category::where('name', $categoryName)->first();
+    public function categoryShowCompany($categoryName)
+    {
+        // TODO: query companies join with contacts, rate by category name
+        $category_id = Category::where('name', $categoryName)->get();
 
-        return view('category-name', ['category' => $category]);
-    }
-
-    public function companyDetail($categoryName, $companyName) {
-        // TODO: query company by company name
-        $category = Category::where('name', $categoryName)->first();
-
-        if ($category) {
-            $company = $category->companies()->where('name', $companyName)->first();
-
-            if ($company) {
-                // return view('company-name', ['company' => $company]);
-                return response()->json([
-                    'company' => $company,
-                ]);
-            }
+        if (count($category_id) == 0) {
+            return view('category-show-company', [
+                'cateNotFound' => true,
+                'categoryName' => $categoryName,
+            ]);
+        } else {
+            $category_id = $category_id[0]->category_id;
         }
 
-        return response()->json([
-            'company' => $company,
+        $companies = Company::with('contacts', 'rates')
+            ->withAvg('rates as avg_star_rate', 'star_number')
+            ->where('category_id', $category_id)->get();
+
+        // return response()->json($companies);
+
+        return view('category-show-company', [
+            'cateNotFound' => false,
+            'companies' => $companies,
+            'categoryName' => $categoryName,
         ]);
-        // return view('company-detail');
+    }
+
+    public function companyDetail($categoryName, $companyName)
+    {
+        // TODO: query company by company name join with contacts, rates, feedbacks service rates
+        // https://laravel.com/docs/8.x/eloquent-relationships#average-aggregate
+        $company = Company::with('contacts', 'rates', 'feedbacks.normalUser', 'services', 'rates')
+            ->withAvg('rates as avg_star_rate', 'star_number')
+            ->where('name', $companyName)->first();
+
+        // return response()->json($company);
+
+        return view('company-detail', [
+            'company' => $company,
+            'categoryName' => $categoryName,
+            'companyName' => $companyName,
+        ]);
     }
 
 }

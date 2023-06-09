@@ -149,7 +149,7 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="card-body d-flex flex-column justify-content-center">
-                                <a href="#" class="text-decoration-none">
+                                <a href="/category/{{ $category->name }}" class="text-decoration-none">
                                     <!-- Category title with icon -->
                                     <h5 class="card-title mb-0">
                                         @php
@@ -163,6 +163,7 @@
                     </div>
                 @endforeach
             @else
+                <p>No category found</p>
             @endif
         </div>
 

@@ -165,11 +165,6 @@ class CompanyUserController extends Controller
         ]);
     }
 
-    public function saveCompanyEdit(Request $request)
-    {
-        return 'TODO later';
-    }
-
     public function addCompany($username, $userId)
     {
         // TODO: query all categories

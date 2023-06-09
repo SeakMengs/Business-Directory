@@ -18,4 +18,9 @@ class Feedback extends Model
         'company_id',
         'normal_user_id',
     ];
+
+    public function normalUser() {
+        // https://stackoverflow.com/questions/19852927/get-specific-columns-using-with-function-in-laravel-eloquent
+        return $this->belongsTo(NormalUser::class, 'normal_user_id', 'normal_user_id')->select(['normal_user_id', 'name']);
+    }
 }

@@ -42,4 +42,9 @@ class NormalUser extends Model implements Authenticatable
     {
         return $value == 1 ? 'normalUser' : null;
     }
+
+    public function savedCompanies()
+    {
+        return $this->hasMany(SavedCompany::class, 'normal_user_id');
+    }
 }

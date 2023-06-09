@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\NormalUser;
+use App\Models\SavedCompany;
 use Illuminate\Http\Request;
 
 class NormalUserController extends Controller
@@ -13,11 +14,10 @@ class NormalUserController extends Controller
         $this->middleware('userAuth:normalUser')->except('logout');
     }
 
-    public function profile($name)
+    public function profile($username, $userId)
     {
-        // this is unofficial query. created for testing purposes
-        // first() returns the first record that matches the query
-        $data = NormalUser::where('name', $name)->first();
+        // TODO:: query normal_user where userId match userId join with savedCompany and company. the company must be joined with category
+        $data = NormalUser::with('savedCompanies.company.category')->where('normal_user_id', $userId)->first();
 
         if (!$data) {
             return response()->json([
@@ -25,31 +25,49 @@ class NormalUserController extends Controller
             ], 404);
         }
 
-        return view('normal_user_profile');
+        // return response()->json($data);
+
+        return view('normal_user_profile', [
+            'user' => $data,
+        ]);
     }
 
-
-    public function editProfile($username)
+    public function editProfile($username, $userId)
     {
-        // TODO: query normal_user where username match username
-        $data = NormalUser::where('name', $username)->first();
+        // TODO:: query normal_user where userId match userId
+        $data = NormalUser::where('normal_user_id', $userId)->first();
 
         if (!$data) {
             return response()->json([
                 'message' => 'User not found',
             ], 404);
         }
-    
+
         return view('edit-normaluser-account', [
             'user' => $data,
         ]);
 
-       
     }
 
-    public function saveProfileEdit(Request $request)
+    public function saveEditProfile(Request $request, $username, $userId)
     {
         return 'TODO later';
     }
 
+    public function removeSavedCompany(Request $request, $username, $userId)
+    {
+        $company_id = $request->query('company_id');
+
+        if ($company_id) {
+            // we check by user_id and company_id because we prevent other user to delete other user's saved company.
+            $removeSavedCompany = SavedCompany::where([
+                'normal_user_id' => $userId,
+                'company_id' => $company_id,
+            ])->delete();
+
+            return redirect()->back()->with('success', 'Company has been removed from your saved company list');
+        } else {
+            return redirect()->back()->with('error', 'Remove saved company failed');
+        }
+    }
 }
