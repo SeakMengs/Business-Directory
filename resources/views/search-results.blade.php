@@ -20,10 +20,10 @@
             <span>| {{count($result)}} result{{ count($result) > 0 ? 's' : ''}}</span>
         </h6>
         <!-- End Breadcrumbs -->
+        
         @if (count($result) > 0)
             @if ($search_by == 'category')
                 <div class="row row-cols-1 row-cols-md-4 g-4">
-
                     @foreach ($result as $category)
                         <div class="col">
                             <div class="card h-100">
@@ -43,11 +43,11 @@
                     @endforeach
                 </div>
             @elseif ($search_by == 'company')
-                <div class="row row-cols-1 row-cols-md-3">
+                <div class="row row-cols-1">
                     @foreach ($result as $company)
                         <!-- Start of First Company -->
                         <div class="col mb-4">
-                            <div class="card h-100">
+                            <div class="card h-100 customtest-card">
                                 <a href="/category/{{ $company->category->name }}/{{ $company->name }}">
                                     <!-- Company logo -->
                                     <img src="{{ $company->logo }}" class="card-img-top company-logo" alt="Company Logo">

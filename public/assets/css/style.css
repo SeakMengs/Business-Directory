@@ -4,6 +4,15 @@ body {
     background-repeat: no-repeat;
 }
 
+ /* for the search-results card size */
+ .customtest-card {
+    /* max-width: 350px; */
+    height: 210px;
+    width: 414px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Set font and link colors */
 body {
     font-family: 'Open Sans', sans-serif;

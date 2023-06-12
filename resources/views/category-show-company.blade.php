@@ -14,8 +14,11 @@
             </ol>
         </nav>
         <!-- End Breadcrumbs -->
+        
         @if ($cateNotFound)
-            <span>Category does not exist :(</span>
+            <div class="alert alert-danger" role="alert">
+                Category does not exist :(
+            </div>
         @else
             <div class="row row-cols-1 row-cols-md-3">
                 @if (count($companies) >= 1)
@@ -73,5 +76,6 @@
             </div>
     </div>
     @endif
+</div>
 
 @stop
