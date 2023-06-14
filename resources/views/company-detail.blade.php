@@ -72,13 +72,18 @@
                                             method="POST">
                                             @csrf
                                             <input type="hidden" value="{{ $company->company_id }}" name="company_id">
-                                            <button class="btn btn-primary me-md-2 mb-2" type="submit">Save
-                                                Company</button>
+                                            <button class="btn btn-primary me-md-2 mb-2" type="submit">
+                                            <i class="fa-regular fa-bookmark fontawe-icontwo"></i> Save Company
+                                            </button>
                                         </form>
                                         <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal"
-                                            data-bs-target="#feedbackModal">Give Feedback</button>
+                                            data-bs-target="#feedbackModal">
+                                            <i class="fa-regular fa-comment fontawe-icontwo"></i>Give Feedback
+                                        </button>
                                         <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal"
-                                            data-bs-target="#reportModal">Report Company</button>
+                                            data-bs-target="#reportModal">
+                                            <i class="fa-regular fa-flag fontawe-icontwo"></i> Report Company
+                                        </button>
                                     </div>
                                     <!-- Star rating -->
                                     <!-- <div class="position-absolute bottom-0 end-0">
