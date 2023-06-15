@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light mb-3">
+<nav class="navbar navbar-expand-md mb-3">
     <div class="container">
         <!-- Navigation Brand -->
         <a class="navbar-brand" href="/">VOS</a>
@@ -13,12 +13,12 @@
                 @if (!Auth::guard('companyUser')->check() && !Auth::guard('normalUser')->check())
                     <!-- Login button -->
                     <li class="nav-item">
-                        <a class="btn btn-outline-primary me-2" href="/login">Login</a>
+                        <a class="btn btn-outline-primary me-2 home-btn" href="/login">Login</a>
                     </li>
 
                     <!-- Sign up button -->
                     <li class="nav-item">
-                        <a class="btn btn-primary" href="/sign-up">Sign-up</a>
+                        <a class="btn btn-primary home-btn" href="/sign-up">Sign-up</a>
                     </li>
                 @elseif (Auth::guard('normalUser')->check())
                     <!-- Logout For normal user -->
@@ -73,7 +73,7 @@
                             {{ isset($search_by) && $search_by == 'category' ? 'selected' : '' }}>Search category
                         </option>
                     </select>
-                    <button class="btn btn-primary" type="submit">Search</button>
+                    <button class="btn btn-primary home-btn" type="submit">Search</button>
                 </div>
             </form>
         </div>
@@ -82,8 +82,6 @@
 <!-- End Search bar -->
 
 <!-- For the dropdown -->
-<script>
-    $(document).ready(function() {
-        $('.dropdown-toggle').dropdown();
-    });
-</script>
+<!-- Include the JavaScript file -->
+<script src="{{ asset('assets/js/search-dropdown.js') }}"></script>
+

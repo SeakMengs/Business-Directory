@@ -34,6 +34,13 @@ a:hover {
     justify-content: space-between;
 }
 
+/* For login and signup button */
+
+.home-btn:hover{
+    background-color: #36714b !important;
+    border-color: #214f6a;
+}
+
 /* Head and foot bg color */
 .head-foot-bg{
     /* background: linear-gradient(to bottom, #f7f7f7, #eaeaea); */
@@ -579,3 +586,5 @@ outline: none;
         align-items: center !important;
     }
 }
+
+

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light mb-3">
+<nav class="navbar navbar-expand-md mb-3">
     <div class="container">
         <!-- Navigation Brand -->
         <a class="navbar-brand" href="/">VOS</a>

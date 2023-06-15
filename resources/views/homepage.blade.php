@@ -9,7 +9,7 @@
             </div>
             <div class="col text-end">
                 <!-- Link to view more categories -->
-                <a href="/category" class="btn btn-primary btn-sm">View More</a>
+                <a href="/category" class="btn btn-primary btn-sm home-btn">View More</a>
             </div>
         </div>
 
