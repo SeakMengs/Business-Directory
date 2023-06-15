@@ -26,6 +26,7 @@ class CreateCompanyUserTable extends Migration
             $table->tinyInteger('role')->default(2);
             $table->boolean('is_banned')->default(false);
             $table->unsignedBigInteger('ban_by_admin_id')->nullable();
+            $table->text('ban_reason')->nullable();
             $table->text('profile_url')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

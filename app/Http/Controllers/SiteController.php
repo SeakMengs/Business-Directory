@@ -22,7 +22,7 @@ class SiteController extends Controller
 
     public function test()
     {
-        $data = CompanyUser::with('companies.feedbacks', 'companies.contacts')->get();
+        $data = CompanyUser::with('companies.feedbacks.normalUser', 'companies.contacts')->get();
 
         // with id
         // $data = CompanyUser::with('companies.feedbacks')->where('company_user_id', 2)->get();

@@ -11,7 +11,7 @@ class AdminUser extends Model
 
     protected $table = 'admin_user';
 
-    protected $primaryKey = 'admin_user_id';
+    protected $primaryKey = 'admin_id';
 
     protected $fillable = [
         'name',

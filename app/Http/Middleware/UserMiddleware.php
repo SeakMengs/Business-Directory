@@ -38,6 +38,7 @@ class UserMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
+    // role is the middleware parameter
     public function handle(Request $request, Closure $next, $role)
     {
 

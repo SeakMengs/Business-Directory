@@ -285,15 +285,13 @@
                 <input id="hidden-rate-input" type="hidden" name="rate_number">
                 <button id="hidden-rate-submit" type="submit" class="btn btn-primary">Submit</button>
             </form>
+            <input type="text" id="currentUserRateNumber" value="{{ $currentUserRateNumber ?? 0}}">
         @else
             <span>No company found :(</span>
         @endif
 
     </div>
 
-
     <!-- Script for rating -->
     <script src="{{ asset('assets/js/company-detail.js') }}"></script>
-
-
 @stop
