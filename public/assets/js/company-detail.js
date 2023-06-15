@@ -2,7 +2,7 @@
 const ratingContainer = document.querySelector("#star-rating");
 const totalStar = 5;
 // 	Null coalescing operator (??) to check if user has rated
-const checkedStar = currentUserRateNumber;
+const checkedStar = {{ $currentUserRateNumber ?? 0}}
 const unCheckedStar = totalStar - checkedStar;
 
 console.log(checkedStar);

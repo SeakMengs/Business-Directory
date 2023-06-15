@@ -294,9 +294,6 @@
 
     <!-- Script for rating -->
     <script src="{{ asset('assets/js/company-detail.js') }}"></script>
-    <script>
-        var currentUserRateNumber = {{ $currentUserRateNumber ?? 0 }};
-    </script>
-    
+
 
 @stop
