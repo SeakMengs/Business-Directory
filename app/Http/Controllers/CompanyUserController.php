@@ -25,18 +25,18 @@ class CompanyUserController extends Controller
     }
 
     // Not being used due to caching problem that make request to img return 404
-    public function uploadToCloudinary($image)
-    {
-        // ignore the warning (i'm not sure why it's there but it works, maybe I use low version of cloudinary package)
-        $uploadedFileUrl = cloudinary()->upload($image->getRealPath(), [
-            'folder' => 'business-directory',
-            // don't cache the image
-            'invalidate' => true,
-            'cache_invalidation' => true,
-        ])->getSecurePath();
+    // public function uploadToCloudinary($image)
+    // {
+    //     // ignore the warning (i'm not sure why it's there but it works, maybe I use low version of cloudinary package)
+    //     $uploadedFileUrl = cloudinary()->upload($image->getRealPath(), [
+    //         'folder' => 'business-directory',
+    //         // don't cache the image
+    //         'invalidate' => true,
+    //         'cache_invalidation' => true,
+    //     ])->getSecurePath();
 
-        return $uploadedFileUrl;
-    }
+    //     return $uploadedFileUrl;
+    // }
 
     public function uploadToImgur($image) {
         $client_id = env('IMGUR_CLIENT_ID');
