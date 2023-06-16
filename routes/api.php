@@ -28,23 +28,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //* Route with controller
 Route::controller(SiteController::class)->group(function() {
 
-    Route::get('/', 'home')->name('home');
+    Route::get('/', 'home')->name('api.home');
 
-    Route::get('/category', 'categories')->name('category');
+    Route::get('/category', 'categories')->name('api.category');
 
-    route::get('/category/{categoryName}', 'categoryShowCompany')->name('category.categoryName');
+    route::get('/category/{categoryName}', 'categoryShowCompany')->name('api.category.categoryName');
 
-    route::get('/category/{categoryName}/{companyName}', 'companyDetail')->name('category.categoryName.companyName');
+    route::get('/category/{categoryName}/{companyName}', 'companyDetail')->name('api.category.categoryName.companyName');
 
-    route::get('/search' , 'search')->name('search');
+    route::get('/search' , 'search')->name('api.search');
 
-    Route::post('/category/{categoryName}/{companyName}/save', 'saveCompany')->name('category.categoryName.companyName.save');
+    Route::post('/category/{categoryName}/{companyName}/save', 'saveCompany')->name('api.category.categoryName.companyName.save');
 
-    Route::post('/category/{categoryName}/{companyName}/feedback/post', 'postFeedback')->name('category.categoryName.companyName.feedback.post');
+    Route::post('/category/{categoryName}/{companyName}/feedback/post', 'postFeedback')->name('api.category.categoryName.companyName.feedback.post');
 
-    Route::post('/category/{categoryName}/{companyName}/report/post', 'postReport')->name('category.categoryName.companyName.report.post');
+    Route::post('/category/{categoryName}/{companyName}/report/post', 'postReport')->name('api.category.categoryName.companyName.report.post');
 
-    Route::post('/category/{categoryName}/{companyName}/rate/post', 'postRate')->name('category.categoryName.companyName.rate.post');
+    Route::post('/category/{categoryName}/{companyName}/rate/post', 'postRate')->name('api.category.categoryName.companyName.rate.post');
 
 });
 
@@ -52,16 +52,16 @@ Route::controller(SiteController::class)->group(function() {
 // Group route by RegisterController
 Route::controller(RegisterController::class)->group(function() {
 
-    Route::get('/sign-up', 'signUpOption')->name('sign-up');
+    Route::get('/sign-up', 'signUpOption')->name('api.sign-up');
 
-    Route::get('sign-up/company', 'companyUserSignUpView')->name('sign-up.company');
+    Route::get('sign-up/company', 'companyUserSignUpView')->name('api.sign-up.company');
 
-    Route::get('sign-up/user', 'normalUserSignUpView')->name('sign-up.user');
+    Route::get('sign-up/user', 'normalUserSignUpView')->name('api.sign-up.user');
 
     // Route for saving user to database
-    Route::post('/register/company', 'companyUserRegister')->name('register.company');
+    Route::post('/register/company', 'companyUserRegister')->name('api.register.company');
 
-    Route::post('/register/user', 'normalUserRegister')->name('register.user');
+    Route::post('/register/user', 'normalUserRegister')->name('api.register.user');
 
 });
 
@@ -69,16 +69,16 @@ Route::controller(RegisterController::class)->group(function() {
 // Group route by LoginController
 Route::controller(LoginController::class)->group(function() {
 
-    Route::get('/login', 'loginOption')->name('login');
+    Route::get('/login', 'loginOption')->name('api.login');
 
-    Route::get('login/company', 'companyUserLoginView')->name('login.company');
+    Route::get('login/company', 'companyUserLoginView')->name('api.login.company');
 
-    Route::get('login/user', 'normalUserLoginView')->name('login.user');
+    Route::get('login/user', 'normalUserLoginView')->name('api.login.user');
 
     // Route for saving user to database
-    Route::post('/logging-in/company', 'companyUserLogin')->name('logging-in.company');
+    Route::post('/logging-in/company', 'companyUserLogin')->name('api.logging-in.company');
 
-    Route::post('/logging-in/user', 'normalUserLogin')->name('logging-in.user');
+    Route::post('/logging-in/user', 'normalUserLogin')->name('api.logging-in.user');
 
 });
 
@@ -86,9 +86,9 @@ Route::controller(LoginController::class)->group(function() {
 // Group route by LogoutController
 Route::controller(LogoutController::class)->group(function() {
 
-    Route::get('/user/normal/logout', 'logNormalUserOut')->name('user.normal.logout');
+    Route::get('/user/normal/logout', 'logNormalUserOut')->name('api.user.normal.logout');
 
-    Route::get('/user/company/logout', 'logCompanyUserOut')->name('user.company.logout');
+    Route::get('/user/company/logout', 'logCompanyUserOut')->name('api.user.company.logout');
 
 });
 
@@ -111,34 +111,34 @@ Route::controller(LogoutController::class)->group(function() {
 
 Route::middleware(['userAuth:normalUser'])->group(function () {
 
-    Route::get('/user/normal/{name}/{id}/profile', [NormalUserController::class, 'profile'])->name('user.normal.name.id.profile');
+    Route::get('/user/normal/{name}/{id}/profile', [NormalUserController::class, 'profile'])->name('api.user.normal.name.id.profile');
 
-    Route::get('/user/normal/{name}/{id}/profile/edit', [NormalUserController::class, 'editProfile'])->name('user.normal.name.id.profile.edit');
+    Route::get('/user/normal/{name}/{id}/profile/edit', [NormalUserController::class, 'editProfile'])->name('api.user.normal.name.id.profile.edit');
 
-    Route::post('/user/normal/{name}/{id}/profile/edit/save', [NormalUserController::class, 'saveEditProfile'])->name('user.normal.name.id.profile.edit.save');
+    Route::post('/user/normal/{name}/{id}/profile/edit/save', [NormalUserController::class, 'saveEditProfile'])->name('api.user.normal.name.id.profile.edit.save');
 
-    Route::post('/user/normal/{name}/{id}/remove-saved-company', [NormalUserController::class, 'removeSavedCompany'])->name('user.normal.name.id.remove-saved-company');
+    Route::post('/user/normal/{name}/{id}/remove-saved-company', [NormalUserController::class, 'removeSavedCompany'])->name('api.user.normal.name.id.remove-saved-company');
 
 });
 
 Route::middleware(['userAuth:companyUser'])->group(function () {
 
-    Route::get('/user/company/{name}/{id}/profile', [CompanyUserController::class, 'profile'])->name('user.company.name.id.profile');
+    Route::get('/user/company/{name}/{id}/profile', [CompanyUserController::class, 'profile'])->name('api.user.company.name.id.profile');
 
-    Route::get('/user/company/{name}/{id}/profile/edit', [CompanyUserController::class, 'editProfile'])->name('user.company.name.id.profile.edit');
+    Route::get('/user/company/{name}/{id}/profile/edit', [CompanyUserController::class, 'editProfile'])->name('api.user.company.name.id.profile.edit');
 
-    Route::post('/user/company/{name}/{id}/profile/edit/save', [CompanyUserController::class, 'saveEditProfile'])->name('user.company.name.id.profile.edit.save');
+    Route::post('/user/company/{name}/{id}/profile/edit/save', [CompanyUserController::class, 'saveEditProfile'])->name('api.user.company.name.id.profile.edit.save');
 
 
-    Route::get('/user/company/{name}/{id}/add-company', [CompanyUserController::class, 'addCompany'])->name('user.company.name.id.add-company');
+    Route::get('/user/company/{name}/{id}/add-company', [CompanyUserController::class, 'addCompany'])->name('api.user.company.name.id.add-company');
 
-    Route::post('/user/company/{name}/{id}/add-company/save', [CompanyUserController::class, 'addCompanySave'])->name('user.company.name.id.add-company.save');
+    Route::post('/user/company/{name}/{id}/add-company/save', [CompanyUserController::class, 'addCompanySave'])->name('api.user.company.name.id.add-company.save');
 
-    Route::get('/user/company/{name}/{id}/edit-company', [CompanyUserController::class, 'editCompany'])->name('user.company.name.id.edit-company');
+    Route::get('/user/company/{name}/{id}/edit-company', [CompanyUserController::class, 'editCompany'])->name('api.user.company.name.id.edit-company');
 
-    Route::patch('/user/company/{name}/{id}/edit-company/save', [CompanyUserController::class, 'saveEditCompany'])->name('user.company.name.id.edit-company.save');
+    Route::patch('/user/company/{name}/{id}/edit-company/save', [CompanyUserController::class, 'saveEditCompany'])->name('api.user.company.name.id.edit-company.save');
 
-    Route::get('/user/company/{name}/{id}/remove-company', [CompanyUserController::class, 'removeCompany'])->name('user.company.name.id.removeCompany');
+    Route::get('/user/company/{name}/{id}/remove-company', [CompanyUserController::class, 'removeCompany'])->name('api.user.company.name.id.removeCompany');
 
     // Route::get('/test', [SiteController::class, 'test']);
 
