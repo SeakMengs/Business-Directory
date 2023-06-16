@@ -23,10 +23,10 @@
         
         @if (count($result) > 0)
             @if ($search_by == 'category')
-                <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="row row-cols-1 row-cols-md-1 g-4">
                     @foreach ($result as $category)
                         <div class="col">
-                            <div class="card h-100">
+                            <div class="card h-100 category-column">
                                 <div class="card-body d-flex flex-column justify-content-center">
                                     <a href="/category/{{ $category->name }}" class="text-decoration-none">
                                         <!-- Category title with icon -->

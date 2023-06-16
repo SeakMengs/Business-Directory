@@ -13,6 +13,15 @@ body {
     margin-right: auto;
 }
 
+.category-column {
+    /* height: 53.2px; */
+    width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
 /* Set font and link colors */
 body {
     font-family: 'Open Sans', sans-serif;
@@ -77,10 +86,17 @@ a:hover {
 .navbar-toggler {
     background-color: #fff;
     border: none;
+    padding: 0.25rem 0.5rem;
+    transition: background-color 0.3s ease;
 }
 
 .navbar-toggler:focus {
     outline: none;
+    color: white;
+}
+
+.navbar-toggler:hover {
+    background-color: #f8f9fa;
 }
 
 
