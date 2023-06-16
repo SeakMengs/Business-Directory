@@ -51,7 +51,7 @@
                                     {{-- <p class="card-comdetail my-3">No.901, Kampuchea Krom Blvd (128), Sangkat Teuk Laak II,
                                         Khan
                                         Toul Kork , 12156, Phnom Penh</p> --}}
-                                    <address class="card-comdetail my-3">Address: {{ $company->street }},
+                                    <address class="card-comdetail my-3">Address: {{ $company->street }}, {{ $company->village }},
                                         {{ $company->district }}, {{ $company->commune }} , {{ $company->city }}
                                     </address>
                                     <!-- Contact details -->
@@ -72,15 +72,15 @@
                                             method="POST">
                                             @csrf
                                             <input type="hidden" value="{{ $company->company_id }}" name="company_id">
-                                            <button class="btn btn-primary me-md-2 mb-2" type="submit">
+                                            <button class="btn btn-primary me-md-2 mb-2 home-btn" type="submit">
                                             <i class="fa-regular fa-bookmark fontawe-icontwo"></i> Save Company
                                             </button>
                                         </form>
-                                        <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal"
+                                        <button class="btn btn-primary me-md-2 mb-2 home-btn" type="button" data-bs-toggle="modal"
                                             data-bs-target="#feedbackModal">
                                             <i class="fa-regular fa-comment fontawe-icontwo"></i>Give Feedback
                                         </button>
-                                        <button class="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="modal"
+                                        <button class="btn btn-primary me-md-2 mb-2 home-btn" type="button" data-bs-toggle="modal"
                                             data-bs-target="#reportModal">
                                             <i class="fa-regular fa-flag fontawe-icontwo"></i> Report Company
                                         </button>
