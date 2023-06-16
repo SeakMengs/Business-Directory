@@ -11,15 +11,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 @if (!Auth::guard('companyUser')->check() && !Auth::guard('normalUser')->check())
-                    <!-- Login button -->
-                    <li class="nav-item">
-                        <a class="btn btn-outline-primary me-2 home-btn" href="/login">Login</a>
-                    </li>
+                    @if (!request()->is('login*') && !request()->is('sign-up*'))
+                        <!-- Login button -->
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary me-2 home-btn" href="/login">Login</a>
+                        </li>
 
-                    <!-- Sign up button -->
-                    <li class="nav-item">
-                        <a class="btn btn-primary home-btn" href="/sign-up">Sign-up</a>
-                    </li>
+                        <!-- Sign up button -->
+                        <li class="nav-item">
+                            <a class="btn btn-primary home-btn" href="/sign-up">Sign-up</a>
+                        </li>
+                    @endif
                 @elseif (Auth::guard('normalUser')->check())
                     <!-- Logout For normal user -->
                     <div class="dropdown">

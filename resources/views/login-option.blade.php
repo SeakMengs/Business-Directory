@@ -1,4 +1,4 @@
-@extends('layout.mastertwo')
+@extends('layout.master')
 
 @section('dyncontent')
 
