@@ -10,20 +10,20 @@ class LoginController extends Controller
 {
     public function loginOption()
     {
-        // return view('login-option');
-        return response()->json(['view' => view('login-option')]);
+        return view('login-option');
+        
     }
 
     public function companyUserLoginView()
     {
-        // return view('company-user-login');
-        return response()->json(['view' => view('company-user-login')]);
+        return view('company-user-login');
+       
     }
 
     public function normalUserLoginView()
     {
-        // return view('normal-user-login');
-        return response()->json(['view' => view('normal-user-login')]);
+        return view('normal-user-login');
+      
     }
 
     public function companyUserLogin(Request $request)
@@ -50,14 +50,21 @@ class LoginController extends Controller
                 // logout from companyUser guard if normalUser is logged in
                 Auth::guard('normalUser')->logout();
 
-                return redirect()->route('user.company.name.id.profile', [
+                // return redirect()->route('user.company.name.id.profile', [
+                //     'name' => Auth::guard('companyUser')->user()->name,
+                //     'id' => Auth::guard('companyUser')->user()->company_user_id
+                // ])->with('success', 'Login success');
+
+                return response()->json([
                     'name' => Auth::guard('companyUser')->user()->name,
-                    'id' => Auth::guard('companyUser')->user()->company_user_id
-                ])->with('success', 'Login success');
+                    'id' => Auth::guard('companyUser')->user()->company_user_id,
+                    'success' => 'Login success'
+                ], 200);
             }
 
         } else {
-            return redirect()->back()->withErrors(['error' => 'Credentials does not match']);
+            // return redirect()->back()->withErrors(['error' => 'Credentials does not match']);
+            return response()->json(['error' => 'Credentials does not match'], 400);
         }
     }
 
@@ -85,13 +92,21 @@ class LoginController extends Controller
                 // logout from normalUser guard if companyUser is logged in
                 Auth::guard('companyUser')->logout();
 
-                return redirect()->route('user.normal.name.id.profile', [
+                // return redirect()->route('user.normal.name.id.profile', [
+                //     'name' => Auth::guard('normalUser')->user()->name,
+                //     'id' => Auth::guard('normalUser')->user()->normal_user_id
+                // ])->with('success', 'Login success');
+                
+                return response()->json([
                     'name' => Auth::guard('normalUser')->user()->name,
-                    'id' => Auth::guard('normalUser')->user()->normal_user_id
-                ])->with('success', 'Login success');
+                    'id' => Auth::guard('normalUser')->user()->normal_user_id,
+                    'success' => 'Login success'
+                ], 200);
+
             }
         } else {
-            return redirect()->back()->withErrors(['error' => 'Credentials does not match']);
+            // return redirect()->back()->withErrors(['error' => 'Credentials does not match']);
+            return response()->json(['error' => 'Credentials does not match'], 400);
         }
     }
 }

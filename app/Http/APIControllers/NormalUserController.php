@@ -31,13 +31,8 @@ class NormalUserController extends Controller
         // return view('normal_user_profile', [
         //     'user' => $data,
         // ]);
-        return response()
-        // ->view('edit-normaluser-account')
-        ->json([
-        'view' => 'normal_user_profile',
-        'data' => [
+        return response()->json([
             'user' => $data,
-        ]
     ]);
     }
 
@@ -55,13 +50,8 @@ class NormalUserController extends Controller
         // return view('edit-normaluser-account', [
         //     'user' => $data,
         // ]);
-        return response()
-            // ->view('edit-normaluser-account')
-            ->json([
-            'view' => 'edit-normaluser-account',
-            'data' => [
+        return response()->json([
                 'user' => $data,
-            ]
         ]);
 
     }
@@ -136,12 +126,18 @@ class NormalUserController extends Controller
         $saveChange = normalUser::where('normal_user_id', $userId)->update($storeInput);
 
         if (!$saveChange) {
-            return redirect()->back()->withErrors('error', 'Failed to save changes');
+            // return redirect()->back()->withErrors('error', 'Failed to save changes');
+            return response()->json(['error' => 'Failed to save changes'], 400);
         } else {
-            return redirect()->route('user.normal.name.id.profile.edit', [
+            // return redirect()->route('user.normal.name.id.profile.edit', [
+            //     'name' => $storeInput['name'],
+            //     'id' => $userId,
+            // ])->with('success', 'Changes saved');
+
+            return response()->json([
                 'name' => $storeInput['name'],
                 'id' => $userId,
-            ])->with('success', 'Changes saved');
+                'success' => 'Changes saved'], 200);
         }
     }
 
@@ -156,9 +152,11 @@ class NormalUserController extends Controller
                 'company_id' => $company_id,
             ])->delete();
 
-            return redirect()->back()->with('success', 'Company has been removed from your saved company list');
+            // return redirect()->back()->with('success', 'Company has been removed from your saved company list');
+            return response()->json(['success' => 'Company has been removed from your saved company list'], 200);
         } else {
-            return redirect()->back()->with('error', 'Remove saved company failed');
+            // return redirect()->back()->with('error', 'Remove saved company failed');
+            return response()->json(['error' => 'Remove saved company failed'], 400);
         }
     }
 }

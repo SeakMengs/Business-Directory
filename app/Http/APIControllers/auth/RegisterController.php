@@ -13,22 +13,19 @@ class RegisterController extends Controller
 {
     public function signUpOption()
     {
-        // return view('sign-up-option');
-        return response()->json(['view' => view('sign-up-option')]);
+        return view('sign-up-option');
 
     }
 
     public function normalUserSignUpView()
     {
-        // return view('normal-user-sign-up');
-        return response()->json(['view' => view('normal-user-sign-up')]);
+        return view('normal-user-sign-up');
 
     }
 
     public function companyUserSignUpView()
     {
-        // return view('company-user-sign-up');
-        return response()->json(['view' => view('company-user-sign-up')]);
+        return view('company-user-sign-up');
 
     }
 
@@ -73,11 +70,13 @@ class RegisterController extends Controller
                     // logout from normalUser guard if companyUser is logged in
                     Auth::guard('companyUser')->logout();
 
-                    return redirect()->route('user.normal.name.profile')->with('success', 'Login success');
+                    // return redirect()->route('user.normal.name.profile')->with('success', 'Login success');
+                    return response()->json(['success' => 'Login success'], 200);
                 }
             }
         } else {
-            return redirect()->back()->withErrors(['error' => 'Failed to create user']);
+            // return redirect()->back()->withErrors(['error' => 'Failed to create user']);
+            return response()->json(['error' => 'Failed to create user'], 400);
         }
     }
 
@@ -121,11 +120,13 @@ class RegisterController extends Controller
                     // logout from companyUser guard if normalUser is logged in
                     Auth::guard('normalUser')->logout();
 
-                    return redirect()->route('user.company.name.profile')->with('success', 'Login success');
+                    // return redirect()->route('user.company.name.profile')->with('success', 'Login success');
+                    return response()->json(['success' => 'Login success'], 200);
                 }
             }
         } else {
-            return redirect()->back()->withErrors(['error' => 'Failed to create user']);
+            // return redirect()->back()->withErrors(['error' => 'Failed to create user']);
+            return response()->json(['error' => 'Failed to create user']);
         }
     }
 }

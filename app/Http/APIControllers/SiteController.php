@@ -60,14 +60,9 @@ class SiteController extends Controller
             //     'cateNotFound' => true,
             //     'categoryName' => $categoryName,
             // ]);
-            return response()
-                // ->view('category-show-company')
-                ->json([
-                'view' => 'category-show-company',
-                'data' => [
+            return response()->json([
                     'cateNotFound' => true,
                     'categoryName' => $categoryName
-                ]
             ]);
             
         } else {
@@ -86,15 +81,10 @@ class SiteController extends Controller
         //     'categoryName' => $categoryName,
         // ]);
 
-        return response()
-            // ->view('category-show-company')
-            ->json([
-            'view' => 'category-show-company',
-            'data' => [
+        return response()->json([
                 'cateNotFound' => false,
                 'companies' => $companies,
                 'categoryName' => $categoryName
-            ]
         ]);
         
         
@@ -124,16 +114,11 @@ class SiteController extends Controller
         //     'companyName' => $companyName,
         //     'currentUserRateNumber' => $currentUserRateNumber ? $currentUserRateNumber->star_number : null,
         // ]);
-        return response()
-            // ->view('company-detail')
-            ->json([
-            'view' => 'company-detail',
-            'data' => [
+        return response()->json([
                 'company' => $company,
                 'categoryName' => $categoryName,
                 'companyName' => $companyName,
                 'currentUserRateNumber' => $currentUserRateNumber ? $currentUserRateNumber->star_number : null
-            ]
         ]);
         
     }
@@ -162,15 +147,10 @@ class SiteController extends Controller
         //     'result' => $result,
         // ]);
 
-        return response()
-            // ->view('search-results')
-            ->json([
-            'view' => 'search-results',
-            'data' => [
+        return response()->json([
                 'search_query' => $search_query,
                 'search_by' => $search_by,
                 'result' => $result
-            ]
         ]);
         
     }
@@ -178,7 +158,8 @@ class SiteController extends Controller
     public function saveCompany(Request $request, $categoryName, $companyName)
     {
         if (!Auth::guard('normalUser')->check()) {
-            return redirect()->back()->with('error', 'You must login as a normal user to save company');
+            // return redirect()->back()->with('error', 'You must login as a normal user to save company');
+            return response()->json(['error' => 'You must login as a normal user to save company'], 400);
         }
 
 
@@ -191,7 +172,8 @@ class SiteController extends Controller
         ])->first();
 
         if ($checkSavedCompanyHistory) {
-            return redirect()->back()->with('error', 'Company has already been saved in your list');
+            // return redirect()->back()->with('error', 'Company has already been saved in your list');
+            return response()->json(['error' => 'Company has already been saved in your list'], 400);
         }
 
         $saveCompany = SavedCompany::create([
@@ -200,16 +182,19 @@ class SiteController extends Controller
         ]);
 
         if ($saveCompany) {
-            return redirect()->back()->with('success', 'Company has been saved in your list');
+            // return redirect()->back()->with('success', 'Company has been saved in your list');
+            return response()->json(['success' => 'Company has been saved in your list'], 200);
         } else {
-            return redirect()->back()->with('error', 'Failed to save company in your list');
+            // return redirect()->back()->with('error', 'Failed to save company in your list');
+            return response()->json(['error' => 'Failed to save company in your list'], 400);
         }
     }
 
     public function postFeedback(Request $request, $categoryName, $companyName)
     {
         if (!Auth::guard('normalUser')->check()) {
-            return redirect()->back()->with('error', 'You must login as a normal user to post feedback on company');
+            // return redirect()->back()->with('error', 'You must login as a normal user to post feedback on company');
+            return response()->json(['error' => 'You must login as a normal user to post feedback on company'], 400);
         }
 
         $validate = Validator::make($request->all(), [
@@ -218,7 +203,8 @@ class SiteController extends Controller
 
         if ($validate->fails()) {
             if ($validate->errors()->has('feedback')) {
-                return redirect()->back()->with('error', 'Feedback is required');
+                // return redirect()->back()->with('error', 'Feedback is required');
+                return response()->json(['error' => 'Feedback is required'], 400);
             }
         }
 
@@ -233,7 +219,8 @@ class SiteController extends Controller
         ])->first();
 
         if ($checkFeedbackHistory) {
-            return redirect()->back()->with('error', 'You have already posted feedback on this company before');
+            // return redirect()->back()->with('error', 'You have already posted feedback on this company before');
+            return response()->json(['error' => 'You have already posted feedback on this company before'], 400);
         }
 
         $saveFeedback = Feedback::create([
@@ -243,16 +230,19 @@ class SiteController extends Controller
         ]);
 
         if ($saveFeedback) {
-            return redirect()->back()->with('success', 'Feedback has been posted');
+            // return redirect()->back()->with('success', 'Feedback has been posted');
+            return response()->json(['success' => 'Feedback has been posted'], 200);
         } else {
-            return redirect()->back()->with('error', 'Failed to post feedback');
+            // return redirect()->back()->with('error', 'Failed to post feedback');
+            return response()->json(['error' => 'Failed to post feedback'], 400);
         }
     }
 
     public function postReport(Request $request, $categoryName, $companyName)
     {
         if (!Auth::guard('normalUser')->check()) {
-            return redirect()->back()->with('error', 'You must login as a normal user to report company');
+            // return redirect()->back()->with('error', 'You must login as a normal user to report company');
+            return response()->json(['error' => 'You must login as a normal user to report company'], 400);
         }
 
         $validate = Validator::make($request->all(), [
@@ -261,7 +251,8 @@ class SiteController extends Controller
 
         if ($validate->fails()) {
             if ($validate->errors()->has('report')) {
-                return redirect()->back()->with('error', 'Report is required');
+                // return redirect()->back()->with('error', 'Report is required');
+                return response()->json(['error' => 'Report is required'], 400);
             }
         }
 
@@ -276,7 +267,8 @@ class SiteController extends Controller
         ])->first();
 
         if ($checkReportHistory) {
-            return redirect()->back()->with('error', 'You have already reported this company');
+            // return redirect()->back()->with('error', 'You have already reported this company');
+            return response()->json(['error' => 'You have already reported this company'], 400);
         }
 
         $saveReport = Report::create([
@@ -286,16 +278,19 @@ class SiteController extends Controller
         ]);
 
         if ($saveReport) {
-            return redirect()->back()->with('success', 'Company has been reported');
+            // return redirect()->back()->with('success', 'Company has been reported');
+            return response()->json(['success' => 'Company has been reported'], 200);
         } else {
-            return redirect()->back()->with('error', 'Failed to report company');
+            // return redirect()->back()->with('error', 'Failed to report company');
+            return response()->json(['error' => 'Failed to report company'], 400);
         }
     }
 
     public function postRate(Request $request, $categoryName, $companyName)
     {
         if (!Auth::guard('normalUser')->check()) {
-            return redirect()->back()->with('error', 'You must login as a normal user to rate company');
+            // return redirect()->back()->with('error', 'You must login as a normal user to rate company');
+            return response()->json(['error' => 'You must login as a normal user to rate company'], 400);
         }
 
         $validate = Validator::make($request->all(), [
@@ -308,7 +303,8 @@ class SiteController extends Controller
 
         if ($validate->fails()) {
             if ($validate->errors()->has('rate_number')) {
-                return redirect()->back()->with('error', 'Rate is required');
+                // return redirect()->back()->with('error', 'Rate is required');
+                return response()->json(['error' => 'Rate is required'], 400);
             }
         }
 
@@ -328,9 +324,11 @@ class SiteController extends Controller
                 ]);
 
             if ($updateRating) {
-                return redirect()->back()->with('success', 'Company rate has been updated to ' . $rate_number . ' stars');
+                // return redirect()->back()->with('success', 'Company rate has been updated to ' . $rate_number . ' stars');
+                return response()->json(['success' => 'Company rate has been updated to ' . $rate_number . ' stars'], 200);
             } else {
-                return redirect()->back()->with('error', 'Failed to rate company');
+                // return redirect()->back()->with('error', 'Failed to rate company');
+                return response()->json(['error' => 'Failed to rate company'], 400);
             }
         }
 
@@ -341,9 +339,11 @@ class SiteController extends Controller
         ]);
 
         if ($saveRate) {
-            return redirect()->back()->with('success', 'Company has been rated');
+            // return redirect()->back()->with('success', 'Company has been rated');
+            return response()->json(['success' => 'Company has been rated'], 200);
         } else {
-            return redirect()->back()->with('error', 'Failed to rate company');
+            // return redirect()->back()->with('error', 'Failed to rate company');
+            return response()->json(['error' => 'Failed to rate company'], 400);
         }
     }
 }
