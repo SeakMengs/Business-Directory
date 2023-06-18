@@ -29,6 +29,7 @@ class CreateCompanyTable extends Migration
             $table->text('description');
             $table->boolean('is_banned')->default(false);
             $table->unsignedBigInteger('ban_by_admin_id')->nullable();
+            $table->unsignedBigInteger('unban_by_admin_id')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 

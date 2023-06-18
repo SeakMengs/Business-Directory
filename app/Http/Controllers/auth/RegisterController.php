@@ -67,7 +67,10 @@ class RegisterController extends Controller
                     // logout from normalUser guard if companyUser is logged in
                     Auth::guard('companyUser')->logout();
 
-                    return redirect()->route('user.normal.name.profile')->with('success', 'Login success');
+                    return redirect()->route('user.normal.name.id.profile', [
+                        'name' => Auth::guard('normalUser')->user()->name,
+                        'id' => Auth::guard('normalUser')->user()->normal_user_id
+                    ])->with('success', 'Register success');
                 }
             }
         } else {
@@ -115,7 +118,10 @@ class RegisterController extends Controller
                     // logout from companyUser guard if normalUser is logged in
                     Auth::guard('normalUser')->logout();
 
-                    return redirect()->route('user.company.name.profile')->with('success', 'Login success');
+                    return redirect()->route('user.company.name.id.profile', [
+                        'name' => Auth::guard('companyUser')->user()->name,
+                        'id' => Auth::guard('companyUser')->user()->company_user_id
+                    ])->with('success', 'Register success');
                 }
             }
         } else {
