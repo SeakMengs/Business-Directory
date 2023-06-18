@@ -50,6 +50,14 @@ a:hover {
     border-color: #214f6a;
 }
 
+.home-btn{
+    padding: 5px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
 /* Head and foot bg color */
 .head-foot-bg{
     /* background: linear-gradient(to bottom, #f7f7f7, #eaeaea); */
@@ -71,12 +79,15 @@ a:hover {
 }
 
 .navbar-brand {
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
+    /* font-family: 'Arial', sans-serif; */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
     font-weight: bold;
     color: #c93434 !important;
     text-decoration: none;
     transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .navbar-brand:hover {
