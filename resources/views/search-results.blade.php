@@ -66,7 +66,7 @@
                                             @else
                                                 <span>This company does not have contact number</span>
                                             @endif
-                                            <span class="company-address"><small>{{ $company->street }},
+                                            <span class="company-address"><small>{{ $company->street }}, {{ $company->village }},
                                                     {{ $company->district }}, {{ $company->commune }} ,
                                                     {{ $company->city }}</small></span>
                                         </div>
