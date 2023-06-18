@@ -38,7 +38,8 @@ class CompanyUserController extends Controller
     //     return $uploadedFileUrl;
     // }
 
-    public function uploadToImgur($image) {
+    public function uploadToImgur($image)
+    {
         $client_id = env('IMGUR_CLIENT_ID');
 
         // https://stackoverflow.com/questions/63060351/how-to-upload-images-to-imgur-using-laravel
@@ -304,34 +305,46 @@ class CompanyUserController extends Controller
 
         $savedComapnyId = $saveCompany->company_id;
 
-        // Save the company contacts
-        foreach ($request->input('phone_number') as $phone_number) {
-            CompanyContact::create([
-                'company_id' => $savedComapnyId,
-                'phone_number' => $phone_number,
-            ]);
+        // if we get the saved company id, it means the company is created successfully
+        if ($savedComapnyId) {
+
+            if ($request->input('phone_number')) {
+                // Save the company contacts
+                foreach ($request->input('phone_number') as $phone_number) {
+                    CompanyContact::create([
+                        'company_id' => $savedComapnyId,
+                        'phone_number' => $phone_number,
+                    ]);
+                }
+            }
+
+            if ($request->input('services')) {
+                // Save the company services
+                foreach ($request->input('services') as $service) {
+                    // echo $service;
+                    Service::create([
+                        'company_id' => $savedComapnyId,
+                        'name' => $service,
+                    ]);
+                }
+            }
+
+            if ($request->file('photo_url')) {
+                // Save the company photos
+                foreach ($request->file('photo_url') as $photo) {
+                    $photoUrl = $this->uploadToImgur($photo);
+
+                    CompanyGallery::create([
+                        'company_id' => $savedComapnyId,
+                        'photo_url' => $photoUrl,
+                    ]);
+                }
+            }
+
+            return redirect()->back()->with('success', 'Company added successfully');
+        } else {
+            return redirect()->back()->with('error', 'Failed to add company');
         }
-
-        // Save the company services
-        foreach ($request->input('services') as $service) {
-            // echo $service;
-            Service::create([
-                'company_id' => $savedComapnyId,
-                'name' => $service,
-            ]);
-        }
-
-        // Save the company photos
-        foreach ($request->file('photo_url') as $photo) {
-            $photoUrl = $this->uploadToImgur($photo);
-
-            CompanyGallery::create([
-                'company_id' => $savedComapnyId,
-                'photo_url' => $photoUrl,
-            ]);
-        }
-
-        return redirect()->back()->with('success', 'Company added successfully');
     }
 
     public function removeCompany(Request $request, $username, $userId)

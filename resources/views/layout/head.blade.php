@@ -2,6 +2,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+{{-- https://stackoverflow.com/questions/43895390/imgur-images-returning-403 --}}
+<meta name="referrer" content="no-referrer">
+
 <title>VOS Business Directory</title>
 
 <!-- Bootstrap 5 CSS -->
