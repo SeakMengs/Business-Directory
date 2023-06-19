@@ -617,21 +617,21 @@ outline: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   
-.alert::before {
+/* .alert::before {
     display: inline-block;
     margin-right: 8px;
     font-size: 20px;
     font-weight: bold;
     color: #dc3545;
-}
+} */
 
-.alert.success {
+.alert-success {
     background-color: #d4edda;
     border-color: #28a745;
     color: #155724;
 }
 
-.alert.success::before {
+/* .alert.success::before {
     content: "\2714";
 }
 
@@ -649,11 +649,11 @@ outline: none;
     background-color: #f8d7da;
     border-color: #dc3545;
     color: #721c24;
-}
+} 
 
 .alert.error::before {
     content: "\2716";
-}
+} */
 
 .alert button {
     padding: 8px 16px;

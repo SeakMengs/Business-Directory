@@ -67,7 +67,7 @@ function removeInputById(id, className) {
     const nodeInputChild = node.querySelector('input');
 
     if (node.style.opacity === '0.5') {
-        alert('This input is already in delete state. Click submit to save changes ')
+        showAlert('This input is already in delete state. Click submit to save changes ')
         return;
     }
 
