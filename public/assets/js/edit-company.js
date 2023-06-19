@@ -19,6 +19,32 @@ function PopBackInputDom(className) {
 
     // remove last input
     nodes[currentExistingInput - 1].remove();
+} 
+
+// for the alert box
+function showAlert(message) {
+    const alertBox = document.createElement('div');
+    alertBox.className = 'alert';
+
+    const messageElement = document.createElement('p');
+    messageElement.innerText = message;
+    alertBox.appendChild(messageElement);
+
+    const okButton = document.createElement('button');
+    okButton.innerText = 'OK';
+    okButton.addEventListener('click', function () {
+        document.body.removeChild(alertBox);
+    });
+    alertBox.appendChild(okButton);
+
+    // Style alert box
+    alertBox.style.position = 'fixed';
+    alertBox.style.top = '50%';
+    alertBox.style.left = '50%';
+    alertBox.style.transform = 'translate(-50%, -50%)';
+    alertBox.style.zIndex = '9999';
+
+    document.body.appendChild(alertBox);
 }
 
 // it take two argument, the first one is the id that we will use for remove.
@@ -48,7 +74,10 @@ function removeInputById(id, className) {
     const currentExistingInput = findInputThatHasOpacityHalf(nodes);
 
     if (currentExistingInput <= 1) {
-        alert('You must have at least one input left')
+        // alert('You must have at least one input left')
+        // return;
+
+        showAlert('! You must have at least one input left');
         return;
     }
 
@@ -90,7 +119,7 @@ function renderNewPhoneInput() {
     }
 
     if (currentExistingPhones + currentNewPhones >= 3) {
-        alert('You can only have 3 phone numbers')
+        showAlert('You can only have 3 phone numbers !')
         return;
     }
 
