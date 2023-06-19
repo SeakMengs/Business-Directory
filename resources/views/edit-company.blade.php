@@ -217,10 +217,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     @else
-        <h1>The company that you are looking for doesn't belong to your account :(</h1>
+        <h1 class="not-company">The company that you are looking for doesn't belong to your account :(</h1>
     @endif
+    </div>
 
     <!-- Include the JavaScript file -->
     <script src="{{ asset('assets/js/edit-company.js') }}"></script>
