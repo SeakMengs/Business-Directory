@@ -14,7 +14,7 @@
                     @if (!request()->is('login*') && !request()->is('sign-up*'))
                         <!-- Login button -->
                         <li class="nav-item">
-                            <a class="btn btn-outline-primary me-2 home-btn" href="/login">Login</a>
+                            <a class="btn btn-outline-success me-2 home-btn" href="/login">Login</a>
                         </li>
 
                         <!-- Sign up button -->
