@@ -45,6 +45,14 @@ class UserMiddleware
         if ($this->guard) {
             if (Auth::guard($this->guard)->user()->role == $role) {
 
+                // check if user has been banned
+                if (Auth::guard($this->guard)->user()->is_banned) {
+                    Auth::guard($this->guard)->logout();
+
+                    $redirectTo = $this->guard == 'normalUser' ? 'login.user' : 'login.company';
+                    return redirect()->route($redirectTo)->withErrors(['error' => 'The account has been banned']);
+                }
+
                 // get current dynamic name from route
                 $currentName = $request->route()->parameter('name');
                 $currentId = $request->route()->parameter('id');
@@ -52,7 +60,7 @@ class UserMiddleware
                 if ($currentName) {
                     // if currentName and currentId is not null, check if the user is authorized to access the data
                     if (Auth::guard($this->guard)->user()->name != $currentName || $currentId != $this->currentUserId) {
-                    // prevent user with the same role from accessing other user's data
+                        // prevent user with the same role from accessing other user's data
                         return response("You do not have access to view " . $currentName . '\'s data', 401);
                     }
                 }

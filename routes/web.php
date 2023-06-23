@@ -77,9 +77,9 @@ use App\Http\Controllers\auth\RegisterController;
 // });
 
 //Render Search Results
-Route::get('/search-results', function () {
-    return view('/search-results');
-});
+// Route::get('/search-results', function () {
+//     return view('/search-results');
+// });
 //* End of to be deleted ------------------------------------------------------------------
 
 //* Route with controller

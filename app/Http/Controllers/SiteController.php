@@ -111,7 +111,7 @@ class SiteController extends Controller
         if ($search_by == 'company') {
             $result = Company::with('contacts', 'rates', 'category')
                 ->withAvg('rates as avg_star_rate', 'star_number')
-                ->where('name', 'like', '%' . $search_query . '%')->get();
+                ->where([['name', 'like', '%' . $search_query . '%'], ['is_banned', 0]])->get();
         } else if ($search_by == 'category') {
             $result = Category::where('name', 'like', '%' . $search_query . '%')->get();
         }

@@ -63,10 +63,16 @@
                                 @foreach ($userData->companies as $company)
                                     <div class="col">
                                         <div class="card h-100">
-                                            <img src="{{ $company->logo }}" class="card-img-top company-logo"
-                                                alt="Company Logo">
+                                            <a href="/category/{{ $company->category->name }}/{{ $company->name }}">
+                                                <img src="{{ $company->logo }}" class="card-img-top company-logo"
+                                                    alt="Company Logo">
+                                            </a>
                                             <div class="card-body">
-                                                <h5 class="card-title"> {{ $company->name }}</h5>
+                                                <h5 class="card-title company-name">
+                                                    <a href="/category/{{ $company->category->name }}/{{ $company->name }}"
+                                                        class="company-link">{{ $company->name }}
+                                                    </a>
+                                                </h5>
                                             </div>
                                             <div class="card-footer">
                                                 <!-- Edit listing button for S-Cool Cambodia -->

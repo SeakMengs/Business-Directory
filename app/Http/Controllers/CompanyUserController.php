@@ -12,6 +12,7 @@ use App\Models\SavedCompany;
 use Illuminate\Http\Request;
 use App\Models\CompanyContact;
 use App\Models\CompanyGallery;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -44,7 +45,7 @@ class CompanyUserController extends Controller
 
         // https://stackoverflow.com/questions/63060351/how-to-upload-images-to-imgur-using-laravel
         // upload image to imgur api to my account
-        $client = new \GuzzleHttp\Client();
+        $client = new Client;
         $response = $client->request('POST', 'https://api.imgur.com/3/image', [
             'headers' => [
                 'authorization' => 'Client-ID ' . $client_id,
@@ -64,7 +65,7 @@ class CompanyUserController extends Controller
     public function profile($username, $userId)
     {
         // TODO: Join relationship of company_user and many companies
-        $data = CompanyUser::with('companies')->where('company_user_id', $userId)->first();
+        $data = CompanyUser::with('companies.category')->where('company_user_id', $userId)->first();
 
         if (!$data) {
             return response()->json([

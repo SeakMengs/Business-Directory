@@ -14,7 +14,14 @@
             </ol>
         </nav>
         <!-- End Breadcrumbs -->
-        @if ($company)
+        @if ($company->is_banned)
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Sorry!</strong> This company has been banned by the admin.
+                <!-- Error message -->
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <!-- Button to close the alert -->
+            </div>
+        @elseif ($company)
             @if (session('success'))
                 <!-- Alert for success -->
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -51,7 +58,8 @@
                                     {{-- <p class="card-comdetail my-3">No.901, Kampuchea Krom Blvd (128), Sangkat Teuk Laak II,
                                         Khan
                                         Toul Kork , 12156, Phnom Penh</p> --}}
-                                    <address class="card-comdetail my-3">Address: {{ $company->street }}, {{ $company->village }},
+                                    <address class="card-comdetail my-3">Address: {{ $company->street }},
+                                        {{ $company->village }},
                                         {{ $company->district }}, {{ $company->commune }} , {{ $company->city }}
                                     </address>
                                     <!-- Contact details -->
@@ -73,22 +81,22 @@
                                             @csrf
                                             <input type="hidden" value="{{ $company->company_id }}" name="company_id">
                                             <button class="btn btn-primary me-md-2 mb-2 home-btn" type="submit">
-                                            <i class="fa-regular fa-bookmark fontawe-icontwo"></i> Save Company
+                                                <i class="fa-regular fa-bookmark fontawe-icontwo"></i> Save Company
                                             </button>
                                         </form>
-                                        <button class="btn btn-primary me-md-2 mb-2 home-btn" type="button" data-bs-toggle="modal"
-                                            data-bs-target="#feedbackModal">
+                                        <button class="btn btn-primary me-md-2 mb-2 home-btn" type="button"
+                                            data-bs-toggle="modal" data-bs-target="#feedbackModal">
                                             <i class="fa-regular fa-comment fontawe-icontwo"></i>Give Feedback
                                         </button>
-                                        <button class="btn btn-primary me-md-2 mb-2 home-btn" type="button" data-bs-toggle="modal"
-                                            data-bs-target="#reportModal">
+                                        <button class="btn btn-primary me-md-2 mb-2 home-btn" type="button"
+                                            data-bs-toggle="modal" data-bs-target="#reportModal">
                                             <i class="fa-regular fa-flag fontawe-icontwo"></i> Report Company
                                         </button>
                                     </div>
                                     <!-- Star rating -->
                                     <!-- <div class="position-absolute bottom-0 end-0">
-                                                                                        <div class="star-rating" id="star-rating"></div>
-                                                                                    </div> -->
+                                                                                            <div class="star-rating" id="star-rating"></div>
+                                                                                        </div> -->
 
                                     <div class="card-footer d-flex justify-content-between align-items-center">
                                         <!-- Overall rating -->
@@ -285,7 +293,8 @@
                 <input id="hidden-rate-input" type="hidden" name="rate_number">
                 <button id="hidden-rate-submit" type="submit" class="btn btn-primary">Submit</button>
             </form>
-            <input style="display: none" type="text" id="currentUserRateNumber" value="{{ $currentUserRateNumber ?? 0}}">
+            <input style="display: none" type="text" id="currentUserRateNumber"
+                value="{{ $currentUserRateNumber ?? 0 }}">
         @else
             <span>No company found :(</span>
         @endif
