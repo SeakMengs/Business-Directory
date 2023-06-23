@@ -64,7 +64,7 @@ class SiteController extends Controller
 
         $companies = Company::with('contacts', 'rates')
             ->withAvg('rates as avg_star_rate', 'star_number')
-            ->where('category_id', $category_id)->get();
+            ->where([['category_id', $category_id], ['is_banned', 0]])->get();
 
         // return response()->json($companies);
 
@@ -275,8 +275,8 @@ class SiteController extends Controller
                 ['normal_user_id', $currentUserId],
                 ['company_id', $company_id],
             ])->update([
-                    'star_number' => $rate_number,
-                ]);
+                        'star_number' => $rate_number,
+                    ]);
 
             if ($updateRating) {
                 return redirect()->back()->with('success', 'Company rate has been updated to ' . $rate_number . ' stars');

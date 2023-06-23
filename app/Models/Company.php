@@ -31,7 +31,6 @@ class Company extends Model
     protected $hidden = [
         'created_at',
         'updated_at',
-        'is_banned',
         'ban_by_admin_id',
     ];
 

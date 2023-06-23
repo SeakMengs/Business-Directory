@@ -27,7 +27,7 @@
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Success!</strong> {{ session('success') }}
                     <!-- Success message -->
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close alert-success" data-bs-dismiss="alert" aria-label="Close"></button>
                     <!-- Button to close the alert -->
                 </div>
             @elseif (session('error'))

@@ -18,15 +18,17 @@ class NormalUserController extends Controller
     public function profile($username, $userId)
     {
         // TODO:: query normal_user where userId match userId join with savedCompany and company. the company must be joined with category
-        $data = NormalUser::with('savedCompanies.company.category')->where('normal_user_id', $userId)->first();
+        // https://stackoverflow.com/questions/74097326/laravel-relationship-where-clause-returns-all-records-parent
+        $data = NormalUser::with('savedCompanies.company.category')
+            ->where('normal_user_id', $userId)->first();
+
+        // return response()->json($data);
 
         if (!$data) {
             return response()->json([
                 'message' => 'User not found',
             ], 404);
         }
-
-        // return response()->json($data);
 
         return view('normal_user_profile', [
             'user' => $data,

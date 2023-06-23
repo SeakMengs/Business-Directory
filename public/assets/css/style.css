@@ -616,7 +616,7 @@ outline: none;
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
-  
+
 /* .alert::before {
     display: inline-block;
     margin-right: 8px;
@@ -626,9 +626,9 @@ outline: none;
 } */
 
 .alert-success {
-    background-color: #d4edda;
-    border-color: #28a745;
-    color: #155724;
+    background-color: #d4edda !important;
+    border-color: #28a745 !important;
+    color: #155724 !important;
 }
 
 /* .alert.success::before {
@@ -649,7 +649,7 @@ outline: none;
     background-color: #f8d7da;
     border-color: #dc3545;
     color: #721c24;
-} 
+}
 
 .alert.error::before {
     content: "\2716";
@@ -668,8 +668,8 @@ outline: none;
 
 .alert button:hover {
     background-color: #c82333;
-}   
-  
+}
+
 /* not your company css */
 .not-company {
     color: #dc3545;
@@ -681,7 +681,7 @@ outline: none;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-  
+
 /* For mobiler responsive */
 @media (min-width: 320px) {
 
