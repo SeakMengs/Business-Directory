@@ -18,4 +18,8 @@ class Report extends Model
         'company_id',
         'report_by_normal_user_id',
     ];
+
+    public function reportBy() {
+        return $this->belongsTo(NormalUser::class, 'report_by_normal_user_id', 'normal_user_id')->select(['normal_user_id', 'name']);
+    }
 }

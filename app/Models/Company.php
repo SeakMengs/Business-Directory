@@ -29,9 +29,6 @@ class Company extends Model
     ];
 
     protected $hidden = [
-        'created_at',
-        'updated_at',
-        'ban_by_admin_id',
     ];
 
     public function feedbacks() {
@@ -60,5 +57,13 @@ class Company extends Model
 
     public function category() {
         return $this->hasOne(Category::class, 'category_id', 'category_id')->select(['category_id', 'name']);
+    }
+
+    public function reports() {
+        return $this->hasMany(Report::class, 'company_id', 'company_id');
+    }
+
+    public function companyUser() {
+        return $this->belongsTo(CompanyUser::class, 'company_user_id', 'company_user_id')->select(['company_user_id', 'name']);
     }
 }
