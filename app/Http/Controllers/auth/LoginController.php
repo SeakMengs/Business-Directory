@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\auth;
 
+use App\Models\CompanyUser;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\NormalUser;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -53,6 +56,14 @@ class LoginController extends Controller
                     return redirect()->back()->withErrors(['error' => 'The account has been banned']);
                 }
 
+                do {
+                    $token = Str::random(80);
+                } while (CompanyUser::where('api_token', $token)->first());
+
+                CompanyUser::where('company_user_id', Auth::guard('companyUser')->user()->company_user_id)->update([
+                    'api_token' => $token
+                ]);
+
                 return redirect()->route('user.company.name.id.profile', [
                     'name' => Auth::guard('companyUser')->user()->name,
                     'id' => Auth::guard('companyUser')->user()->company_user_id
@@ -93,6 +104,14 @@ class LoginController extends Controller
                     Auth::guard('normalUser')->logout();
                     return redirect()->back()->withErrors(['error' => 'The account has been banned']);
                 }
+
+                do {
+                    $token = Str::random(80);
+                } while (NormalUser::where('api_token', $token)->first());
+
+                NormalUser::where('normal_user_id', Auth::guard('normalUser')->user()->normal_user_id)->update([
+                    'api_token' => $token
+                ]);
 
                 return redirect()->route('user.normal.name.id.profile', [
                     'name' => Auth::guard('normalUser')->user()->name,

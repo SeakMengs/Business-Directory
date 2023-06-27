@@ -4,6 +4,7 @@ namespace App\Http\Controllers\auth;
 
 use App\Models\NormalUser;
 use App\Models\CompanyUser;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -67,6 +68,14 @@ class RegisterController extends Controller
                     // logout from normalUser guard if companyUser is logged in
                     Auth::guard('companyUser')->logout();
 
+                    do {
+                        $token = Str::random(80);
+                    } while (NormalUser::where('api_token', $token)->first());
+
+                    NormalUser::where('normal_user_id', Auth::guard('normalUser')->user()->normal_user_id)->update([
+                        'api_token' => $token
+                    ]);
+
                     return redirect()->route('user.normal.name.id.profile', [
                         'name' => Auth::guard('normalUser')->user()->name,
                         'id' => Auth::guard('normalUser')->user()->normal_user_id
@@ -117,6 +126,14 @@ class RegisterController extends Controller
                 if (Auth::guard('companyUser')->user()->role == 'companyUser') {
                     // logout from companyUser guard if normalUser is logged in
                     Auth::guard('normalUser')->logout();
+
+                    do {
+                        $token = Str::random(80);
+                    } while (CompanyUser::where('api_token', $token)->first());
+
+                    CompanyUser::where('company_user_id', Auth::guard('companyUser')->user()->company_user_id)->update([
+                        'api_token' => $token
+                    ]);
 
                     return redirect()->route('user.company.name.id.profile', [
                         'name' => Auth::guard('companyUser')->user()->name,

@@ -11,7 +11,7 @@
  Target Server Version : 80023 (8.0.23-PlanetScale)
  File Encoding         : 65001
 
- Date: 26/06/2023 20:33:53
+ Date: 28/06/2023 00:19:01
 */
 
 SET NAMES utf8mb4;
@@ -40,13 +40,13 @@ CREATE TABLE `admin_user`  (
 -- ----------------------------
 -- Records of admin_user
 -- ----------------------------
-INSERT INTO `admin_user` VALUES (1, 'SuperAdmin', 'superadmin@gmail.com', '$2y$10$K56U1XEBqglxFYZCDAQXj.aKsCn.UUidAcc4XX5w43wwQJVHuKLRG', 3, 'https://i.imgur.com/OPGfO76.jpg', 1, 1, 1, '2023-06-10 13:33:28', '2023-06-26 13:28:57', 'jtfJhzBAA12H2VeH6WSmqOH9ZT0LhNqWDJAAIabkEJg9DSurOokEGFIKpSY5LAcJjS12hJGzfUJjNUno');
+INSERT INTO `admin_user` VALUES (1, 'SuperAdmin', 'superadmin@gmail.com', '$2y$10$K56U1XEBqglxFYZCDAQXj.aKsCn.UUidAcc4XX5w43wwQJVHuKLRG', 3, 'https://i.imgur.com/OPGfO76.jpg', 1, 1, 1, '2023-06-10 13:33:28', '2023-06-26 18:27:55', 'Zx5JqbYumOYxedh5piFyYKO75XDIPpQO3KjnK0Ga0dtChTWnSjpL7fbTZ01oAuF7KOuK8ye6ZHEob4IZ');
 INSERT INTO `admin_user` VALUES (2, 'admin2', 'admin2@gmail.com', '$2y$10$bUhyjjjBhp2S5NHrFdKZaey3pHIZdKcUNYgvkmHWxKL8kI8B9YERe', 3, NULL, 1, 0, 0, '2023-06-21 19:34:37', '2023-06-21 22:36:51', NULL);
 INSERT INTO `admin_user` VALUES (3, 'admin3', 'admin3@gmail.com', '$2y$10$7wUMotznK5zAwHVgxNHSoO4MxotRYf1oQvfL9f0RyyaPu/axAQ.R.', 3, NULL, 1, 0, 0, '2023-06-21 19:36:03', '2023-06-21 23:21:24', NULL);
 INSERT INTO `admin_user` VALUES (4, 'admin4', 'admin4@gmail.com', '$2y$10$QBk2ezxTPBdOIwmCRrqwKeoMyCyNUMJUhuaLk58unM3JG/3a0Gkwq', 3, NULL, 1, 0, 0, '2023-06-21 19:36:24', '2023-06-21 19:36:24', NULL);
 INSERT INTO `admin_user` VALUES (9, 'admin123', 'admin123@gmail.com', '$2y$10$g4jWj9kNsQbt92M5G282sOpetcpLn/8nVzkGdWs1QWD3jepIk/hIe', 3, NULL, 0, 0, 0, '2023-06-22 00:21:34', '2023-06-22 00:21:34', NULL);
 INSERT INTO `admin_user` VALUES (10, 'admin1234', 'admin1234@gmail.com', '$2y$10$iX.L4.YUNc8IU..kGfwWiuZzqa74fqVx525M1yzABtE9rGmAFIdeu', 3, NULL, 0, 0, 0, '2023-06-22 00:22:48', '2023-06-22 00:22:48', NULL);
-INSERT INTO `admin_user` VALUES (13, 'testadmin', 'testadmin@gmail.com', '$2y$10$6Ag/svsYbGKbPG3fQtOlV.hn/CJhupd53XFta6mWJ/NYCE7EDWdsG', 3, 'https://i.imgur.com/gpadima.jpg', 1, 1, 0, '2023-06-23 22:16:13', '2023-06-23 23:17:32', 'X6vaaPR8xnO9njgrNnvwlqNWY7LOuYoofPoAiLJaBsf8Ss4SzBQzyEnzczWHkvsCwkqFC9pIfGMKWJcF');
+INSERT INTO `admin_user` VALUES (13, 'testadmin', 'testadmin@gmail.com', '$2y$10$6Ag/svsYbGKbPG3fQtOlV.hn/CJhupd53XFta6mWJ/NYCE7EDWdsG', 3, 'https://i.imgur.com/gpadima.jpg', 1, 1, 0, '2023-06-23 22:16:13', '2023-06-27 17:04:23', 'X6vaaPR8xnO9njgrNnvwlqNWY7LOuYoofPoAiLJaBsf8Ss4SzBQzyEnzczWHkvsCwkqFC9pIfGMKWJcF');
 INSERT INTO `admin_user` VALUES (14, 'testadmin2', 'testadmin2@gmail.com', '$2y$10$mQLa/w/RdC08YRNepZIIG.s.nbf1gKikyHBdJ8TEthKqZNNLfLBRu', 3, NULL, 0, 0, 0, '2023-06-23 22:18:12', '2023-06-23 22:18:12', NULL);
 INSERT INTO `admin_user` VALUES (15, 'testtt', 'testtt@gmail.com', '$2y$10$IA5Rl/H.65uIzeL5gs1mauFn32/5czJ3jGkuH.CulATwWDvmBlRH6', 3, NULL, 1, 1, 0, '2023-06-23 22:19:59', '2023-06-23 22:31:14', NULL);
 INSERT INTO `admin_user` VALUES (21, 'test', 'test@gmail.com', '$2y$10$yumCK1qH7UsF3ShLX5u5BelFaCHQw3DnN5D.79tsqw.nBnQCDtAWe', 3, NULL, 0, 0, 0, '2023-06-23 22:49:17', '2023-06-23 22:49:17', NULL);
@@ -111,7 +111,7 @@ CREATE TABLE `company`  (
 INSERT INTO `company` VALUES (22, 2, 3, 'Tesla3', 'Kampuchea Krom Blvd (128)', 'New York', 'Khan Toul Kork', 'Sangkat                                                    Teuk                                                    Laak                                                    II', 'village village', 'https://i.imgur.com/aJgJco4.jpg', 'tesla23@gmail.com', 'https://www.tesla2.com', 'S-COOL is the world leading heat protection window film company with its head office in Singapore. Our proprietary products included Super Ceramic ATO window film, provides the best high heat protection and value for money. This is the result of dedications and efforts by our R&D team, whom founded the use of this special ceramic compound for maximum heat rejection. Our founders started marketing solar control window film since 2007, under the brand S-COOL Solar & Security Window Film.', 0, NULL, 1, NULL, '2023-06-07 22:20:35', '2023-06-23 20:24:45');
 INSERT INTO `company` VALUES (23, 2, 4, 'Tesla4 e', 'street2 e', 'city2 e', 'district2 e', 'commune2 e', 'village2 e', 'https://i.imgur.com/8HYYrno.jpg', 'tesla244@gmail.com', 'https://www.tesla2w.com', 'We serve delicious food', 0, NULL, 1, NULL, '2023-06-07 22:21:46', '2023-06-23 20:24:45');
 INSERT INTO `company` VALUES (24, 2, 3, 'testla55', 'street', 'city', 'district', 'commune', 'village', 'https://i.imgur.com/5XPzaNV.jpg', 'tesl44a@gmail.com', 'https://www.tesla222.com', '1234', 0, NULL, 1, NULL, '2023-06-07 22:53:18', '2023-06-26 07:37:54');
-INSERT INTO `company` VALUES (25, 4, 3, 'anotherCompany', 'street', 'city', 'district', 'commune', 'village', 'https://i.imgur.com/DOv6eU6.jpg', '2@d.com', 'https://www.tesla500.com', 'test desc', 0, NULL, 1, NULL, '2023-06-08 01:22:39', '2023-06-22 00:28:48');
+INSERT INTO `company` VALUES (25, 4, 3, 'anotherCompany', 'street', 'city', 'district', 'commune', 'village', 'https://i.imgur.com/DOv6eU6.jpg', '2@d.com', 'https://www.tesla500.com', 'test desc', 0, NULL, 13, NULL, '2023-06-08 01:22:39', '2023-06-27 16:34:24');
 INSERT INTO `company` VALUES (32, 7, 4, 'amazon', 'street', 'city', 'district', 'commune', 'village', 'https://i.imgur.com/gWFUFPh.png', 'amazon@gmail.com', 'https://www.amazon.com/', 'Amazon description', 0, NULL, NULL, NULL, '2023-06-25 01:16:26', '2023-06-25 01:17:02');
 
 -- ----------------------------
@@ -189,17 +189,19 @@ CREATE TABLE `company_user`  (
   `profile_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `api_token` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   PRIMARY KEY (`company_user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of company_user
 -- ----------------------------
-INSERT INTO `company_user` VALUES (2, 'name215', 'name2@gmail.com', '$2y$10$Q871w0g//lElyrzAol9S0.NdTbUfVIbe5IzIRs4F2/7GC52VcdaXW', 2, 0, NULL, 1, NULL, NULL, '2023-06-01 15:32:16', '2023-06-23 20:24:45');
-INSERT INTO `company_user` VALUES (4, 'cname1', 'cname1@gmail.com', '$2y$10$sLZYLSHJb2bex1ThVgGmCu13QhMS6K2nY0WKmKW8mezXf2zpExIcu', 2, 0, NULL, 1, NULL, NULL, '2023-06-03 19:07:56', '2023-06-22 00:28:48');
-INSERT INTO `company_user` VALUES (5, 'cname2', 'cname2@gmail.com', '$2y$10$QzkAOr2g9xJ7JO1WIW1rgu468m3lIf2w8ohrNddg4m4ZmGfwn0mum', 2, 0, NULL, 1, NULL, NULL, '2023-06-18 16:27:03', '2023-06-23 20:17:29');
-INSERT INTO `company_user` VALUES (6, 'DomCom', 'domcom@gmail.com', '$2y$10$Nzdu6a9dj63TFl69MK4CB.8B4CDXhcqLM0huhWN0QSgCUVLNxze3S', 2, 0, NULL, 1, NULL, NULL, '2023-06-18 20:41:40', '2023-06-23 20:17:27');
-INSERT INTO `company_user` VALUES (7, 'cuser1', 'cuser1@gmail.com', '$2y$10$jod0PwavEfCigaO8rc9.NeVY3ohJ21NuvsmCX/5YF2UBz.79rpIoC', 2, 0, NULL, NULL, NULL, NULL, '2023-06-25 01:10:58', '2023-06-25 01:11:59');
+INSERT INTO `company_user` VALUES (2, 'name215', 'name2@gmail.com', '$2y$10$Q871w0g//lElyrzAol9S0.NdTbUfVIbe5IzIRs4F2/7GC52VcdaXW', 2, 0, NULL, 1, NULL, NULL, '2023-06-01 15:32:16', '2023-06-27 23:41:29', NULL);
+INSERT INTO `company_user` VALUES (4, 'cname1', 'cname1@gmail.com', '$2y$10$sLZYLSHJb2bex1ThVgGmCu13QhMS6K2nY0WKmKW8mezXf2zpExIcu', 2, 0, NULL, 13, NULL, NULL, '2023-06-03 19:07:56', '2023-06-27 16:34:24', NULL);
+INSERT INTO `company_user` VALUES (5, 'cname2', 'cname2@gmail.com', '$2y$10$QzkAOr2g9xJ7JO1WIW1rgu468m3lIf2w8ohrNddg4m4ZmGfwn0mum', 2, 0, NULL, 1, NULL, NULL, '2023-06-18 16:27:03', '2023-06-23 20:17:29', NULL);
+INSERT INTO `company_user` VALUES (6, 'DomCom', 'domcom@gmail.com', '$2y$10$Nzdu6a9dj63TFl69MK4CB.8B4CDXhcqLM0huhWN0QSgCUVLNxze3S', 2, 0, NULL, 1, NULL, NULL, '2023-06-18 20:41:40', '2023-06-23 20:17:27', NULL);
+INSERT INTO `company_user` VALUES (7, 'cuser1', 'cuser1@gmail.com', '$2y$10$jod0PwavEfCigaO8rc9.NeVY3ohJ21NuvsmCX/5YF2UBz.79rpIoC', 2, 0, NULL, NULL, NULL, NULL, '2023-06-25 01:10:58', '2023-06-25 01:11:59', NULL);
+INSERT INTO `company_user` VALUES (8, 'companyu1', 'companyu1@gmail.com', '$2y$10$RMgiMayLGYBhDBZvn6Te8uXB7fnYh0M2BQQQCiMq2hUq1kdoN.soi', 2, 0, NULL, NULL, NULL, NULL, '2023-06-27 23:44:31', '2023-06-27 23:44:46', NULL);
 
 -- ----------------------------
 -- Table structure for feedback
@@ -268,21 +270,23 @@ CREATE TABLE `normal_user`  (
   `profile_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `api_token` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   PRIMARY KEY (`normal_user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of normal_user
 -- ----------------------------
-INSERT INTO `normal_user` VALUES (1, 'name1', 'name1@gmail.com', '$2y$10$MkT1cVDgRhrvEYRVuyxyQ.LQ6/GXs9qwN81tPhZl3aZJc3y.w05vG', 1, 0, NULL, 1, NULL, NULL, '2023-06-01 15:26:34', '2023-06-23 20:42:04');
-INSERT INTO `normal_user` VALUES (2, 'Oudom', 'obol@email.com', '$2y$10$HmyeVBXpZfx1Gm1CPsj15Ost4cCI3EpMKygEVuWJa9BiQtgR1v7jO', 1, 0, NULL, 1, NULL, NULL, '2023-06-02 13:01:59', '2023-06-23 20:42:02');
-INSERT INTO `normal_user` VALUES (3, 'uname1', 'uname1@gmail.com', '$2y$10$3stnHMiNiYsRVkeEm7THMuJpZ6MBH3PQClD/6XBGrFdfuXPpdS/d2', 1, 0, NULL, 1, NULL, NULL, '2023-06-03 19:07:27', '2023-06-23 20:11:58');
-INSERT INTO `normal_user` VALUES (4, 'DomUser', 'Domuser@gmail.com', '$2y$10$Z.niGh6zaV31.GzMJw2vXuKezgPwFDurGGoTwRA7IQd7sFPCqukcy', 1, 0, NULL, 1, NULL, NULL, '2023-06-18 16:15:53', '2023-06-23 20:11:56');
-INSERT INTO `normal_user` VALUES (5, 'Domtesttwo', 'domtesttwo@gmail.com', '$2y$10$qnXXOktcSRxjzwRVd8E.6.Rn7D05rzaHjYeEarDYE9GYI0PNPkMR2', 1, 0, NULL, NULL, NULL, NULL, '2023-06-18 16:19:47', '2023-06-18 16:19:47');
-INSERT INTO `normal_user` VALUES (6, 'uname2', 'uname2@gmail.com', '$2y$10$./m6y33uyr.iNrO25ZptFOVJC9WP9rDb.6DCW4ENihaSn8vpnRTR.', 1, 0, NULL, NULL, NULL, NULL, '2023-06-18 16:26:38', '2023-06-18 16:26:38');
-INSERT INTO `normal_user` VALUES (7, 'DomUserTwo', 'domusertwo@yahoo.com', '$2y$10$XrD4R5KzYGajXx95xrdNeOJG4IGhZ9fuzJEgXhf2UOKCmYAivdm5y', 1, 0, NULL, 1, NULL, NULL, '2023-06-18 21:11:12', '2023-06-23 20:12:30');
-INSERT INTO `normal_user` VALUES (8, 'flash29', 'flash29@gmail.com', '$2y$10$81JrDXR5WT4./7cvED96R.DZmJf4XKEONktjOxgVRoY.z1guTuIqS', 1, 0, NULL, 1, NULL, NULL, '2023-06-24 02:05:17', '2023-06-23 20:12:30');
-INSERT INTO `normal_user` VALUES (9, 'nuser12', 'nuser1@gmail.com', '$2y$10$jlSIEuunimYUCQwK1YY1z.H5.APnjM2EzArMV78o/l4PP5BEyJmhm', 1, 0, NULL, NULL, NULL, NULL, '2023-06-25 01:05:51', '2023-06-25 01:08:42');
+INSERT INTO `normal_user` VALUES (1, 'name1', 'name1@gmail.com', '$2y$10$MkT1cVDgRhrvEYRVuyxyQ.LQ6/GXs9qwN81tPhZl3aZJc3y.w05vG', 1, 0, NULL, 1, NULL, NULL, '2023-06-01 15:26:34', '2023-06-27 23:40:52', NULL);
+INSERT INTO `normal_user` VALUES (2, 'Oudom', 'obol@email.com', '$2y$10$HmyeVBXpZfx1Gm1CPsj15Ost4cCI3EpMKygEVuWJa9BiQtgR1v7jO', 1, 0, NULL, 1, NULL, NULL, '2023-06-02 13:01:59', '2023-06-23 20:42:02', NULL);
+INSERT INTO `normal_user` VALUES (3, 'uname1', 'uname1@gmail.com', '$2y$10$3stnHMiNiYsRVkeEm7THMuJpZ6MBH3PQClD/6XBGrFdfuXPpdS/d2', 1, 1, 13, NULL, '1', NULL, '2023-06-03 19:07:27', '2023-06-27 13:42:03', NULL);
+INSERT INTO `normal_user` VALUES (4, 'DomUser', 'Domuser@gmail.com', '$2y$10$Z.niGh6zaV31.GzMJw2vXuKezgPwFDurGGoTwRA7IQd7sFPCqukcy', 1, 0, NULL, 1, NULL, NULL, '2023-06-18 16:15:53', '2023-06-23 20:11:56', NULL);
+INSERT INTO `normal_user` VALUES (5, 'Domtesttwo', 'domtesttwo@gmail.com', '$2y$10$qnXXOktcSRxjzwRVd8E.6.Rn7D05rzaHjYeEarDYE9GYI0PNPkMR2', 1, 0, NULL, NULL, NULL, NULL, '2023-06-18 16:19:47', '2023-06-18 16:19:47', NULL);
+INSERT INTO `normal_user` VALUES (6, 'uname2', 'uname2@gmail.com', '$2y$10$./m6y33uyr.iNrO25ZptFOVJC9WP9rDb.6DCW4ENihaSn8vpnRTR.', 1, 0, NULL, NULL, NULL, NULL, '2023-06-18 16:26:38', '2023-06-18 16:26:38', NULL);
+INSERT INTO `normal_user` VALUES (7, 'DomUserTwo', 'domusertwo@yahoo.com', '$2y$10$XrD4R5KzYGajXx95xrdNeOJG4IGhZ9fuzJEgXhf2UOKCmYAivdm5y', 1, 0, NULL, 1, NULL, NULL, '2023-06-18 21:11:12', '2023-06-23 20:12:30', NULL);
+INSERT INTO `normal_user` VALUES (8, 'flash29', 'flash29@gmail.com', '$2y$10$81JrDXR5WT4./7cvED96R.DZmJf4XKEONktjOxgVRoY.z1guTuIqS', 1, 0, NULL, 1, NULL, NULL, '2023-06-24 02:05:17', '2023-06-23 20:12:30', NULL);
+INSERT INTO `normal_user` VALUES (9, 'nuser12', 'nuser1@gmail.com', '$2y$10$jlSIEuunimYUCQwK1YY1z.H5.APnjM2EzArMV78o/l4PP5BEyJmhm', 1, 0, NULL, 13, NULL, NULL, '2023-06-25 01:05:51', '2023-06-26 15:06:39', NULL);
+INSERT INTO `normal_user` VALUES (10, 'normalu1', 'normalu1@gmail.com', '$2y$10$lqs1GmMNyDumk5xroS237OPe.WKR/droUCn5cR5ssCDJg.MSGtTBe', 1, 0, NULL, NULL, NULL, NULL, '2023-06-27 23:43:59', '2023-06-27 23:44:12', NULL);
 
 -- ----------------------------
 -- Table structure for rate

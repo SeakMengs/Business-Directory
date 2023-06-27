@@ -20,23 +20,6 @@ class SiteController extends Controller
         return view('homepage');
     }
 
-    public function test()
-    {
-        $data = CompanyUser::with('companies.feedbacks.normalUser', 'companies.contacts')->get();
-
-        // with id
-        // $data = CompanyUser::with('companies.feedbacks')->where('company_user_id', 2)->get();
-
-        // doesn't have to add the 'user' object name but it's better to do so
-        // so that we know what the object is
-        return response()->json([
-            'user' => $data,
-        ]);
-
-        // example
-        // return response()->json($data);
-    }
-
     public function categories()
     {
         // TODO: query all categories

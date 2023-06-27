@@ -23,10 +23,12 @@ class CompanyUser extends Model implements Authenticatable
         'email',
         'password',
         'profile_url',
+        'api_token'
     ];
 
     protected $hidden = [
         'password',
+        'api_token',
     ];
 
     // The function below are mutators and accessors that will be called automatically
