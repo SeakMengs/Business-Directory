@@ -692,4 +692,21 @@ outline: none;
     }
 }
 
+/* Laravel Pagination 4 Bootstrap customize to red*/
+.pagination-to-right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 2rem 0 2rem 0;
+}
 
+.pagination .active .page-link {
+    background-color: #c93434;
+    border-color: #c93434;
+    color: #fff !important;
+}
+
+.pagination .page-link {
+    color: #c93434 !important;
+    /* background-color: #fff; */
+}

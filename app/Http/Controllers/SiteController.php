@@ -23,7 +23,7 @@ class SiteController extends Controller
     public function categories()
     {
         // TODO: query all categories
-        $categories = Category::all();
+        $categories = Category::paginate(16);
 
         // return response()->json($categories);
 
@@ -47,7 +47,7 @@ class SiteController extends Controller
 
         $companies = Company::with('contacts', 'rates')
             ->withAvg('rates as avg_star_rate', 'star_number')
-            ->where([['category_id', $category_id], ['is_banned', 0]])->get();
+            ->where([['category_id', $category_id], ['is_banned', 0]])->paginate(9);
 
         // return response()->json($companies);
 
@@ -94,9 +94,9 @@ class SiteController extends Controller
         if ($search_by == 'company') {
             $result = Company::with('contacts', 'rates', 'category')
                 ->withAvg('rates as avg_star_rate', 'star_number')
-                ->where([['name', 'like', '%' . $search_query . '%'], ['is_banned', 0]])->get();
+                ->where([['name', 'like', '%' . $search_query . '%'], ['is_banned', 0]])->paginate(20);
         } else if ($search_by == 'category') {
-            $result = Category::where('name', 'like', '%' . $search_query . '%')->get();
+            $result = Category::where('name', 'like', '%' . $search_query . '%')->paginate(20);
         }
         // }
 

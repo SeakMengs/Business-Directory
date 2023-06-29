@@ -14,7 +14,7 @@
             </ol>
         </nav>
         <!-- End Breadcrumbs -->
-        
+
         @if ($cateNotFound)
             <div class="alert alert-danger" role="alert">
                 Category does not exist :(
@@ -44,7 +44,9 @@
                                             @else
                                                 <span>This company does not have contact number</span>
                                             @endif
-                                            <span class="company-address"><small>{{ $company->street}}, {{ $company->village}}, {{ $company->district}}, {{ $company->commune}} , {{ $company->city }}</small></span>
+                                            <span class="company-address"><small>{{ $company->street }},
+                                                    {{ $company->village }}, {{ $company->district }},
+                                                    {{ $company->commune }} , {{ $company->city }}</small></span>
                                         </div>
                                         <!-- Company rating -->
                                         <div class="company-rating">
@@ -68,14 +70,16 @@
                         </div>
                     @endforeach
                 @else
-                <div class="alert alert-danger" style="width: 100%" role="alert">
-                    No company found for <span class="text-danger">Category</span> name <span
-                        class="text-danger">{{ $categoryName }}</span>
-                </div>
+                    <div class="alert alert-danger" style="width: 100%" role="alert">
+                        No company found for <span class="text-danger">Category</span> name <span
+                            class="text-danger">{{ $categoryName }}</span>
+                    </div>
                 @endif
             </div>
+            <div class="pagination-to-right">
+                {{ $companies->links('pagination::bootstrap-4') }}
+            </div>
+        @endif
     </div>
-    @endif
-</div>
 
 @stop

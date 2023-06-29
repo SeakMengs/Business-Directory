@@ -17,7 +17,7 @@
             <!-- First category -->
             <div class="col">
                 <div class="card h-100">
-                    <a href="#" class="text-decoration-none">
+                    <a href="/category/Business%20Services" class="text-decoration-none">
                         <!-- Category logo -->
                         <div class="text-center mt-2">
                             <!-- Add a class to center the image -->
@@ -39,7 +39,7 @@
             <!-- 2nd category -->
             <div class="col">
                 <div class="card h-100">
-                    <a href="#" class="text-decoration-none">
+                    <a href="/category/Banking%20&%20Finance" class="text-decoration-none">
                         <!-- Category logo -->
                         <div class="text-center mt-2">
                             <!-- Add a class to center the image -->
@@ -59,7 +59,7 @@
             <!-- 3rd Category -->
             <div class="col">
                 <div class="card h-100">
-                    <a href="#" class="text-decoration-none">
+                    <a href="/category/Construction" class="text-decoration-none">
                         <!-- Category logo -->
                         <div class="text-center mt-2">
                             <!-- Add a class to center the image -->
@@ -80,7 +80,7 @@
             <!-- 4th Category -->
             <div class="col">
                 <div class="card h-100">
-                    <a href="#" class="text-decoration-none">
+                    <a href="/category/Home%20&%20Household" class="text-decoration-none">
                         <!-- Category logo -->
                         <div class="text-center mt-2">
                             <!-- Add a class to center the image -->
@@ -101,7 +101,7 @@
             <!-- 5th Category -->
             <div class="col">
                 <div class="card h-100">
-                    <a href="#" class="text-decoration-none">
+                    <a href="/category/Industry,%20Agricultural%20&%20Garment" class="text-decoration-none">
                         <!-- Category logo -->
                         <div class="text-center mt-2">
                             <!-- Add a class to center the image -->
@@ -122,7 +122,7 @@
             <!-- 6th Category -->
             <div class="col">
                 <div class="card h-100">
-                    <a href="#" class="text-decoration-none">
+                    <a href="/category/Travel%20&%20Tourism" class="text-decoration-none">
                         <!-- Category logo -->
                         <div class="text-center mt-2">
                             <!-- Add a class to center the image -->

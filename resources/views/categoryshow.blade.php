@@ -38,7 +38,9 @@
                 <p>No category found</p>
             @endif
         </div>
-
+        <div class="pagination-to-right">
+            {{ $categories->links('pagination::bootstrap-4') }}
+        </div>
     </div>
 
 @stop

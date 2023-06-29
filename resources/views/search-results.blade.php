@@ -17,10 +17,10 @@
         </nav>
         <h6 class="text-center m-4">Search results for <span class="text-danger">{{ $search_query }}</span> by <span
                 class="text-danger">{{ $search_by }}</span>
-            <span>| {{count($result)}} result{{ count($result) > 0 ? 's' : ''}}</span>
+            {{-- <span>| {{count($result)}} result{{ count($result) > 0 ? 's' : ''}}</span> --}}
         </h6>
         <!-- End Breadcrumbs -->
-        
+
         @if (count($result) > 0)
             @if ($search_by == 'category')
                 <div class="row row-cols-1 row-cols-md-1 g-4">
@@ -41,6 +41,10 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+                <div class="pagination-to-right">
+                    {{-- https://github.com/laravel/framework/issues/19441 --}}
+                    {{ $result->appends(request()->except('page'))->links('pagination::bootstrap-4') }}
                 </div>
             @elseif ($search_by == 'company')
                 <div class="row row-cols-1">
@@ -91,6 +95,10 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+                <div class="pagination-to-right">
+                    {{-- https://github.com/laravel/framework/issues/19441 --}}
+                    {{ $result->appends(request()->except('page'))->links('pagination::bootstrap-4') }}
                 </div>
             @endif
         @else
