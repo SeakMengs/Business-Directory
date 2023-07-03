@@ -56,6 +56,7 @@ class CompanyUserController extends Controller
             'form_params' => [
                 'image' => base64_encode(file_get_contents($image)),
             ],
+            'verify' => false,
         ]);
 
         // get link

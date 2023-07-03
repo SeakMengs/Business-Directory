@@ -11,7 +11,7 @@
  Target Server Version : 80023 (8.0.23-PlanetScale)
  File Encoding         : 65001
 
- Date: 28/06/2023 00:19:01
+ Date: 04/07/2023 01:39:35
 */
 
 SET NAMES utf8mb4;
@@ -40,13 +40,12 @@ CREATE TABLE `admin_user`  (
 -- ----------------------------
 -- Records of admin_user
 -- ----------------------------
-INSERT INTO `admin_user` VALUES (1, 'SuperAdmin', 'superadmin@gmail.com', '$2y$10$K56U1XEBqglxFYZCDAQXj.aKsCn.UUidAcc4XX5w43wwQJVHuKLRG', 3, 'https://i.imgur.com/OPGfO76.jpg', 1, 1, 1, '2023-06-10 13:33:28', '2023-06-26 18:27:55', 'Zx5JqbYumOYxedh5piFyYKO75XDIPpQO3KjnK0Ga0dtChTWnSjpL7fbTZ01oAuF7KOuK8ye6ZHEob4IZ');
+INSERT INTO `admin_user` VALUES (1, 'SuperAdmin', 'superadmin@gmail.com', '$2y$10$K56U1XEBqglxFYZCDAQXj.aKsCn.UUidAcc4XX5w43wwQJVHuKLRG', 3, 'https://i.imgur.com/OPGfO76.jpg', 1, 1, 1, '2023-06-10 13:33:28', '2023-07-03 14:59:39', 'w3P9gpCFRIgnO2Cn4IVLi862HiRtbZ4qhxXI70WSduSh2GJ6QTSpVHTdNDNuK1bSSk3oLuX57Lt33y64');
 INSERT INTO `admin_user` VALUES (2, 'admin2', 'admin2@gmail.com', '$2y$10$bUhyjjjBhp2S5NHrFdKZaey3pHIZdKcUNYgvkmHWxKL8kI8B9YERe', 3, NULL, 1, 0, 0, '2023-06-21 19:34:37', '2023-06-21 22:36:51', NULL);
 INSERT INTO `admin_user` VALUES (3, 'admin3', 'admin3@gmail.com', '$2y$10$7wUMotznK5zAwHVgxNHSoO4MxotRYf1oQvfL9f0RyyaPu/axAQ.R.', 3, NULL, 1, 0, 0, '2023-06-21 19:36:03', '2023-06-21 23:21:24', NULL);
 INSERT INTO `admin_user` VALUES (4, 'admin4', 'admin4@gmail.com', '$2y$10$QBk2ezxTPBdOIwmCRrqwKeoMyCyNUMJUhuaLk58unM3JG/3a0Gkwq', 3, NULL, 1, 0, 0, '2023-06-21 19:36:24', '2023-06-21 19:36:24', NULL);
 INSERT INTO `admin_user` VALUES (9, 'admin123', 'admin123@gmail.com', '$2y$10$g4jWj9kNsQbt92M5G282sOpetcpLn/8nVzkGdWs1QWD3jepIk/hIe', 3, NULL, 0, 0, 0, '2023-06-22 00:21:34', '2023-06-22 00:21:34', NULL);
-INSERT INTO `admin_user` VALUES (10, 'admin1234', 'admin1234@gmail.com', '$2y$10$iX.L4.YUNc8IU..kGfwWiuZzqa74fqVx525M1yzABtE9rGmAFIdeu', 3, NULL, 0, 0, 0, '2023-06-22 00:22:48', '2023-06-22 00:22:48', NULL);
-INSERT INTO `admin_user` VALUES (13, 'testadmin', 'testadmin@gmail.com', '$2y$10$6Ag/svsYbGKbPG3fQtOlV.hn/CJhupd53XFta6mWJ/NYCE7EDWdsG', 3, 'https://i.imgur.com/gpadima.jpg', 1, 1, 0, '2023-06-23 22:16:13', '2023-06-27 17:04:23', 'X6vaaPR8xnO9njgrNnvwlqNWY7LOuYoofPoAiLJaBsf8Ss4SzBQzyEnzczWHkvsCwkqFC9pIfGMKWJcF');
+INSERT INTO `admin_user` VALUES (13, 'testadmin', 'testadmin@gmail.com', '$2y$10$6Ag/svsYbGKbPG3fQtOlV.hn/CJhupd53XFta6mWJ/NYCE7EDWdsG', 3, 'https://i.imgur.com/gpadima.jpg', 1, 1, 0, '2023-06-23 22:16:13', '2023-07-02 03:36:04', NULL);
 INSERT INTO `admin_user` VALUES (14, 'testadmin2', 'testadmin2@gmail.com', '$2y$10$mQLa/w/RdC08YRNepZIIG.s.nbf1gKikyHBdJ8TEthKqZNNLfLBRu', 3, NULL, 0, 0, 0, '2023-06-23 22:18:12', '2023-06-23 22:18:12', NULL);
 INSERT INTO `admin_user` VALUES (15, 'testtt', 'testtt@gmail.com', '$2y$10$IA5Rl/H.65uIzeL5gs1mauFn32/5czJ3jGkuH.CulATwWDvmBlRH6', 3, NULL, 1, 1, 0, '2023-06-23 22:19:59', '2023-06-23 22:31:14', NULL);
 INSERT INTO `admin_user` VALUES (21, 'test', 'test@gmail.com', '$2y$10$yumCK1qH7UsF3ShLX5u5BelFaCHQw3DnN5D.79tsqw.nBnQCDtAWe', 3, NULL, 0, 0, 0, '2023-06-23 22:49:17', '2023-06-23 22:49:17', NULL);
@@ -65,7 +64,7 @@ CREATE TABLE `category`  (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`category_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of category
@@ -77,6 +76,12 @@ INSERT INTO `category` VALUES (4, 1, 'Education', '<i class=\"fa-solid fa-school
 INSERT INTO `category` VALUES (5, 1, 'Automotive - Vehicles', '<i class=\"fa-solid fa-car fontawe-icon\"></i>', NULL, '2023-06-18 21:42:30', '2023-06-18 21:42:30');
 INSERT INTO `category` VALUES (16, 1, 'Food & Beverages', '<i class=\"fa-solid fa-bowl-food fontawe-icon\"></i>', 1, '2023-06-23 12:01:00', '2023-06-26 13:21:25');
 INSERT INTO `category` VALUES (17, 1, 'Health & Medicine', '<i class=\"fa-solid fa-suitcase-medical fontawe-icon\"></i>', NULL, '2023-06-26 13:21:39', '2023-06-26 13:21:39');
+INSERT INTO `category` VALUES (18, 1, 'Hotels', '<i class=\"fa-solid fa-hotel fontawe-icon\"></i>', NULL, '2023-06-29 13:49:13', '2023-06-29 13:49:13');
+INSERT INTO `category` VALUES (19, 1, 'Security Services', '<i class=\"fa-solid fa-shield-halved fontawe-icon\"></i>', NULL, '2023-06-29 13:49:48', '2023-06-29 13:49:48');
+INSERT INTO `category` VALUES (20, 1, 'Business Services', '<i class=\"fa-solid fa-briefcase fontawe-icon\"></i>', NULL, '2023-06-29 14:15:37', '2023-06-29 14:15:37');
+INSERT INTO `category` VALUES (21, 1, 'Home & Household', '<i class=\"fa-solid fa-house fontawe-icon\"></i>', 1, '2023-06-29 14:18:23', '2023-06-29 14:19:33');
+INSERT INTO `category` VALUES (22, 1, 'Industry, Agricultural & Garment', '<i class=\"fa-sharp fa-solid fa-tractor fontawe-icon\"></i>', NULL, '2023-06-29 14:20:48', '2023-06-29 14:20:48');
+INSERT INTO `category` VALUES (23, 1, 'Travel & Tourism', '<i class=\"fa-solid fa-plane fontawe-icon\"></i>', NULL, '2023-06-29 14:22:12', '2023-06-29 14:22:12');
 
 -- ----------------------------
 -- Table structure for company
@@ -196,7 +201,7 @@ CREATE TABLE `company_user`  (
 -- ----------------------------
 -- Records of company_user
 -- ----------------------------
-INSERT INTO `company_user` VALUES (2, 'name215', 'name2@gmail.com', '$2y$10$Q871w0g//lElyrzAol9S0.NdTbUfVIbe5IzIRs4F2/7GC52VcdaXW', 2, 0, NULL, 1, NULL, NULL, '2023-06-01 15:32:16', '2023-06-27 23:41:29', NULL);
+INSERT INTO `company_user` VALUES (2, 'name215', 'name2@gmail.com', '$2y$10$Q871w0g//lElyrzAol9S0.NdTbUfVIbe5IzIRs4F2/7GC52VcdaXW', 2, 0, NULL, 1, NULL, NULL, '2023-06-01 15:32:16', '2023-07-04 01:30:30', 'sZhKffi5iyTXUMzb44SfTb8ClN9X1nmVYqK8QBLIj24hIwlfIgUlHUgf4bg5YuFutUtyE1SsFdTqvB8J');
 INSERT INTO `company_user` VALUES (4, 'cname1', 'cname1@gmail.com', '$2y$10$sLZYLSHJb2bex1ThVgGmCu13QhMS6K2nY0WKmKW8mezXf2zpExIcu', 2, 0, NULL, 13, NULL, NULL, '2023-06-03 19:07:56', '2023-06-27 16:34:24', NULL);
 INSERT INTO `company_user` VALUES (5, 'cname2', 'cname2@gmail.com', '$2y$10$QzkAOr2g9xJ7JO1WIW1rgu468m3lIf2w8ohrNddg4m4ZmGfwn0mum', 2, 0, NULL, 1, NULL, NULL, '2023-06-18 16:27:03', '2023-06-23 20:17:29', NULL);
 INSERT INTO `company_user` VALUES (6, 'DomCom', 'domcom@gmail.com', '$2y$10$Nzdu6a9dj63TFl69MK4CB.8B4CDXhcqLM0huhWN0QSgCUVLNxze3S', 2, 0, NULL, 1, NULL, NULL, '2023-06-18 20:41:40', '2023-06-23 20:17:27', NULL);
@@ -272,12 +277,12 @@ CREATE TABLE `normal_user`  (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `api_token` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   PRIMARY KEY (`normal_user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of normal_user
 -- ----------------------------
-INSERT INTO `normal_user` VALUES (1, 'name1', 'name1@gmail.com', '$2y$10$MkT1cVDgRhrvEYRVuyxyQ.LQ6/GXs9qwN81tPhZl3aZJc3y.w05vG', 1, 0, NULL, 1, NULL, NULL, '2023-06-01 15:26:34', '2023-06-27 23:40:52', NULL);
+INSERT INTO `normal_user` VALUES (1, 'name1', 'name1@gmail.com', '$2y$10$MkT1cVDgRhrvEYRVuyxyQ.LQ6/GXs9qwN81tPhZl3aZJc3y.w05vG', 1, 0, NULL, 1, NULL, NULL, '2023-06-01 15:26:34', '2023-07-04 01:30:24', NULL);
 INSERT INTO `normal_user` VALUES (2, 'Oudom', 'obol@email.com', '$2y$10$HmyeVBXpZfx1Gm1CPsj15Ost4cCI3EpMKygEVuWJa9BiQtgR1v7jO', 1, 0, NULL, 1, NULL, NULL, '2023-06-02 13:01:59', '2023-06-23 20:42:02', NULL);
 INSERT INTO `normal_user` VALUES (3, 'uname1', 'uname1@gmail.com', '$2y$10$3stnHMiNiYsRVkeEm7THMuJpZ6MBH3PQClD/6XBGrFdfuXPpdS/d2', 1, 1, 13, NULL, '1', NULL, '2023-06-03 19:07:27', '2023-06-27 13:42:03', NULL);
 INSERT INTO `normal_user` VALUES (4, 'DomUser', 'Domuser@gmail.com', '$2y$10$Z.niGh6zaV31.GzMJw2vXuKezgPwFDurGGoTwRA7IQd7sFPCqukcy', 1, 0, NULL, 1, NULL, NULL, '2023-06-18 16:15:53', '2023-06-23 20:11:56', NULL);
@@ -287,6 +292,7 @@ INSERT INTO `normal_user` VALUES (7, 'DomUserTwo', 'domusertwo@yahoo.com', '$2y$
 INSERT INTO `normal_user` VALUES (8, 'flash29', 'flash29@gmail.com', '$2y$10$81JrDXR5WT4./7cvED96R.DZmJf4XKEONktjOxgVRoY.z1guTuIqS', 1, 0, NULL, 1, NULL, NULL, '2023-06-24 02:05:17', '2023-06-23 20:12:30', NULL);
 INSERT INTO `normal_user` VALUES (9, 'nuser12', 'nuser1@gmail.com', '$2y$10$jlSIEuunimYUCQwK1YY1z.H5.APnjM2EzArMV78o/l4PP5BEyJmhm', 1, 0, NULL, 13, NULL, NULL, '2023-06-25 01:05:51', '2023-06-26 15:06:39', NULL);
 INSERT INTO `normal_user` VALUES (10, 'normalu1', 'normalu1@gmail.com', '$2y$10$lqs1GmMNyDumk5xroS237OPe.WKR/droUCn5cR5ssCDJg.MSGtTBe', 1, 0, NULL, NULL, NULL, NULL, '2023-06-27 23:43:59', '2023-06-27 23:44:12', NULL);
+INSERT INTO `normal_user` VALUES (11, 'uuu1', 'uuu1@gmail.com', '$2y$10$cYuQ3S0ArblR0Aqp/SAKHejjXc19SdfiNxugEQEA/.mHDsc3fpYMW', 1, 0, NULL, NULL, NULL, NULL, '2023-06-28 20:12:17', '2023-06-28 20:26:11', NULL);
 
 -- ----------------------------
 -- Table structure for rate
@@ -300,7 +306,7 @@ CREATE TABLE `rate`  (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`rate_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of rate
@@ -313,6 +319,7 @@ INSERT INTO `rate` VALUES (8, 23, 1, 5, '2023-06-10 06:07:40', '2023-06-24 01:59
 INSERT INTO `rate` VALUES (9, 23, 4, 3, '2023-06-18 20:40:34', '2023-06-18 20:40:34');
 INSERT INTO `rate` VALUES (10, 25, 1, 3, '2023-06-24 02:00:36', '2023-06-24 02:00:36');
 INSERT INTO `rate` VALUES (11, 24, 9, 5, '2023-06-25 01:10:03', '2023-06-25 01:10:03');
+INSERT INTO `rate` VALUES (12, 24, 1, 5, '2023-07-03 00:59:19', '2023-07-03 01:00:10');
 
 -- ----------------------------
 -- Table structure for report

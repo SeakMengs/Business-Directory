@@ -4,7 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 {{-- https://stackoverflow.com/questions/43895390/imgur-images-returning-403 --}}
 <meta name="referrer" content="no-referrer">
-
+<link rel="icon" type="image/x-icon" href="https://i.imgur.com/T0cqgO1.png">
 <title>VOS Business Directory</title>
 
 <!-- Bootstrap 5 CSS -->
