@@ -11,7 +11,7 @@
  Target Server Version : 80023 (8.0.23-PlanetScale)
  File Encoding         : 65001
 
- Date: 04/07/2023 01:39:35
+ Date: 06/07/2023 03:04:14
 */
 
 SET NAMES utf8mb4;
@@ -35,12 +35,12 @@ CREATE TABLE `admin_user`  (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `api_token` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   PRIMARY KEY (`admin_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin_user
 -- ----------------------------
-INSERT INTO `admin_user` VALUES (1, 'SuperAdmin', 'superadmin@gmail.com', '$2y$10$K56U1XEBqglxFYZCDAQXj.aKsCn.UUidAcc4XX5w43wwQJVHuKLRG', 3, 'https://i.imgur.com/OPGfO76.jpg', 1, 1, 1, '2023-06-10 13:33:28', '2023-07-03 14:59:39', 'w3P9gpCFRIgnO2Cn4IVLi862HiRtbZ4qhxXI70WSduSh2GJ6QTSpVHTdNDNuK1bSSk3oLuX57Lt33y64');
+INSERT INTO `admin_user` VALUES (1, 'SuperAdmin', 'superadmin@gmail.com', '$2y$10$K56U1XEBqglxFYZCDAQXj.aKsCn.UUidAcc4XX5w43wwQJVHuKLRG', 3, 'https://i.imgur.com/OPGfO76.jpg', 1, 1, 1, '2023-06-10 13:33:28', '2023-07-05 19:16:06', NULL);
 INSERT INTO `admin_user` VALUES (2, 'admin2', 'admin2@gmail.com', '$2y$10$bUhyjjjBhp2S5NHrFdKZaey3pHIZdKcUNYgvkmHWxKL8kI8B9YERe', 3, NULL, 1, 0, 0, '2023-06-21 19:34:37', '2023-06-21 22:36:51', NULL);
 INSERT INTO `admin_user` VALUES (3, 'admin3', 'admin3@gmail.com', '$2y$10$7wUMotznK5zAwHVgxNHSoO4MxotRYf1oQvfL9f0RyyaPu/axAQ.R.', 3, NULL, 1, 0, 0, '2023-06-21 19:36:03', '2023-06-21 23:21:24', NULL);
 INSERT INTO `admin_user` VALUES (4, 'admin4', 'admin4@gmail.com', '$2y$10$QBk2ezxTPBdOIwmCRrqwKeoMyCyNUMJUhuaLk58unM3JG/3a0Gkwq', 3, NULL, 1, 0, 0, '2023-06-21 19:36:24', '2023-06-21 19:36:24', NULL);
@@ -48,8 +48,9 @@ INSERT INTO `admin_user` VALUES (9, 'admin123', 'admin123@gmail.com', '$2y$10$g4
 INSERT INTO `admin_user` VALUES (13, 'testadmin', 'testadmin@gmail.com', '$2y$10$6Ag/svsYbGKbPG3fQtOlV.hn/CJhupd53XFta6mWJ/NYCE7EDWdsG', 3, 'https://i.imgur.com/gpadima.jpg', 1, 1, 0, '2023-06-23 22:16:13', '2023-07-02 03:36:04', NULL);
 INSERT INTO `admin_user` VALUES (14, 'testadmin2', 'testadmin2@gmail.com', '$2y$10$mQLa/w/RdC08YRNepZIIG.s.nbf1gKikyHBdJ8TEthKqZNNLfLBRu', 3, NULL, 0, 0, 0, '2023-06-23 22:18:12', '2023-06-23 22:18:12', NULL);
 INSERT INTO `admin_user` VALUES (15, 'testtt', 'testtt@gmail.com', '$2y$10$IA5Rl/H.65uIzeL5gs1mauFn32/5czJ3jGkuH.CulATwWDvmBlRH6', 3, NULL, 1, 1, 0, '2023-06-23 22:19:59', '2023-06-23 22:31:14', NULL);
-INSERT INTO `admin_user` VALUES (21, 'test', 'test@gmail.com', '$2y$10$yumCK1qH7UsF3ShLX5u5BelFaCHQw3DnN5D.79tsqw.nBnQCDtAWe', 3, NULL, 0, 0, 0, '2023-06-23 22:49:17', '2023-06-23 22:49:17', NULL);
+INSERT INTO `admin_user` VALUES (21, 'test', 'test@gmail.com', '$2y$10$yumCK1qH7UsF3ShLX5u5BelFaCHQw3DnN5D.79tsqw.nBnQCDtAWe', 3, NULL, 1, 0, 0, '2023-06-23 22:49:17', '2023-07-05 18:45:04', NULL);
 INSERT INTO `admin_user` VALUES (22, 'test2', 'test2@gmail.com', '$2y$10$bRSXu3toXGfsI/tpfNRDI.T9bNadZQU9Tmemwdp/yEAykE9nZh5ni', 3, NULL, 1, 1, 0, '2023-06-23 23:12:42', '2023-06-23 23:12:42', NULL);
+INSERT INTO `admin_user` VALUES (24, 'superadmin2', 'superadmin2@gmail.com', '$2y$10$.2MKH8W1wnjj97JHnwv/s.6PTeBvBbAKxEfl/1gz9NNzTqzkGA496', 3, NULL, 1, 1, 1, '2023-07-05 19:15:23', '2023-07-05 19:43:39', 'OqazFdimAHJpJdR8YcFljg8jHFL4LEYfMlJWPKouiEDvnNEUlsSQhasVM0al5HBrjVvNs9cZschKOScO');
 
 -- ----------------------------
 -- Table structure for category
@@ -108,16 +109,17 @@ CREATE TABLE `company`  (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`company_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of company
 -- ----------------------------
-INSERT INTO `company` VALUES (22, 2, 3, 'Tesla3', 'Kampuchea Krom Blvd (128)', 'New York', 'Khan Toul Kork', 'Sangkat                                                    Teuk                                                    Laak                                                    II', 'village village', 'https://i.imgur.com/aJgJco4.jpg', 'tesla23@gmail.com', 'https://www.tesla2.com', 'S-COOL is the world leading heat protection window film company with its head office in Singapore. Our proprietary products included Super Ceramic ATO window film, provides the best high heat protection and value for money. This is the result of dedications and efforts by our R&D team, whom founded the use of this special ceramic compound for maximum heat rejection. Our founders started marketing solar control window film since 2007, under the brand S-COOL Solar & Security Window Film.', 0, NULL, 1, NULL, '2023-06-07 22:20:35', '2023-06-23 20:24:45');
-INSERT INTO `company` VALUES (23, 2, 4, 'Tesla4 e', 'street2 e', 'city2 e', 'district2 e', 'commune2 e', 'village2 e', 'https://i.imgur.com/8HYYrno.jpg', 'tesla244@gmail.com', 'https://www.tesla2w.com', 'We serve delicious food', 0, NULL, 1, NULL, '2023-06-07 22:21:46', '2023-06-23 20:24:45');
-INSERT INTO `company` VALUES (24, 2, 3, 'testla55', 'street', 'city', 'district', 'commune', 'village', 'https://i.imgur.com/5XPzaNV.jpg', 'tesl44a@gmail.com', 'https://www.tesla222.com', '1234', 0, NULL, 1, NULL, '2023-06-07 22:53:18', '2023-06-26 07:37:54');
+INSERT INTO `company` VALUES (22, 2, 20, 'Grant Thornton (Cambodia) Limited.', 'No.315, Preah Ang Duong (St. 110)', 'Phnom Penh', 'Daun Penh', 'Wat Phnom', 'Corner of Preah Monivong Blvd (93), Canadia Tower', 'https://i.imgur.com/fxjdCIc.png', 'ronald.almera@kh.gt.com', 'https://www.grantthornton.com.kh', 'We are Grant Thornton.\r\nGoing beyond business as usual, so you can too.\r\nWe invest in listening, building relationships and understanding your concerns to deliver an experience that’s more personal, agile and proactive. We work at the pace that matters. Yours. That\'s why we celebrate fresh thinking and diverse perspectives to find better solutions. We don’t predict the future. We help you shape it.\r\n\r\nWe embrace what makes each market unique.', 0, NULL, 1, NULL, '2023-06-07 22:20:35', '2023-07-05 20:25:02');
+INSERT INTO `company` VALUES (23, 2, 20, 'Crowe (KH) Co., Ltd.', 'No.148, Mao Tse Toung Blvd (245), Corner of St. 248', 'Phnom Penh', 'Chamkar Morn', 'Toul Tum Poung II', 'K1 Building, 4th Floor, Office B4', 'https://i.imgur.com/t5hP6nz.png', 'virakphakdei.chea@crowe.com.kh', 'https://www.crowe.com.kh', 'We help inward investors establish themselves in Cambodia by providing corporate secretarial, accounting and consulting services. We are also a one-stop agency providing audit, tax, corporate advisory and business improvement services to growing entrepreneurs and corporate groups in Cambodia.\r\n\r\nSupported by a team of professionals who understand the business mindset of innovative Cambodian entrepreneurs, we are committed to provide quality services in a personalised manner.', 0, NULL, 1, NULL, '2023-06-07 22:21:46', '2023-07-05 20:11:49');
+INSERT INTO `company` VALUES (24, 2, 20, 'Graphic Roots Co., Ltd.', 'No.15, Oknha Peich (St. 242)', 'Phnom Penh', 'Daun Penh', 'Chak Tomuk', 'Village', 'https://i.imgur.com/Qrue569.png', 'design@graphicroots.net', 'https://www.graphicroots.net', 'Our Mission is to provide high quality, professional and complete creative services in all design & communication fields including:Graphic Design  / Printing  /  Advertising  /  Branding  /  Packaging  /  Promotional Materials Design & Supply  /  Copy-writing  /  Photography  /  Strategic Marketing  /  Multimedia  /  Web Design, Development & Hosting  /  Interiors Design.\r\n\r\nOur focus on the future is to supply the business market in the region as well as in the world with our outstanding design solutions that would grow together the firm and our client success.', 0, NULL, 1, NULL, '2023-06-07 22:53:18', '2023-07-05 18:51:23');
 INSERT INTO `company` VALUES (25, 4, 3, 'anotherCompany', 'street', 'city', 'district', 'commune', 'village', 'https://i.imgur.com/DOv6eU6.jpg', '2@d.com', 'https://www.tesla500.com', 'test desc', 0, NULL, 13, NULL, '2023-06-08 01:22:39', '2023-06-27 16:34:24');
 INSERT INTO `company` VALUES (32, 7, 4, 'amazon', 'street', 'city', 'district', 'commune', 'village', 'https://i.imgur.com/gWFUFPh.png', 'amazon@gmail.com', 'https://www.amazon.com/', 'Amazon description', 0, NULL, NULL, NULL, '2023-06-25 01:16:26', '2023-06-25 01:17:02');
+INSERT INTO `company` VALUES (33, 2, 4, 'Vanda Institute', 'No.216-218', 'Phnom Penh', 'Khan Chamkarmorn', 'Sangkat Tumnup Teuk', 'Mao Tse Toung Blvd (245)', 'https://i.imgur.com/0zK4QDz.png', 'vanda@camnet.com.kh', 'https://www.vanda.edu.kh', 'We Educate people', 0, NULL, NULL, NULL, '2023-07-05 23:54:11', '2023-07-05 23:54:11');
 
 -- ----------------------------
 -- Table structure for company_contact
@@ -130,7 +132,7 @@ CREATE TABLE `company_contact`  (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`contact_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of company_contact
@@ -139,14 +141,15 @@ INSERT INTO `company_contact` VALUES (16, 13, 12345678, '2023-06-06 00:05:04', '
 INSERT INTO `company_contact` VALUES (17, 13, 123456789, '2023-06-06 01:53:59', '2023-06-07 13:35:40');
 INSERT INTO `company_contact` VALUES (18, 16, 18505080845, '2023-06-07 22:11:18', '2023-06-07 22:11:18');
 INSERT INTO `company_contact` VALUES (19, 17, 18505080845, '2023-06-07 22:12:50', '2023-06-07 22:12:50');
-INSERT INTO `company_contact` VALUES (25, 22, 18505080845, '2023-06-07 22:20:35', '2023-06-19 17:20:04');
-INSERT INTO `company_contact` VALUES (26, 22, 123456789, '2023-06-07 22:20:35', '2023-06-19 17:20:05');
-INSERT INTO `company_contact` VALUES (27, 23, 18505080845, '2023-06-07 22:21:46', '2023-06-24 00:08:43');
-INSERT INTO `company_contact` VALUES (28, 24, 987456321, '2023-06-07 22:53:18', '2023-06-26 07:37:54');
+INSERT INTO `company_contact` VALUES (25, 22, 23966520, '2023-06-07 22:20:35', '2023-07-05 20:25:02');
+INSERT INTO `company_contact` VALUES (26, 22, 23966522, '2023-06-07 22:20:35', '2023-07-05 20:25:02');
+INSERT INTO `company_contact` VALUES (27, 23, 23216717, '2023-06-07 22:21:46', '2023-07-05 20:11:50');
+INSERT INTO `company_contact` VALUES (28, 24, 23210712, '2023-06-07 22:53:18', '2023-07-05 18:51:23');
 INSERT INTO `company_contact` VALUES (29, 25, 123456789, '2023-06-08 01:22:39', '2023-06-10 05:57:13');
-INSERT INTO `company_contact` VALUES (30, 23, 18505080833, '2023-06-08 21:31:46', '2023-06-24 00:08:43');
+INSERT INTO `company_contact` VALUES (30, 23, 16507655, '2023-06-08 21:31:46', '2023-07-05 20:11:50');
 INSERT INTO `company_contact` VALUES (31, 25, 123456788, '2023-06-08 21:42:08', '2023-06-10 05:57:13');
 INSERT INTO `company_contact` VALUES (39, 32, 18505080845, '2023-06-25 01:16:26', '2023-06-25 01:17:02');
+INSERT INTO `company_contact` VALUES (40, 33, 23213562, '2023-07-05 23:54:11', '2023-07-05 23:54:11');
 
 -- ----------------------------
 -- Table structure for company_gallery
@@ -159,7 +162,7 @@ CREATE TABLE `company_gallery`  (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`gallery_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of company_gallery
@@ -168,14 +171,12 @@ INSERT INTO `company_gallery` VALUES (25, 24, 'https://i.imgur.com/NcPXJmO.jpg',
 INSERT INTO `company_gallery` VALUES (26, 25, 'https://i.imgur.com/UFBABOU.png', '2023-06-10 05:56:55', '2023-06-10 05:56:55');
 INSERT INTO `company_gallery` VALUES (27, 25, 'https://i.imgur.com/kdnUCfT.jpg', '2023-06-10 05:56:59', '2023-06-10 05:56:59');
 INSERT INTO `company_gallery` VALUES (28, 23, 'https://i.imgur.com/nrn0nwv.jpg', '2023-06-10 05:58:14', '2023-06-10 05:58:14');
-INSERT INTO `company_gallery` VALUES (29, 23, 'https://i.imgur.com/9nC0Z1p.jpg', '2023-06-10 05:58:18', '2023-06-10 05:58:18');
 INSERT INTO `company_gallery` VALUES (31, 22, 'https://i.imgur.com/mB3BXVX.jpg', '2023-06-10 06:05:38', '2023-06-10 06:05:38');
-INSERT INTO `company_gallery` VALUES (32, 22, 'https://i.imgur.com/QiSflDz.jpg', '2023-06-14 00:44:15', '2023-06-14 00:44:15');
-INSERT INTO `company_gallery` VALUES (33, 23, 'https://i.imgur.com/sFYRH6e.png', '2023-06-24 00:08:47', '2023-06-24 00:08:47');
 INSERT INTO `company_gallery` VALUES (34, 32, 'https://i.imgur.com/skymDRt.jpg', '2023-06-25 01:17:05', '2023-06-25 01:17:05');
 INSERT INTO `company_gallery` VALUES (35, 24, 'https://i.imgur.com/NXpbs1N.jpg', '2023-06-26 07:37:57', '2023-06-26 07:37:57');
 INSERT INTO `company_gallery` VALUES (36, 24, 'https://i.imgur.com/n3J4wnm.png', '2023-06-26 07:37:59', '2023-06-26 07:37:59');
 INSERT INTO `company_gallery` VALUES (37, 24, 'https://i.imgur.com/Z5ZhMop.jpg', '2023-06-26 07:38:01', '2023-06-26 07:38:01');
+INSERT INTO `company_gallery` VALUES (38, 23, 'https://i.imgur.com/gHB1VwE.jpg', '2023-07-05 20:11:51', '2023-07-05 20:11:51');
 
 -- ----------------------------
 -- Table structure for company_user
@@ -196,17 +197,18 @@ CREATE TABLE `company_user`  (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `api_token` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   PRIMARY KEY (`company_user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of company_user
 -- ----------------------------
-INSERT INTO `company_user` VALUES (2, 'name215', 'name2@gmail.com', '$2y$10$Q871w0g//lElyrzAol9S0.NdTbUfVIbe5IzIRs4F2/7GC52VcdaXW', 2, 0, NULL, 1, NULL, NULL, '2023-06-01 15:32:16', '2023-07-04 01:30:30', 'sZhKffi5iyTXUMzb44SfTb8ClN9X1nmVYqK8QBLIj24hIwlfIgUlHUgf4bg5YuFutUtyE1SsFdTqvB8J');
+INSERT INTO `company_user` VALUES (2, 'name215', 'name2@gmail.com', '$2y$10$Q871w0g//lElyrzAol9S0.NdTbUfVIbe5IzIRs4F2/7GC52VcdaXW', 2, 0, NULL, 1, NULL, NULL, '2023-06-01 15:32:16', '2023-07-06 01:19:22', NULL);
 INSERT INTO `company_user` VALUES (4, 'cname1', 'cname1@gmail.com', '$2y$10$sLZYLSHJb2bex1ThVgGmCu13QhMS6K2nY0WKmKW8mezXf2zpExIcu', 2, 0, NULL, 13, NULL, NULL, '2023-06-03 19:07:56', '2023-06-27 16:34:24', NULL);
 INSERT INTO `company_user` VALUES (5, 'cname2', 'cname2@gmail.com', '$2y$10$QzkAOr2g9xJ7JO1WIW1rgu468m3lIf2w8ohrNddg4m4ZmGfwn0mum', 2, 0, NULL, 1, NULL, NULL, '2023-06-18 16:27:03', '2023-06-23 20:17:29', NULL);
 INSERT INTO `company_user` VALUES (6, 'DomCom', 'domcom@gmail.com', '$2y$10$Nzdu6a9dj63TFl69MK4CB.8B4CDXhcqLM0huhWN0QSgCUVLNxze3S', 2, 0, NULL, 1, NULL, NULL, '2023-06-18 20:41:40', '2023-06-23 20:17:27', NULL);
 INSERT INTO `company_user` VALUES (7, 'cuser1', 'cuser1@gmail.com', '$2y$10$jod0PwavEfCigaO8rc9.NeVY3ohJ21NuvsmCX/5YF2UBz.79rpIoC', 2, 0, NULL, NULL, NULL, NULL, '2023-06-25 01:10:58', '2023-06-25 01:11:59', NULL);
 INSERT INTO `company_user` VALUES (8, 'companyu1', 'companyu1@gmail.com', '$2y$10$RMgiMayLGYBhDBZvn6Te8uXB7fnYh0M2BQQQCiMq2hUq1kdoN.soi', 2, 0, NULL, NULL, NULL, NULL, '2023-06-27 23:44:31', '2023-06-27 23:44:46', NULL);
+INSERT INTO `company_user` VALUES (9, 'ptest1', 'ptest1@gmail.com', '$2y$10$t2BBOd8qcgqM4pzYb2L9TOOoSlbQ1/NbnMVbPzhNCD2qTo8c/KZk2', 2, 0, NULL, NULL, NULL, NULL, '2023-07-05 23:42:10', '2023-07-06 01:18:16', NULL);
 
 -- ----------------------------
 -- Table structure for feedback
@@ -220,7 +222,7 @@ CREATE TABLE `feedback`  (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`feedback_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of feedback
@@ -230,6 +232,7 @@ INSERT INTO `feedback` VALUES (6, 22, 3, 'test', '2023-06-10 02:12:52', '2023-06
 INSERT INTO `feedback` VALUES (7, 23, 4, 'Very good', '2023-06-18 20:40:10', '2023-06-18 20:40:10');
 INSERT INTO `feedback` VALUES (8, 23, 1, 'I like this company', '2023-06-24 04:22:22', '2023-06-24 04:22:22');
 INSERT INTO `feedback` VALUES (9, 24, 9, 'good', '2023-06-25 01:09:39', '2023-06-25 01:09:39');
+INSERT INTO `feedback` VALUES (10, 33, 1, 'i dont like this company. so bad.', '2023-07-06 01:21:37', '2023-07-06 01:21:37');
 
 -- ----------------------------
 -- Table structure for migrations
@@ -282,11 +285,11 @@ CREATE TABLE `normal_user`  (
 -- ----------------------------
 -- Records of normal_user
 -- ----------------------------
-INSERT INTO `normal_user` VALUES (1, 'name1', 'name1@gmail.com', '$2y$10$MkT1cVDgRhrvEYRVuyxyQ.LQ6/GXs9qwN81tPhZl3aZJc3y.w05vG', 1, 0, NULL, 1, NULL, NULL, '2023-06-01 15:26:34', '2023-07-04 01:30:24', NULL);
+INSERT INTO `normal_user` VALUES (1, 'name1', 'name1@gmail.com', '$2y$10$MkT1cVDgRhrvEYRVuyxyQ.LQ6/GXs9qwN81tPhZl3aZJc3y.w05vG', 1, 0, NULL, 1, NULL, NULL, '2023-06-01 15:26:34', '2023-07-06 01:22:15', NULL);
 INSERT INTO `normal_user` VALUES (2, 'Oudom', 'obol@email.com', '$2y$10$HmyeVBXpZfx1Gm1CPsj15Ost4cCI3EpMKygEVuWJa9BiQtgR1v7jO', 1, 0, NULL, 1, NULL, NULL, '2023-06-02 13:01:59', '2023-06-23 20:42:02', NULL);
 INSERT INTO `normal_user` VALUES (3, 'uname1', 'uname1@gmail.com', '$2y$10$3stnHMiNiYsRVkeEm7THMuJpZ6MBH3PQClD/6XBGrFdfuXPpdS/d2', 1, 1, 13, NULL, '1', NULL, '2023-06-03 19:07:27', '2023-06-27 13:42:03', NULL);
 INSERT INTO `normal_user` VALUES (4, 'DomUser', 'Domuser@gmail.com', '$2y$10$Z.niGh6zaV31.GzMJw2vXuKezgPwFDurGGoTwRA7IQd7sFPCqukcy', 1, 0, NULL, 1, NULL, NULL, '2023-06-18 16:15:53', '2023-06-23 20:11:56', NULL);
-INSERT INTO `normal_user` VALUES (5, 'Domtesttwo', 'domtesttwo@gmail.com', '$2y$10$qnXXOktcSRxjzwRVd8E.6.Rn7D05rzaHjYeEarDYE9GYI0PNPkMR2', 1, 0, NULL, NULL, NULL, NULL, '2023-06-18 16:19:47', '2023-06-18 16:19:47', NULL);
+INSERT INTO `normal_user` VALUES (5, 'Domtesttwo', 'domtesttwo@gmail.com', '$2y$10$qnXXOktcSRxjzwRVd8E.6.Rn7D05rzaHjYeEarDYE9GYI0PNPkMR2', 1, 0, NULL, 1, NULL, NULL, '2023-06-18 16:19:47', '2023-07-05 14:09:24', NULL);
 INSERT INTO `normal_user` VALUES (6, 'uname2', 'uname2@gmail.com', '$2y$10$./m6y33uyr.iNrO25ZptFOVJC9WP9rDb.6DCW4ENihaSn8vpnRTR.', 1, 0, NULL, NULL, NULL, NULL, '2023-06-18 16:26:38', '2023-06-18 16:26:38', NULL);
 INSERT INTO `normal_user` VALUES (7, 'DomUserTwo', 'domusertwo@yahoo.com', '$2y$10$XrD4R5KzYGajXx95xrdNeOJG4IGhZ9fuzJEgXhf2UOKCmYAivdm5y', 1, 0, NULL, 1, NULL, NULL, '2023-06-18 21:11:12', '2023-06-23 20:12:30', NULL);
 INSERT INTO `normal_user` VALUES (8, 'flash29', 'flash29@gmail.com', '$2y$10$81JrDXR5WT4./7cvED96R.DZmJf4XKEONktjOxgVRoY.z1guTuIqS', 1, 0, NULL, 1, NULL, NULL, '2023-06-24 02:05:17', '2023-06-23 20:12:30', NULL);
@@ -306,20 +309,21 @@ CREATE TABLE `rate`  (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`rate_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of rate
 -- ----------------------------
-INSERT INTO `rate` VALUES (4, 22, 1, 5, '2023-06-09 14:12:39', '2023-06-24 02:00:28');
+INSERT INTO `rate` VALUES (4, 22, 1, 5, '2023-06-09 14:12:39', '2023-07-06 01:20:40');
 INSERT INTO `rate` VALUES (5, 22, 2, 5, '2023-06-09 14:12:57', '2023-06-09 14:12:57');
 INSERT INTO `rate` VALUES (6, 22, 3, 2, '2023-06-09 14:13:04', '2023-06-10 02:38:03');
 INSERT INTO `rate` VALUES (7, 23, 3, 3, '2023-06-10 02:41:47', '2023-06-10 02:41:47');
-INSERT INTO `rate` VALUES (8, 23, 1, 5, '2023-06-10 06:07:40', '2023-06-24 01:59:55');
+INSERT INTO `rate` VALUES (8, 23, 1, 2, '2023-06-10 06:07:40', '2023-07-05 22:03:55');
 INSERT INTO `rate` VALUES (9, 23, 4, 3, '2023-06-18 20:40:34', '2023-06-18 20:40:34');
 INSERT INTO `rate` VALUES (10, 25, 1, 3, '2023-06-24 02:00:36', '2023-06-24 02:00:36');
 INSERT INTO `rate` VALUES (11, 24, 9, 5, '2023-06-25 01:10:03', '2023-06-25 01:10:03');
-INSERT INTO `rate` VALUES (12, 24, 1, 5, '2023-07-03 00:59:19', '2023-07-03 01:00:10');
+INSERT INTO `rate` VALUES (12, 24, 1, 3, '2023-07-03 00:59:19', '2023-07-06 00:02:15');
+INSERT INTO `rate` VALUES (13, 33, 1, 2, '2023-07-06 01:21:51', '2023-07-06 01:21:51');
 
 -- ----------------------------
 -- Table structure for report
@@ -381,7 +385,7 @@ CREATE TABLE `service`  (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`service_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of service
@@ -395,16 +399,18 @@ INSERT INTO `service` VALUES (7, 1, 'service', NULL, '2023-06-07 22:16:04', '202
 INSERT INTO `service` VALUES (8, 1, 'service', NULL, '2023-06-07 22:17:41', '2023-06-07 22:17:41');
 INSERT INTO `service` VALUES (9, 1, 'service2', NULL, '2023-06-07 22:18:26', '2023-06-07 22:18:26');
 INSERT INTO `service` VALUES (10, 1, 'service2', NULL, '2023-06-07 22:18:26', '2023-06-07 22:18:26');
-INSERT INTO `service` VALUES (13, 22, 'service2', NULL, '2023-06-07 22:20:35', '2023-06-19 17:20:05');
-INSERT INTO `service` VALUES (14, 23, 'Hotdog', NULL, '2023-06-07 22:21:47', '2023-06-24 00:08:44');
-INSERT INTO `service` VALUES (15, 24, 'service', NULL, '2023-06-07 22:53:18', '2023-06-26 07:37:54');
+INSERT INTO `service` VALUES (13, 22, 'Business Consultant', NULL, '2023-06-07 22:20:35', '2023-07-05 20:25:02');
+INSERT INTO `service` VALUES (14, 23, 'Outsourcing Services', NULL, '2023-06-07 22:21:47', '2023-07-05 20:11:50');
+INSERT INTO `service` VALUES (15, 24, 'Graphic Design', NULL, '2023-06-07 22:53:18', '2023-07-05 18:51:23');
 INSERT INTO `service` VALUES (16, 25, 'service', NULL, '2023-06-08 01:22:39', '2023-06-10 05:57:13');
 INSERT INTO `service` VALUES (17, 25, 'service5', NULL, '2023-06-08 01:22:39', '2023-06-10 05:57:14');
-INSERT INTO `service` VALUES (18, 23, 'Bagel', NULL, '2023-06-08 21:31:47', '2023-06-24 00:08:44');
-INSERT INTO `service` VALUES (20, 22, 'service3', NULL, '2023-06-09 20:59:48', '2023-06-19 17:20:05');
-INSERT INTO `service` VALUES (21, 22, 'service4', NULL, '2023-06-09 20:59:48', '2023-06-19 17:20:05');
-INSERT INTO `service` VALUES (22, 23, 'Hamburger', NULL, '2023-06-18 20:44:38', '2023-06-24 00:08:44');
+INSERT INTO `service` VALUES (18, 23, 'Business Consultant', NULL, '2023-06-08 21:31:47', '2023-07-05 20:11:50');
+INSERT INTO `service` VALUES (20, 22, 'Tax Service', NULL, '2023-06-09 20:59:48', '2023-07-05 20:25:02');
+INSERT INTO `service` VALUES (21, 22, 'Audit & Accounting Services', NULL, '2023-06-09 20:59:48', '2023-07-05 20:25:02');
 INSERT INTO `service` VALUES (30, 32, 'online shop', NULL, '2023-06-25 01:16:26', '2023-06-25 01:17:02');
 INSERT INTO `service` VALUES (31, 32, 'service2', NULL, '2023-06-25 01:16:26', '2023-06-25 01:17:02');
+INSERT INTO `service` VALUES (32, 24, 'Web Design', NULL, '2023-07-05 18:50:36', '2023-07-05 18:51:24');
+INSERT INTO `service` VALUES (33, 24, 'Advertising', NULL, '2023-07-05 18:50:36', '2023-07-05 18:51:24');
+INSERT INTO `service` VALUES (34, 33, 'Educate', NULL, '2023-07-05 23:54:11', '2023-07-05 23:54:11');
 
 SET FOREIGN_KEY_CHECKS = 1;

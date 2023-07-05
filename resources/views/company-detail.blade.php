@@ -14,7 +14,7 @@
             </ol>
         </nav>
         <!-- End Breadcrumbs -->
-        @if ($company->is_banned)
+        @if (isset($company) && $company->is_banned)
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Sorry!</strong> This company has been banned by the admin.
                 <!-- Error message -->
@@ -27,7 +27,8 @@
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Success!</strong> {{ session('success') }}
                     <!-- Success message -->
-                    <button type="button" class="btn-close alert-success" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close alert-success" data-bs-dismiss="alert"
+                        aria-label="Close"></button>
                     <!-- Button to close the alert -->
                 </div>
             @elseif (session('error'))
@@ -95,8 +96,8 @@
                                     </div>
                                     <!-- Star rating -->
                                     <!-- <div class="position-absolute bottom-0 end-0">
-                                                                                            <div class="star-rating" id="star-rating"></div>
-                                                                                        </div> -->
+                                                                                                <div class="star-rating" id="star-rating"></div>
+                                                                                            </div> -->
 
                                     <div class="card-footer d-flex justify-content-between align-items-center">
                                         <!-- Overall rating -->
@@ -296,7 +297,10 @@
             <input style="display: none" type="text" id="currentUserRateNumber"
                 value="{{ $currentUserRateNumber ?? 0 }}">
         @else
-            <span>No company found :(</span>
+            {{-- <span>No company found :(</span> --}}
+            <div class="alert alert-danger" style="width: 100%" role="alert">
+                No company found :(
+            </div>
         @endif
 
     </div>

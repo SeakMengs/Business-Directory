@@ -19,7 +19,7 @@ function PopBackInputDom(className) {
 
     // remove last input
     nodes[currentExistingInput - 1].remove();
-} 
+}
 
 // for the alert box
 function showAlert(message) {

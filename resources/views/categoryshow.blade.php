@@ -35,7 +35,10 @@
                     </div>
                 @endforeach
             @else
-                <p>No category found</p>
+                {{-- <p>No category found</p> --}}
+                <div class="alert alert-danger" style="width: 100%" role="alert">
+                    No category found :(
+                </div>
             @endif
         </div>
         <div class="pagination-to-right">
