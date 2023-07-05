@@ -171,6 +171,9 @@
                         </div>
                         <div class="card-footer text-center">
                             <button type="submit" class="btn btn-primary">List Company</button>
+                            <a href="/user/company/{{ Auth::guard('companyUser')->user()->name }}/{{ Auth::guard('companyUser')->user()->company_user_id}}/profile">
+                                <button type="button" class="btn btn-primary">Cancel</button>
+                            </a>
                             <!-- Button to submit the form for approval -->
                         </div>
                         {{-- error style here --}}
