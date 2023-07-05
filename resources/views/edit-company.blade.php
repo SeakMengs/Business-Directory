@@ -200,6 +200,9 @@
                             <!-- Save Changes button -->
                             <div class="card-footer text-center">
                                 <button type="submit" class="btn btn-primary">Save Changes</button>
+                                <a href="/user/company/{{ Auth::guard('companyUser')->user()->name }}/{{ Auth::guard('companyUser')->user()->company_user_id}}/profile">
+                                    <button type="button" class="btn btn-primary">Cancel</button>
+                                </a>
                             </div>
                             {{-- error style here --}}
                             @if ($errors->any())
