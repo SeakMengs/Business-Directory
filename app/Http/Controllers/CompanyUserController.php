@@ -63,6 +63,16 @@ class CompanyUserController extends Controller
         return json_decode($response->getBody()->getContents())->data->link;
     }
 
+    public function uploadToSpaceObject($image)
+    {
+        $fileName = $image->getClientOriginalName();
+        $folderName = env('BLOCKS_FOLDER_NAME', 'images');
+        $path = $image->storeAs($folderName, $fileName, 'spaces');
+        $url = env('DO_SPACES_FULL_ENDPOINT') . '/' . $path;
+
+        return $url;
+    }
+
     public function profile($username, $userId)
     {
         // TODO: Join relationship of company_user and many companies
@@ -288,7 +298,7 @@ class CompanyUserController extends Controller
 
         // https://stackoverflow.com/questions/17861412/calling-other-function-in-the-same-controller
         // call function inside the same controller
-        $logoUrl = $this->uploadToImgur($request->file('logo'));
+        $logoUrl = $this->uploadToSpaceObject($request->file('logo'));
 
         $saveCompany = Company::create([
             'name' => $request->input('name'),
@@ -334,7 +344,7 @@ class CompanyUserController extends Controller
             if ($request->file('photo_url')) {
                 // Save the company photos
                 foreach ($request->file('photo_url') as $photo) {
-                    $photoUrl = $this->uploadToImgur($photo);
+                    $photoUrl = $this->uploadToSpaceObject($photo);
 
                     CompanyGallery::create([
                         'company_id' => $savedComapnyId,
@@ -472,7 +482,7 @@ class CompanyUserController extends Controller
 
         // dd($storeUpdateCompany);
         if ($request->file('logo')) {
-            $storeUpdateCompany['logo'] = $this->uploadToImgur($request->file('logo'));
+            $storeUpdateCompany['logo'] = $this->uploadToSpaceObject($request->file('logo'));
         }
 
         // Update the company
@@ -519,7 +529,7 @@ class CompanyUserController extends Controller
                 foreach ($request->file('add_gallery') as $key => $photo) {
                     $addGallery = CompanyGallery::create([
                         'company_id' => $company_id,
-                        'photo_url' => $this->uploadToImgur($photo),
+                        'photo_url' => $this->uploadToSpaceObject($photo),
                     ]);
                 }
             }

@@ -1,6 +1,12 @@
 @extends('layout.master')
 
 @section('dyncontent')
+    <?php
+    echo '<h1>ServerName: ' . gethostname() . '<br></h1>';
+    if (isset($_SERVER['SERVER_ADDR'])) {
+        echo '<h1>ServerIP: ' . $_SERVER['SERVER_ADDR'] . '</h1>';
+    }
+    ?>
     <div class="container my-5">
         <div class="row">
             <div class="col">
